@@ -1,4 +1,4 @@
 ---
 title: "其他"
-description: "分享更优秀的开源笔记网站"
+description: "Be yourself...But do study them all"
 ---
