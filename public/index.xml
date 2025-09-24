@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>Tardus Pura 的个人空间</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on Tardus Pura 的个人空间</description>
     <generator>Hugo -- 0.150.0</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 24 Sep 2025 11:06:21 +0800</lastBuildDate>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Sep 2025 14:16:59 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Project</title>
+      <link>http://localhost:1313/projects/first-project/</link>
+      <pubDate>Wed, 24 Sep 2025 14:16:59 +0800</pubDate>
+      <guid>http://localhost:1313/projects/first-project/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>First Note</title>
+      <link>http://localhost:1313/posts/first-note/</link>
+      <pubDate>Wed, 24 Sep 2025 14:16:04 +0800</pubDate>
+      <guid>http://localhost:1313/posts/first-note/</guid>
+      <description></description>
+    </item>
     <item>
       <title>First Post</title>
       <link>http://localhost:1313/posts/first-post/</link>
@@ -20,7 +34,10 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Wed, 24 Sep 2025 11:05:47 +0800</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description></description>
+      <description>&lt;p&gt;Hi!&lt;/p&gt;
+&lt;p&gt;i am Tardus Pura,who studying IS in ZJU,Hangzhou,China.&lt;/p&gt;
+&lt;p&gt;Welcome to my world.&lt;/p&gt;
+&lt;p&gt;Feel free to explore and contact with me!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
