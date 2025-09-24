@@ -12,20 +12,20 @@ draft: false
 
 ## 油画:
 
-- **油画集萃**:[gallerix]: (https://gallerix.asia/)
+- **油画集萃**:[gallerix](https://gallerix.asia/)
 
 
 
 ## 雕塑与建筑：
 
-- **现代雕塑**:[史密森尼赫尔斯霍恩博物馆与雕塑花园]: (https://hirshhorn.si.edu)
+- **现代雕塑**:[史密森尼赫尔斯霍恩博物馆与雕塑花园](https://hirshhorn.si.edu)
 
 
 
 ## 博物馆：
 
-- **综合艺术**:[大都会]: (https://www.metmuseum.org/art/collection)
-- **欧美艺术**:[国家美术馆]: (https://www.nga.gov)
-- **现代艺术**:[现代艺术博物馆]: (https://www.moma.org)
-- **综合艺术**:[荷兰国立博物馆]: (https://www.rijksmuseum.nl)
+- **综合艺术**:[大都会](https://www.metmuseum.org/art/collection)
+- **欧美艺术**:[国家美术馆](https://www.nga.gov)
+- **现代艺术**:[现代艺术博物馆](https://www.moma.org)
+- **综合艺术**:[荷兰国立博物馆](https://www.rijksmuseum.nl)
 
