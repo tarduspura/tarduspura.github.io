@@ -53,7 +53,7 @@ buildExpired = false
 [[menu.main]]
   identifier = "her"
   name = "Her"
-  url = "/about/"
+  url = "/her/"
   weight = 7  
 
   
