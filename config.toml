@@ -12,7 +12,7 @@ buildExpired = false
   minifyOutput = true
 
 [params]
-  homeInfoParams = { Title = "你好，我是 Tardus Pura", Content = "技术 | 户外 | 哲学" }
+  homeInfoParams = { Title = "Hi，Tardus Pura here", Content = "学习 | 户外 | 创作" }
 
 [[menu.main]]
   identifier = "home"
@@ -21,21 +21,39 @@ buildExpired = false
   weight = 1
 
 [[menu.main]]
+  identifier = "about"
+  name = "关于"
+  url = "/about/"
+  weight = 2
+
+[[menu.main]]
   identifier = "posts"
   name = "笔记"
   url = "/posts/"
   weight = 3
 
 [[menu.main]]
-  identifier = "projects"
-  name = "项目"
-  url = "/projects/"
+  identifier = "travel"
+  name = "旅行&户外"
+  url = "/travel/"
   weight = 4
 
 [[menu.main]]
-  identifier = "about"
-  name = "关于"
+  identifier = "contemplate"
+  name = "沉思"
+  url = "/contemplate/"
+  weight = 5
+
+[[menu.main]]
+  identifier = "projects"
+  name = "项目"
+  url = "/projects/"
+  weight = 6
+
+[[menu.main]]
+  identifier = "her"
+  name = "Her"
   url = "/about/"
-  weight = 2
-  
+  weight = 7  
+
   
