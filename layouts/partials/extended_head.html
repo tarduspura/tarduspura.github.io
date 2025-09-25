@@ -1,0 +1,13 @@
+{{- /*
+  extended_head.html
+  加载自定义 SCSS 样式（Hugo Asset Pipeline）
+*/ -}}
+
+{{- $opts := dict "targetPath" "css/extended.css" "enableSourceMap" false -}}
+{{- $scss := resources.Get "css/extended.scss" -}}
+{{- if $scss -}}
+  {{- $css := $scss | resources.ToCSS $opts | resources.Minify | resources.Fingerprint -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- else -}}
+  {{- warnf "SCSS 文件未找到: assets/css/extended.scss" -}}
+{{- end -}}
