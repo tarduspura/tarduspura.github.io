@@ -68,6 +68,47 @@ body {
   color: var(--primary) !important;
 }
 
+.home-info h1 {
+  color: #ffffff !important; /* 白色确保高对比 */
+  font-weight: 800 !important; /* 超粗 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* 轻微阴影增强可读性 */
+}
+
+/* 首页简介 */
+.home-info p {
+  color: #f0f0f0 !important; /* 浅灰白 */
+  font-weight: 500 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 社交图标颜色 */
+.home-socials a {
+  color: #ffffff !important;
+}
+
+.home-socials a:hover {
+  color: #a5b4fc !important; /* 悬停亮色 */
+}
+
+/* 顶部导航栏字体加粗 */
+.nav-link {
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 暗色模式下也保持白色（如果你背景是深色） */
+body.dark .nav-link,
+body:not(.dark) .nav-link {
+  color: #ffffff !important;
+}
+
+/* 当前激活页面高亮 */
+.nav-link.active {
+  color: #c7d2fe !important;
+  border-bottom: 2px solid #c7d2fe;
+}
+
 /* 动画定义 */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
