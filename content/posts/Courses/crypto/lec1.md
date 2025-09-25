@@ -1,7 +1,7 @@
 ---
-title: "Lec1"
+title: "Lec1:Introduction"
 date: 2025-09-25T08:23:36+08:00
-draft: true
+draft: false
 ---
 
 # 现代密码学介绍<br>
