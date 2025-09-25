@@ -7,19 +7,26 @@
 }
 
 /* 背景图容器（覆盖整个视口） */
-body.home {
-  background: url('/images/bg-home.webp') center/cover no-repeat fixed;
-  background-color: #f0f0f0; /* 备用色 */
+body {
+  background: url('/images/bg-home.webp') center/cover no-repeat fixed !important;
+  background-color: #f0f0f0 !important;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-/* 暗色模式适配（可选不同背景） */
+/* 内容区域提亮（确保文字可读） */
+.home-info {
+  background: rgba(255, 255, 255, 0.85) !important;
+  padding: 2rem !important;
+  border-radius: 16px !important;
+  backdrop-filter: blur(8px) !important;
+  max-width: 800px !important;
+  margin: 2rem auto !important;
+}
+
+/* 暗色模式适配 */
 @media (prefers-color-scheme: dark) {
-  body.home {
-    background: url('/images/bg-home-dark.jpg') center/cover no-repeat fixed;
-    background-color: #111;
+  .home-info {
+    background: rgba(30, 30, 40, 0.85) !important;
   }
 }
 
@@ -75,10 +82,11 @@ body.home {
 /* 移动端适配 */
 @media (max-width: 768px) {
   .home-info {
-    padding: 1.5rem;
-    margin: 1rem;
+  position: relative;
+  z-index: 2;
   }
-  body.home {
-    background-attachment: scroll; /* 移动端禁用 fixed 背景（性能优化） */
-  }
+    body {
+    background: url('/images/bg-home.webp') center/cover no-repeat fixed !important;
+    min-height: 100vh;
+    }
 }
