@@ -6,27 +6,89 @@
     <description>Recent content on Tardus Pura 的个人空间</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 24 Sep 2025 14:16:59 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Sep 2025 08:23:36 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lec1:Introduction</title>
+      <link>http://localhost:1313/posts/courses/crypto/lec1/</link>
+      <pubDate>Thu, 25 Sep 2025 08:23:36 +0800</pubDate>
+      <guid>http://localhost:1313/posts/courses/crypto/lec1/</guid>
+      <description>&lt;h1 id=&#34;现代密码学介绍&#34;&gt;现代密码学介绍&lt;!-- raw HTML omitted --&gt;&lt;/h1&gt;
+&lt;h2 id=&#34;语法&#34;&gt;语法&lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;元素-elements&#34;&gt;元素 elements：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;$ \mathcal{M} $&lt;/strong&gt;: message space&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$ \mathcal{K} $&lt;/strong&gt;: key space&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gen&lt;/strong&gt;: key generation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enc&lt;/strong&gt;: encrypting&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dec&lt;/strong&gt;: decryprting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;名词-nouns&#34;&gt;名词 nouns：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;eavestropping adversary&lt;/strong&gt;: （信息传输间）窃听的攻击者&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;encryption scheme&lt;/strong&gt;: 加密方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;功能-functionality&#34;&gt;功能 functionality：&lt;/h3&gt;
+&lt;p&gt;1.The &lt;em&gt;key-generation&lt;/em&gt; algorithm &lt;strong&gt;Gen&lt;/strong&gt; is a probabilistic algorithm that outputs a key k chosen according to some distribution.&lt;/p&gt;
+&lt;p&gt;2.The &lt;em&gt;encryption algorithm&lt;/em&gt; &lt;strong&gt;Enc&lt;/strong&gt; takes as input a key k and a message m and outputs a ciphertext c. We denote by &lt;strong&gt;$Enc_k(m)$&lt;/strong&gt; the encryption of the plaintext m using the key k.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lec2:Security</title>
+      <link>http://localhost:1313/posts/courses/crypto/lec2/</link>
+      <pubDate>Thu, 25 Sep 2025 08:23:36 +0800</pubDate>
+      <guid>http://localhost:1313/posts/courses/crypto/lec2/</guid>
+      <description>&lt;h1 id=&#34;perfectly-secret-encryption&#34;&gt;Perfectly secret encryption&lt;/h1&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;shannon-security&#34;&gt;Shannon security&lt;/h2&gt;
+&lt;h2 id=&#34;perfect-security&#34;&gt;Perfect security&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>Website</title>
+      <link>http://localhost:1313/contemplate/art/website/</link>
+      <pubDate>Wed, 24 Sep 2025 21:51:59 +0800</pubDate>
+      <guid>http://localhost:1313/contemplate/art/website/</guid>
+      <description>&lt;p&gt;​        在时间和空间的限制被打破以前，对于那些臻美的油画、雕像、建筑、装饰&amp;hellip;我们往往难以亲临现场用肉眼观摩。幸而技术的成熟和热爱艺术的人们的贡献，以下这些网站中提供了高质量的艺术品图片，让我们通过屏幕也可以领略到那些厚重的笔触和神圣的色彩。&lt;/p&gt;
+&lt;p&gt;​         Enjoy your journey!&lt;/p&gt;
+&lt;h2 id=&#34;油画&#34;&gt;油画:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;油画集萃&lt;/strong&gt;:&lt;a href=&#34;https://gallerix.asia/&#34;&gt;gallerix&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;雕塑与建筑&#34;&gt;雕塑与建筑：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;现代雕塑&lt;/strong&gt;:&lt;a href=&#34;https://hirshhorn.si.edu&#34;&gt;史密森尼赫尔斯霍恩博物馆与雕塑花园&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;博物馆&#34;&gt;博物馆：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;综合艺术&lt;/strong&gt;:&lt;a href=&#34;https://www.metmuseum.org/art/collection&#34;&gt;大都会&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;欧美艺术&lt;/strong&gt;:&lt;a href=&#34;https://www.nga.gov&#34;&gt;国家美术馆&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;现代艺术&lt;/strong&gt;:&lt;a href=&#34;https://www.moma.org&#34;&gt;现代艺术博物馆&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;综合艺术&lt;/strong&gt;:&lt;a href=&#34;https://www.rijksmuseum.nl&#34;&gt;荷兰国立博物馆&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Learnmore</title>
+      <link>http://localhost:1313/posts/others/learnmore/</link>
+      <pubDate>Wed, 24 Sep 2025 16:44:44 +0800</pubDate>
+      <guid>http://localhost:1313/posts/others/learnmore/</guid>
+      <description>&lt;p&gt;由于笔者的水平和精力非常有限，因此在Learnmore分类中存放了大佬们一些令我受益匪浅的博客,希望可以有所帮助：&lt;/p&gt;
+&lt;h2 id=&#34;笔记网站&#34;&gt;笔记网站&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Tony Crane&lt;/strong&gt;
+&lt;a href=&#34;https://note.tonycrane.cc/&#34;&gt;笔记网站&lt;/a&gt;,
+&lt;a href=&#34;https://tonycrane.cc/&#34;&gt;个人主页&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;forgelia&lt;/strong&gt;
+&lt;a href=&#34;https://forliage.github.io/&#34;&gt;笔记网站&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>First Project</title>
       <link>http://localhost:1313/projects/first-project/</link>
       <pubDate>Wed, 24 Sep 2025 14:16:59 +0800</pubDate>
       <guid>http://localhost:1313/projects/first-project/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>First Note</title>
-      <link>http://localhost:1313/posts/first-note/</link>
-      <pubDate>Wed, 24 Sep 2025 14:16:04 +0800</pubDate>
-      <guid>http://localhost:1313/posts/first-note/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>First Post</title>
-      <link>http://localhost:1313/posts/first-post/</link>
-      <pubDate>Wed, 24 Sep 2025 11:06:21 +0800</pubDate>
-      <guid>http://localhost:1313/posts/first-post/</guid>
       <description></description>
     </item>
     <item>
@@ -37,7 +99,14 @@
       <description>&lt;p&gt;Hi!&lt;/p&gt;
 &lt;p&gt;i am Tardus Pura,who studying IS in ZJU,Hangzhou,China.&lt;/p&gt;
 &lt;p&gt;Welcome to my world.&lt;/p&gt;
-&lt;p&gt;Feel free to explore and contact with me!&lt;/p&gt;</description>
+&lt;p&gt;Feel free to explore and contact with me!&lt;/p&gt;
+&lt;h2 id=&#34;contact-me&#34;&gt;Contact Me:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/tarduspura&#34;&gt;@tarduspura&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;E-mail&lt;/strong&gt;: &lt;a href=&#34;mailto:fabien_mana@foxmail.com&#34;&gt;fabien_mana@foxmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我不想去送死，我只是想看看我是不是真的活着&lt;/p&gt;&lt;/blockquote&gt;</description>
     </item>
   </channel>
 </rss>

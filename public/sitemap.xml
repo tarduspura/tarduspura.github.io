@@ -2,29 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/posts/courses/crypto/lec1/</loc>
+    <lastmod>2025-09-25T08:23:36+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/courses/crypto/lec2/</loc>
+    <lastmod>2025-09-25T08:23:36+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-09-25T08:23:36+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/courses/</loc>
+    <lastmod>2025-09-25T08:23:36+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/courses/crypto/</loc>
+    <lastmod>2025-09-25T08:23:36+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-09-25T08:23:36+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/contemplate/art/website/</loc>
+    <lastmod>2025-09-24T21:51:59+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/contemplate/</loc>
+    <lastmod>2025-09-24T21:51:59+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/contemplate/art/</loc>
+    <lastmod>2025-09-24T21:51:59+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/others/learnmore/</loc>
+    <lastmod>2025-09-24T16:44:44+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/others/</loc>
+    <lastmod>2025-09-24T16:44:44+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/projects/first-project/</loc>
     <lastmod>2025-09-24T14:16:59+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/</loc>
     <lastmod>2025-09-24T14:16:59+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-09-24T14:16:59+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/first-note/</loc>
-    <lastmod>2025-09-24T14:16:04+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-09-24T14:16:04+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/first-post/</loc>
-    <lastmod>2025-09-24T11:06:21+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/about/</loc>
     <lastmod>2025-09-24T11:05:47+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
+    <loc>http://localhost:1313/her/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/contemplate/create/</loc>
+  </url><url>
+    <loc>http://localhost:1313/her/restaurant/</loc>
+  </url><url>
+    <loc>http://localhost:1313/contemplate/create/novel/</loc>
+  </url><url>
+    <loc>http://localhost:1313/travel/hike/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/tech/</loc>
+  </url><url>
+    <loc>http://localhost:1313/travel/rock/</loc>
+  </url><url>
+    <loc>http://localhost:1313/travel/destination/</loc>
+  </url><url>
+    <loc>http://localhost:1313/travel/</loc>
+  </url><url>
+    <loc>http://localhost:1313/her/things/</loc>
+  </url><url>
+    <loc>http://localhost:1313/her/location/</loc>
+  </url><url>
+    <loc>http://localhost:1313/contemplate/learn/</loc>
+  </url><url>
+    <loc>http://localhost:1313/contemplate/create/poetry/</loc>
+  </url><url>
+    <loc>http://localhost:1313/contemplate/create/essay/</loc>
   </url>
 </urlset>

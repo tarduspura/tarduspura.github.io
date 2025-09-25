@@ -1,6 +1,7 @@
 ---
 title: "Lec1:Introduction"
 date: 2025-09-25T08:23:36+08:00
+math: true
 draft: false
 ---
 

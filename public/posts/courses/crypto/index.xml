@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>数据安全与密码学基础 on Tardus Pura 的个人空间</title>
+    <link>http://localhost:1313/posts/courses/crypto/</link>
+    <description>Recent content in 数据安全与密码学基础 on Tardus Pura 的个人空间</description>
+    <generator>Hugo -- 0.150.0</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 25 Sep 2025 08:23:36 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/courses/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lec1:Introduction</title>
+      <link>http://localhost:1313/posts/courses/crypto/lec1/</link>
+      <pubDate>Thu, 25 Sep 2025 08:23:36 +0800</pubDate>
+      <guid>http://localhost:1313/posts/courses/crypto/lec1/</guid>
+      <description>&lt;h1 id=&#34;现代密码学介绍&#34;&gt;现代密码学介绍&lt;!-- raw HTML omitted --&gt;&lt;/h1&gt;
+&lt;h2 id=&#34;语法&#34;&gt;语法&lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;元素-elements&#34;&gt;元素 elements：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;$ \mathcal{M} $&lt;/strong&gt;: message space&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;$ \mathcal{K} $&lt;/strong&gt;: key space&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gen&lt;/strong&gt;: key generation&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Enc&lt;/strong&gt;: encrypting&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dec&lt;/strong&gt;: decryprting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;名词-nouns&#34;&gt;名词 nouns：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;eavestropping adversary&lt;/strong&gt;: （信息传输间）窃听的攻击者&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;encryption scheme&lt;/strong&gt;: 加密方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;功能-functionality&#34;&gt;功能 functionality：&lt;/h3&gt;
+&lt;p&gt;1.The &lt;em&gt;key-generation&lt;/em&gt; algorithm &lt;strong&gt;Gen&lt;/strong&gt; is a probabilistic algorithm that outputs a key k chosen according to some distribution.&lt;/p&gt;
+&lt;p&gt;2.The &lt;em&gt;encryption algorithm&lt;/em&gt; &lt;strong&gt;Enc&lt;/strong&gt; takes as input a key k and a message m and outputs a ciphertext c. We denote by &lt;strong&gt;$Enc_k(m)$&lt;/strong&gt; the encryption of the plaintext m using the key k.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lec2:Security</title>
+      <link>http://localhost:1313/posts/courses/crypto/lec2/</link>
+      <pubDate>Thu, 25 Sep 2025 08:23:36 +0800</pubDate>
+      <guid>http://localhost:1313/posts/courses/crypto/lec2/</guid>
+      <description>&lt;h1 id=&#34;perfectly-secret-encryption&#34;&gt;Perfectly secret encryption&lt;/h1&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;shannon-security&#34;&gt;Shannon security&lt;/h2&gt;
+&lt;h2 id=&#34;perfect-security&#34;&gt;Perfect security&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>
