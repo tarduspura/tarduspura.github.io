@@ -13,6 +13,8 @@ buildExpired = false
 
 [params]
   homeInfoParams = { Title = "Hi，Tardus Pura here", Content = "学习 | 户外 | 创作" }
+  homePostsRSS = true
+  homePostsLimit = 3
 
 [[menu.main]]
   identifier = "home"

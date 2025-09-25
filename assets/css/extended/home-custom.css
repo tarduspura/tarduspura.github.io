@@ -1,0 +1,84 @@
+.home-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* 背景图容器（覆盖整个视口） */
+body.home {
+  background: url('/images/bg-home.webp') center/cover no-repeat fixed;
+  background-color: #f0f0f0; /* 备用色 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 暗色模式适配（可选不同背景） */
+@media (prefers-color-scheme: dark) {
+  body.home {
+    background: url('/images/bg-home-dark.jpg') center/cover no-repeat fixed;
+    background-color: #111;
+  }
+}
+
+/* 内容区域：加半透明背景提升可读性 */
+.home-info {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px); /* 毛玻璃效果（现代浏览器支持） */
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* 暗色模式内容背景 */
+@media (prefers-color-scheme: dark) {
+  .home-info {
+    background: rgba(30, 30, 40, 0.85);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* 标题动画 */
+.home-info h1 {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.2s forwards;
+}
+
+/* 社交图标悬停效果 */
+.home-socials a {
+  display: inline-block;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.home-socials a:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  color: var(--primary) !important;
+}
+
+/* 动画定义 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .home-info {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  body.home {
+    background-attachment: scroll; /* 移动端禁用 fixed 背景（性能优化） */
+  }
+}
