@@ -1,7 +1,7 @@
 ---
 title: "第二版前言"
 date: 2025-09-25T21:00:40+08:00
-draft: true
+draft: false
 ---
 
 ## 生命阶段
