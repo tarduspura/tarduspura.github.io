@@ -1,0 +1,25 @@
+/* 仅在首页 body 上添加 .home 类时生效 */
+body.home {
+  background: url('/images/bg-home.webp') center/cover no-repeat fixed;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+}
+
+/* 首页内容区域提亮 */
+body.home .home-info {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  max-width: 800px;
+  margin: 2rem auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* 暗色模式适配 */
+@media (prefers-color-scheme: dark) {
+  body.home .home-info {
+    background: rgba(30, 30, 40, 0.85);
+  }
+}
