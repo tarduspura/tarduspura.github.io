@@ -1,21 +1,18 @@
-/* 卡片悬停效果 */
-.article, .post-entry, .entry {
-  transition: all 0.3s ease-in-out;
-  border-radius: 12px;
+/* 社交图标悬停 */
+.home-socials a {
+  display: inline-block;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  transform: translateY(0);
 }
 
-.article:hover, .post-entry:hover, .entry:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  background: rgba(255,255,255,0.1);
+.home-socials a:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  color: var(--primary) !important;
 }
 
-/* 图标悬停效果 */
-.social-icons a {
-  transition: all 0.3s ease-in-out;
-}
-
-.social-icons a:hover {
-  color: #ff4081;
-  transform: scale(1.2);
+/* 导航栏悬停 */
+.nav-link:hover {
+  color: var(--primary) !important;
 }

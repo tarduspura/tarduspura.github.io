@@ -1,8 +1,15 @@
-/* 主题颜色适配（简单版本：白底黑字 / 背景图时强制白字） */
-body.light-text {
-  color: #fff !important;
+:root {
+  --body-color: #333;
+  --body-bg: #fff;
+  --primary: #6366f1;
+  --border: #e5e7eb;
 }
 
-body.dark-text {
-  color: #000 !important;
+/* 暗色模式 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-color: #e5e7eb;
+    --body-bg: #111827;
+    --border: #374151;
+  }
 }
