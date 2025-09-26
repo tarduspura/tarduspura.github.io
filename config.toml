@@ -17,6 +17,9 @@ buildExpired = false
   homePostsLimit = 3
   math = true
 
+[params.assets]
+  customCSS = ["css/custom.css"]  
+
 [[menu.main]]
   identifier = "home"
   name = "首页"

@@ -1,0 +1,21 @@
+/* 卡片悬停效果 */
+.article, .post-entry, .entry {
+  transition: all 0.3s ease-in-out;
+  border-radius: 12px;
+}
+
+.article:hover, .post-entry:hover, .entry:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.1);
+}
+
+/* 图标悬停效果 */
+.social-icons a {
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #ff4081;
+  transform: scale(1.2);
+}

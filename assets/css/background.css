@@ -1,0 +1,11 @@
+/* 背景图设置 */
+body {
+  background: url("/images/bg-home.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* 保证首页文字可读 */
+.post-title, .page-title, .entry-title, body {
+  color: #fff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
