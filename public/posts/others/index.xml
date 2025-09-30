@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>其他 on Tardus Pura 的个人空间</title>
-    <link>http://localhost:1313/posts/others/</link>
+    <link>https://tarduspura.github.io/posts/others/</link>
     <description>Recent content in 其他 on Tardus Pura 的个人空间</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en</language>
     <lastBuildDate>Wed, 24 Sep 2025 16:44:44 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/others/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tarduspura.github.io/posts/others/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Learnmore</title>
-      <link>http://localhost:1313/posts/others/learnmore/</link>
+      <link>https://tarduspura.github.io/posts/others/learnmore/</link>
       <pubDate>Wed, 24 Sep 2025 16:44:44 +0800</pubDate>
-      <guid>http://localhost:1313/posts/others/learnmore/</guid>
+      <guid>https://tarduspura.github.io/posts/others/learnmore/</guid>
       <description>&lt;p&gt;由于笔者的水平和精力非常有限，因此在Learnmore分类中存放了大佬们一些令我受益匪浅的博客,希望可以有所帮助：&lt;/p&gt;
 &lt;h2 id=&#34;笔记网站&#34;&gt;笔记网站&lt;/h2&gt;
 &lt;ul&gt;
