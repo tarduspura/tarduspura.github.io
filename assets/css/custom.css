@@ -1,0 +1,73 @@
+/* 添加油画背景到首页 */
+.home {
+    background-image: url('/images/bg-home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* 添加半透明遮罩层以提高文字可读性 */
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* 调整首页文字颜色以适配背景 */
+.home .profile,
+.home .home-info h1,
+.home .home-info p,
+.home .social-icons a {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* 调整导航栏以适配背景 */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.navbar .nav-links a {
+    color: #ffffff;
+}
+
+/* 鼠标悬停动画效果 */
+.home .profile img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home .profile img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.home .social-icons a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.home .social-icons a:hover {
+    transform: translateY(-3px);
+    color: #f0f0f0;
+}
+
+/* 添加油画纹理效果 */
+.oil-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/bg-home.png');
+    opacity: 0.1;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 1;
+}
