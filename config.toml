@@ -71,10 +71,10 @@ buildExpired = false
   identifier = "her"
   name = "Her"
   url = "/her"
-  weight = 8 
+  weight = 7
 
 [[menu.main]]
   identifier = "guide"
   name = "导航"
   url = "/guide"
-  weight = 7
+  weight = 8
