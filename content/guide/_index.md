@@ -1,6 +1,5 @@
 ---
 title: "导航"
-menu: "main"
-weight: 2
+description: "实用网站和项目导航"
 ---
 
