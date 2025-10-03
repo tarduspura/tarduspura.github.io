@@ -16,7 +16,7 @@ buildExpired = false
   homePostsRSS = true
   homePostsLimit = 3
   math = true
-  showMenuItems = 8
+  mainSections = ["posts","guide","travel","contemplate","projects"]
 
 [params.assets]
   customCSS = ["css/custom.css"]  
