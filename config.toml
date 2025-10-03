@@ -20,10 +20,7 @@ buildExpired = false
   math = true              # 支持数学公式
   showMenuItems = 8
 
-  # 控制首页文章来源，默认只显示 posts 下的
-  # 如果你想把 guide / travel 的文章也显示在首页，可以加上：
-  # mainSections = ["posts", "guide", "travel"]
-  mainSections = ["posts"]
+  mainSections = ["posts", "guide", "travel","her","contemplate","projects"]
 
 [params.assets]
   customCSS = ["css/custom.css"]  
