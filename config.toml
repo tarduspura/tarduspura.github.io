@@ -38,9 +38,9 @@ buildExpired = false
   weight = 1
 
 [[menu.main]]
-  identifier = "guide"
-  name = "导航"
-  url = "/guide"
+  identifier = "about"
+  name = "关于"
+  url = "/about"
   weight = 2
 
 [[menu.main]]
@@ -71,10 +71,10 @@ buildExpired = false
   identifier = "her"
   name = "Her"
   url = "/her"
-  weight = 7  
+  weight = 8 
 
 [[menu.main]]
-  identifier = "about"
-  name = "关于"
-  url = "/about"
-  weight = 8
+  identifier = "guide"
+  name = "导航"
+  url = "/guide"
+  weight = 7
