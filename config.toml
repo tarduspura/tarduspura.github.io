@@ -2,6 +2,7 @@ baseURL = "https://tarduspura.github.io/"
 title = "Tardus Pura 的个人空间"
 theme = "PaperMod"
 
+# 生成设置
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
@@ -12,15 +13,24 @@ buildExpired = false
   minifyOutput = true
 
 [params]
+  # 首页顶部显示
   homeInfoParams = { Title = "Hi，Tardus Pura here", Content = "学习 | 户外 | 创作" }
   homePostsRSS = true
-  homePostsLimit = 3
-  math = true
-  mainSections = ["posts","guide","travel","contemplate","projects"]
+  homePostsLimit = 3       # 首页显示最新 3 篇文章
+  math = true              # 支持数学公式
+  showMenuItems = 8
+
+  # 控制首页文章来源，默认只显示 posts 下的
+  # 如果你想把 guide / travel 的文章也显示在首页，可以加上：
+  # mainSections = ["posts", "guide", "travel"]
+  mainSections = ["posts"]
 
 [params.assets]
   customCSS = ["css/custom.css"]  
 
+# -------------------------------
+# 菜单配置（统一管理）
+# -------------------------------
 [[menu.main]]
   identifier = "home"
   name = "首页"
@@ -30,41 +40,41 @@ buildExpired = false
 [[menu.main]]
   identifier = "guide"
   name = "导航"
-  url = "/guide/"
+  url = "/guide"
   weight = 2
 
 [[menu.main]]
   identifier = "posts"
   name = "笔记"
-  url = "/posts/"
+  url = "/posts"
   weight = 3
 
 [[menu.main]]
   identifier = "travel"
   name = "旅行&户外"
-  url = "/travel/"
+  url = "/travel"
   weight = 4
 
 [[menu.main]]
   identifier = "contemplate"
   name = "沉思"
-  url = "/contemplate/"
+  url = "/contemplate"
   weight = 5
 
 [[menu.main]]
   identifier = "projects"
   name = "项目"
-  url = "/projects/"
+  url = "/projects"
   weight = 6
 
 [[menu.main]]
   identifier = "her"
   name = "Her"
-  url = "/her/"
+  url = "/her"
   weight = 7  
 
 [[menu.main]]
   identifier = "about"
   name = "关于"
-  url = "/about/"
+  url = "/about"
   weight = 8
