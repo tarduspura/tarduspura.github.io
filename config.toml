@@ -14,7 +14,7 @@ buildExpired = false
 
 [params]
   # 首页顶部显示
-  homeInfoParams = { Title = "Hi，Tardus Pura here", Content = "学习 | 户外 | 创作" }
+  homeInfoParams = { Title = "Hi，Tardus Pura here", Content = "知识 | 户外 | 创作" }
   homePostsRSS = true
   homePostsLimit = 3       # 首页显示最新 3 篇文章
   math = true              # 支持数学公式
