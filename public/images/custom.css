@@ -1,0 +1,25 @@
+/* static/css/custom.css */
+
+/* 1. 为首页设置背景图 */
+body.home {
+  background-image: url('/images/bg-home.jpg');
+  background-size: cover;         /* 让图片覆盖整个屏幕 */
+  background-position: center;     /* 让图片居中显示 */
+  background-repeat: no-repeat;    /* 防止图片平铺 */
+  background-attachment: fixed;    /* 可选：让背景固定，产生视差滚动效果 */
+}
+
+/* 2. 为首页的文字信息区域添加半透明背景，提高可读性 */
+body.home .home-info {
+  background-color: rgba(0, 0, 0, 0.6); /* 黑色背景，60%不透明度 */
+  padding: 2rem;                       /* 增加内边距，让文字不贴边 */
+  border-radius: 10px;                 /* 可选：增加圆角 */
+  max-width: 40rem;                    /* 限制最大宽度，避免在大屏幕上过宽 */
+  margin: auto;                        /* 水平居中 */
+}
+
+/* 3. 调整文字颜色以适配深色背景 */
+body.home .home-info h1,
+body.home .home-info .home-info-content {
+  color: #ffffff; /* 将文字颜色设为白色 */
+}

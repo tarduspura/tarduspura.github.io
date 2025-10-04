@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Guide on Tardus Pura 的个人空间</title>
+    <link>https://tarduspura.github.io/guide/</link>
+    <description>Recent content in Guide on Tardus Pura 的个人空间</description>
+    <generator>Hugo -- 0.150.0</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 30 Sep 2025 13:47:42 +0800</lastBuildDate>
+    <atom:link href="https://tarduspura.github.io/guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ZJU常用网站导航</title>
+      <link>https://tarduspura.github.io/guide/zjuguide/</link>
+      <pubDate>Tue, 30 Sep 2025 13:47:42 +0800</pubDate>
+      <guid>https://tarduspura.github.io/guide/zjuguide/</guid>
+      <description>&lt;h3 id=&#34;教学&#34;&gt;教学&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://courses.zju.edu.cn&#34;&gt;学在浙大&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zdbk.zju.edu.cn&#34;&gt;本科教务网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://c.1.2.0.c.f.f.0.7.0.0.6.2.ip6.arpa&#34;&gt;查老师&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://person.zju.edu.cn&#34;&gt;教师信息查询&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;学习&#34;&gt;学习&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://classroom.zju.edu.cn&#34;&gt;智云课堂&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pintia.cn&#34;&gt;PTA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://libweb.zju.edu.cn&#34;&gt;浙大图书馆&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zju.summon.serialssolutions.com&#34;&gt;求是学术搜索&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://scholar.google.com&#34;&gt;谷歌学术&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cc98.org&#34;&gt;CC98&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://eta.zju.edu.cn&#34;&gt;ETA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sztz.zju.edu.cn/&#34;&gt;素质拓展网&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
