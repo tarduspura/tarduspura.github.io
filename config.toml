@@ -19,6 +19,7 @@ buildExpired = false
   homePostsLimit = 3       # 首页显示最新 3 篇文章
   math = true              # 支持数学公式
   showMenuItems = 10
+  comments = true
 
   mainSections = ["posts", "guide", "travel","her","contemplate","projects"]
 
