@@ -23,7 +23,23 @@ buildExpired = false
   mainSections = ["posts", "guide", "travel","her","contemplate","projects"]
 
 [params.assets]
-  customCSS = ["css/custom.css"]  
+  customCSS = ["css/custom.css"] 
+
+
+[params.giscus]
+    repo = "tarduspura/tarduspura.github.io"
+    repoID = "R_kgDOP1xBhA"
+    category = "comments"
+    categoryID = "DIC_kwDOP1xBhM4Cw4e7"
+    mapping = "pathname"
+    reactionsEnabled = "1"
+    emitMetadata = "0"
+    inputPosition = "bottom"
+    theme = "preferred_color_scheme"
+    lang = "zh-CN"
+    loading = "lazy"
+
+   
 
 # -------------------------------
 # 菜单配置（统一管理）
