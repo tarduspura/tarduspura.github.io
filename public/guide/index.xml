@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Guide on Tardus Pura 的个人空间</title>
-    <link>https://tarduspura.github.io/guide/</link>
+    <link>http://localhost:1313/guide/</link>
     <description>Recent content in Guide on Tardus Pura 的个人空间</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en</language>
     <lastBuildDate>Tue, 30 Sep 2025 13:47:42 +0800</lastBuildDate>
-    <atom:link href="https://tarduspura.github.io/guide/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ZJU常用网站导航</title>
-      <link>https://tarduspura.github.io/guide/zjuguide/</link>
+      <link>http://localhost:1313/guide/zjuguide/</link>
       <pubDate>Tue, 30 Sep 2025 13:47:42 +0800</pubDate>
-      <guid>https://tarduspura.github.io/guide/zjuguide/</guid>
+      <guid>http://localhost:1313/guide/zjuguide/</guid>
       <description>&lt;h3 id=&#34;教学&#34;&gt;教学&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://courses.zju.edu.cn&#34;&gt;学在浙大&lt;/a&gt;&lt;/li&gt;

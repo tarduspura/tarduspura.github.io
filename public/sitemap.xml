@@ -2,99 +2,105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tarduspura.github.io/her/restaurant/9-30/</loc>
+    <loc>http://localhost:1313/her/</loc>
+    <lastmod>2025-10-16T00:06:49+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-10-16T00:06:49+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/her/restaurant/</loc>
+    <lastmod>2025-10-16T00:06:49+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/contemplate/art/archi1/</loc>
+    <lastmod>2025-10-15T01:24:50+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/contemplate/</loc>
+    <lastmod>2025-10-15T01:24:50+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/contemplate/art/</loc>
+    <lastmod>2025-10-15T01:24:50+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/travel/rock/</loc>
+    <lastmod>2025-10-13T08:16:31+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/travel/</loc>
+    <lastmod>2025-10-13T08:16:31+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/her/restaurant/10.8/</loc>
+    <lastmod>2025-10-12T23:42:20+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/her/restaurant/9-30/</loc>
     <lastmod>2025-10-03T22:32:07+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/her/</loc>
-    <lastmod>2025-10-03T22:32:07+08:00</lastmod>
-  </url><url>
-    <loc>https://tarduspura.github.io/</loc>
-    <lastmod>2025-10-03T22:32:07+08:00</lastmod>
-  </url><url>
-    <loc>https://tarduspura.github.io/her/restaurant/</loc>
-    <lastmod>2025-10-03T22:32:07+08:00</lastmod>
-  </url><url>
-    <loc>https://tarduspura.github.io/guide/</loc>
+    <loc>http://localhost:1313/guide/</loc>
     <lastmod>2025-09-30T13:47:42+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/guide/zjuguide/</loc>
+    <loc>http://localhost:1313/guide/zjuguide/</loc>
     <lastmod>2025-09-30T13:47:42+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/her/restaurant/9-29/</loc>
+    <loc>http://localhost:1313/her/restaurant/9-29/</loc>
     <lastmod>2025-09-30T10:57:57+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/posts/others/</loc>
+    <loc>http://localhost:1313/posts/others/</loc>
     <lastmod>2025-09-30T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-09-30T00:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/her/location/</loc>
+    <loc>http://localhost:1313/her/location/</loc>
     <lastmod>2025-09-28T20:45:51+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/travel/rock/9-27-dairy/</loc>
+    <loc>http://localhost:1313/travel/rock/9-27-dairy/</loc>
     <lastmod>2025-09-27T15:40:45+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/travel/rock/</loc>
-    <lastmod>2025-09-27T15:40:45+08:00</lastmod>
-  </url><url>
-    <loc>https://tarduspura.github.io/travel/</loc>
-    <lastmod>2025-09-27T15:40:45+08:00</lastmod>
-  </url><url>
-    <loc>https://tarduspura.github.io/contemplate/learn/sciofjoy/</loc>
+    <loc>http://localhost:1313/contemplate/learn/sciofjoy/</loc>
     <lastmod>2025-09-25T21:00:40+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/contemplate/</loc>
+    <loc>http://localhost:1313/contemplate/learn/sciofjoy/foreword/</loc>
     <lastmod>2025-09-25T21:00:40+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/contemplate/learn/sciofjoy/foreword/</loc>
+    <loc>http://localhost:1313/contemplate/learn/</loc>
     <lastmod>2025-09-25T21:00:40+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/contemplate/learn/</loc>
-    <lastmod>2025-09-25T21:00:40+08:00</lastmod>
-  </url><url>
-    <loc>https://tarduspura.github.io/posts/courses/crypto/lec1/</loc>
+    <loc>http://localhost:1313/posts/courses/crypto/lec1/</loc>
     <lastmod>2025-09-25T08:23:36+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/posts/courses/</loc>
+    <loc>http://localhost:1313/posts/courses/</loc>
     <lastmod>2025-09-25T08:23:36+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/posts/courses/crypto/</loc>
+    <loc>http://localhost:1313/posts/courses/crypto/</loc>
     <lastmod>2025-09-25T08:23:36+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/contemplate/art/website/</loc>
+    <loc>http://localhost:1313/contemplate/art/website/</loc>
     <lastmod>2025-09-24T21:51:59+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/contemplate/art/</loc>
-    <lastmod>2025-09-24T21:51:59+08:00</lastmod>
-  </url><url>
-    <loc>https://tarduspura.github.io/posts/others/learnmore/</loc>
+    <loc>http://localhost:1313/posts/others/learnmore/</loc>
     <lastmod>2025-09-24T16:44:44+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/projects/</loc>
+    <loc>http://localhost:1313/projects/</loc>
     <lastmod>2025-09-24T14:16:59+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2025-09-24T11:05:47+08:00</lastmod>
   </url><url>
-    <loc>https://tarduspura.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://tarduspura.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url><url>
-    <loc>https://tarduspura.github.io/contemplate/create/</loc>
+    <loc>http://localhost:1313/contemplate/create/</loc>
   </url><url>
-    <loc>https://tarduspura.github.io/contemplate/create/novel/</loc>
+    <loc>http://localhost:1313/contemplate/create/novel/</loc>
   </url><url>
-    <loc>https://tarduspura.github.io/travel/hike/</loc>
+    <loc>http://localhost:1313/travel/hike/</loc>
   </url><url>
-    <loc>https://tarduspura.github.io/posts/tech/</loc>
+    <loc>http://localhost:1313/posts/tech/</loc>
   </url><url>
-    <loc>https://tarduspura.github.io/travel/destination/</loc>
+    <loc>http://localhost:1313/travel/destination/</loc>
   </url><url>
-    <loc>https://tarduspura.github.io/her/things/</loc>
+    <loc>http://localhost:1313/her/things/</loc>
   </url><url>
-    <loc>https://tarduspura.github.io/contemplate/create/poetry/</loc>
+    <loc>http://localhost:1313/contemplate/create/poetry/</loc>
   </url><url>
-    <loc>https://tarduspura.github.io/contemplate/create/essay/</loc>
+    <loc>http://localhost:1313/contemplate/create/essay/</loc>
   </url>
 </urlset>

@@ -12,16 +12,22 @@ buildExpired = false
   disableXML = true
   minifyOutput = true
 
+# 限制首页文章数量
+paginate = 3
+
 [params]
-  # 首页顶部显示
-  homeInfoParams = { Title = "Hi，Tardus Pura here", Content = "知识 | 户外 | 创作" }
   homePostsRSS = true
-  homePostsLimit = 3       # 首页显示最新 3 篇文章
   math = true              # 支持数学公式
   showMenuItems = 10
   comments = true
-
   mainSections = ["posts", "guide", "travel","her","contemplate","projects"]
+
+[params.homeInfoParams]
+  Title = "Hi，Tardus Pura here"
+  Content = "知识 | 户外 | 创作"
+
+[params.profileMode]
+  enabled = false
 
 [params.assets]
   # PaperMod 会自动加载 assets/css/extended/ 目录下的 CSS 文件

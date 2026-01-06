@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>数据安全与密码学基础 on Tardus Pura 的个人空间</title>
-    <link>https://tarduspura.github.io/posts/courses/crypto/</link>
+    <link>http://localhost:1313/posts/courses/crypto/</link>
     <description>Recent content in 数据安全与密码学基础 on Tardus Pura 的个人空间</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en</language>
     <lastBuildDate>Thu, 25 Sep 2025 08:23:36 +0800</lastBuildDate>
-    <atom:link href="https://tarduspura.github.io/posts/courses/crypto/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/courses/crypto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lec1:Introduction</title>
-      <link>https://tarduspura.github.io/posts/courses/crypto/lec1/</link>
+      <link>http://localhost:1313/posts/courses/crypto/lec1/</link>
       <pubDate>Thu, 25 Sep 2025 08:23:36 +0800</pubDate>
-      <guid>https://tarduspura.github.io/posts/courses/crypto/lec1/</guid>
+      <guid>http://localhost:1313/posts/courses/crypto/lec1/</guid>
       <description>&lt;h1 id=&#34;现代密码学介绍&#34;&gt;现代密码学介绍&lt;!-- raw HTML omitted --&gt;&lt;/h1&gt;
 &lt;h2 id=&#34;语法&#34;&gt;语法&lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;元素-elements&#34;&gt;元素 elements：&lt;/h3&gt;

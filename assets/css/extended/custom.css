@@ -1,18 +1,31 @@
 /* ========================================
-   首页背景图样式 - PaperMod 主题
+   仅首页背景图样式 - PaperMod 主题
+   使用更精确的选择器，只匹配首页
    ======================================== */
 
-/* 首页背景图 */
-body.list {
+/* 首页背景图 - 只在根路径首页显示 */
+body.list[class="list"]:not(.dark),
+body.list.dark[class~="list"] {
     background-image: url('/images/bg-home.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     min-height: 100vh;
 }
 
-/* 深色模式下的遮罩层 */
-body.list::before {
+/* 使用 :has 选择器精确匹配首页（有 home-info 的页面） */
+body:has(.home-info) {
+    background-image: url('/images/bg-home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* 首页遮罩层 */
+body:has(.home-info)::before {
     content: '';
     position: fixed;
     top: 0;
@@ -24,34 +37,38 @@ body.list::before {
     pointer-events: none;
 }
 
+/* 深色模式首页遮罩 */
+body.dark:has(.home-info)::before {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
 /* ========================================
-   导航栏适配背景
+   首页导航栏适配背景
    ======================================== */
-body.list .header {
+body:has(.home-info) .header {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
-body.list .nav a,
-body.list .logo a,
-body.list .logo-switches button {
+body:has(.home-info) .nav a,
+body:has(.home-info) .logo a,
+body:has(.home-info) .logo-switches button {
     color: #ffffff !important;
 }
 
-body.list .nav a:hover {
+body:has(.home-info) .nav a:hover {
     color: #e0e0e0 !important;
 }
 
-/* 主题切换按钮 */
-body.list #theme-toggle svg {
+body:has(.home-info) #theme-toggle svg {
     color: #ffffff;
 }
 
 /* ========================================
    首页信息卡片样式
    ======================================== */
-body.list .home-info {
+.home-info {
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -62,20 +79,26 @@ body.list .home-info {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-body.list .home-info .entry-header h1 {
+.home-info .entry-header h1 {
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-body.list .home-info .entry-content {
+.home-info .entry-content {
     color: #f0f0f0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
+/* 深色模式首页卡片 */
+.dark .home-info {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* ========================================
-   文章列表卡片样式
+   首页文章列表卡片样式
    ======================================== */
-body.list .post-entry {
+body:has(.home-info) .post-entry {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -85,79 +108,48 @@ body.list .post-entry {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body.list .post-entry:hover {
+body:has(.home-info) .post-entry:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-body.list .post-entry .entry-header h2 {
+body:has(.home-info) .post-entry .entry-header h2 {
     color: #ffffff;
 }
 
-body.list .post-entry .entry-content {
+body:has(.home-info) .post-entry .entry-content {
     color: #e8e8e8;
 }
 
-body.list .post-entry .entry-footer {
+body:has(.home-info) .post-entry .entry-footer {
     color: #d0d0d0;
 }
 
-/* ========================================
-   深色模式适配
-   ======================================== */
-body.list.dark {
-    background-image: url('/images/bg-home.jpg');
-}
-
-body.list.dark::before {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-body.list.dark .home-info {
-    background-color: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-body.list.dark .post-entry {
+/* 深色模式首页文章卡片 */
+body.dark:has(.home-info) .post-entry {
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-body.list.dark .post-entry:hover {
+body.dark:has(.home-info) .post-entry:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* ========================================
-   页脚样式
+   首页页脚样式
    ======================================== */
-body.list .footer {
+body:has(.home-info) .footer {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: #ffffff;
 }
 
-body.list .footer a {
+body:has(.home-info) .footer a {
     color: #e0e0e0;
 }
 
 /* ========================================
-   滚动条美化（可选）
+   其他页面统一样式（非首页）
    ======================================== */
-body.list::-webkit-scrollbar {
-    width: 8px;
-}
-
-body.list::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-body.list::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-}
-
-body.list::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
-}
