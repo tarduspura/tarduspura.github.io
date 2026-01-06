@@ -24,7 +24,8 @@ buildExpired = false
   mainSections = ["posts", "guide", "travel","her","contemplate","projects"]
 
 [params.assets]
-  customCSS = ["css/custom.css"] 
+  # PaperMod 会自动加载 assets/css/extended/ 目录下的 CSS 文件
+  # 无需手动指定 customCSS 
 
 
 [params.giscus]

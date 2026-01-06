@@ -1,0 +1,163 @@
+/* ========================================
+   首页背景图样式 - PaperMod 主题
+   ======================================== */
+
+/* 首页背景图 */
+body.list {
+    background-image: url('/images/bg-home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* 深色模式下的遮罩层 */
+body.list::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ========================================
+   导航栏适配背景
+   ======================================== */
+body.list .header {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+body.list .nav a,
+body.list .logo a,
+body.list .logo-switches button {
+    color: #ffffff !important;
+}
+
+body.list .nav a:hover {
+    color: #e0e0e0 !important;
+}
+
+/* 主题切换按钮 */
+body.list #theme-toggle svg {
+    color: #ffffff;
+}
+
+/* ========================================
+   首页信息卡片样式
+   ======================================== */
+body.list .home-info {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+body.list .home-info .entry-header h1 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body.list .home-info .entry-content {
+    color: #f0f0f0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   文章列表卡片样式
+   ======================================== */
+body.list .post-entry {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.list .post-entry:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.list .post-entry .entry-header h2 {
+    color: #ffffff;
+}
+
+body.list .post-entry .entry-content {
+    color: #e8e8e8;
+}
+
+body.list .post-entry .entry-footer {
+    color: #d0d0d0;
+}
+
+/* ========================================
+   深色模式适配
+   ======================================== */
+body.list.dark {
+    background-image: url('/images/bg-home.jpg');
+}
+
+body.list.dark::before {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+body.list.dark .home-info {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.list.dark .post-entry {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.list.dark .post-entry:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   页脚样式
+   ======================================== */
+body.list .footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ffffff;
+}
+
+body.list .footer a {
+    color: #e0e0e0;
+}
+
+/* ========================================
+   滚动条美化（可选）
+   ======================================== */
+body.list::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+body.list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+body.list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
