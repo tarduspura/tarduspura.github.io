@@ -1,20 +1,9 @@
 /* ========================================
    仅首页背景图样式 - PaperMod 主题
-   使用更精确的选择器，只匹配首页
+   使用 :has 选择器精确匹配首页（有 home-info 的页面）
    ======================================== */
 
-/* 首页背景图 - 只在根路径首页显示 */
-body.list[class="list"]:not(.dark),
-body.list.dark[class~="list"] {
-    background-image: url('/images/bg-home.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-}
-
-/* 使用 :has 选择器精确匹配首页（有 home-info 的页面） */
+/* 首页背景图 */
 body:has(.home-info) {
     background-image: url('/images/bg-home.jpg');
     background-size: cover;
@@ -149,7 +138,3 @@ body:has(.home-info) .footer {
 body:has(.home-info) .footer a {
     color: #e0e0e0;
 }
-
-/* ========================================
-   其他页面统一样式（非首页）
-   ======================================== */
