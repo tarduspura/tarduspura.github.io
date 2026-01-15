@@ -156,3 +156,130 @@ body.list:has(.home-info) .footer {
 body.list:has(.home-info) .footer a {
     color: #e0e0e0;
 }
+
+
+/* ========================================
+   阅读进度条
+   ======================================== */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* ========================================
+   首页卡片悬停动效增强
+   ======================================== */
+body.list:has(.home-info) .post-entry {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+body.list:has(.home-info) .post-entry:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* 首页标题动画 */
+.home-info .entry-header h1 {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.home-info .entry-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   文章页面美化
+   ======================================== */
+/* 目录样式 */
+.toc {
+    background-color: var(--code-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.dark .toc {
+    background-color: var(--entry);
+}
+
+/* 代码块美化 */
+.post-content pre {
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* 引用块美化 */
+.post-content blockquote {
+    border-left: 4px solid #667eea;
+    background-color: rgba(102, 126, 234, 0.1);
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+}
+
+.dark .post-content blockquote {
+    background-color: rgba(102, 126, 234, 0.15);
+}
+
+/* 图片圆角和阴影 */
+.post-content img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.post-content img:hover {
+    transform: scale(1.02);
+}
+
+/* ========================================
+   搜索页面美化
+   ======================================== */
+#searchbox {
+    border-radius: 25px;
+    padding: 12px 20px;
+    border: 2px solid var(--border);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#searchbox:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    outline: none;
+}
+
+/* ========================================
+   返回顶部按钮美化
+   ======================================== */
+.top-link {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.top-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.top-link svg {
+    color: #ffffff;
+}

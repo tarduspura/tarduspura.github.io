@@ -27,6 +27,20 @@ paginate = 3
   showMenuItems = 10
   comments = true
   mainSections = ["posts", "guide", "travel","her","contemplate","projects"]
+  
+  # 文章页面功能
+  ShowReadingTime = true      # 显示阅读时间
+  ShowWordCount = true        # 显示字数统计
+  ShowPostNavLinks = true     # 显示上一篇/下一篇
+  ShowBreadCrumbs = true      # 显示面包屑导航
+  ShowCodeCopyButtons = true  # 代码复制按钮
+  ShowShareButtons = false    # 分享按钮
+  ShowToc = true              # 显示目录
+  TocOpen = false             # 目录默认折叠
+
+# 搜索功能
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
 [params.homeInfoParams]
   Title = "Hi，Tardus Pura here"
@@ -105,3 +119,9 @@ paginate = 3
   name = "导航"
   url = "/guide"
   weight = 8
+
+[[menu.main]]
+  identifier = "search"
+  name = "🔍"
+  url = "/search"
+  weight = 9

@@ -1,0 +1,20 @@
+{{- /* 阅读进度条 - 仅在文章页面显示 */ -}}
+{{- if .IsPage }}
+<div class="reading-progress" id="reading-progress"></div>
+<script>
+(function() {
+    const progressBar = document.getElementById('reading-progress');
+    if (!progressBar) return;
+    
+    function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + '%';
+    }
+    
+    window.addEventListener('scroll', updateProgress);
+    updateProgress();
+})();
+</script>
+{{- end }}
