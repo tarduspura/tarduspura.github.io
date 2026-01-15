@@ -1,16 +1,40 @@
-{{- /* 阅读进度条 - 仅在文章页面显示 */ -}}
+{{- /* 圆形阅读进度指示器 - 仅在文章页面显示 */ -}}
 {{- if .IsPage }}
-<div class="reading-progress" id="reading-progress"></div>
+<div class="reading-progress-circle" id="reading-progress">
+    <svg viewBox="0 0 50 50">
+        <circle class="progress-bg" cx="25" cy="25" r="22"></circle>
+        <circle class="progress-bar" cx="25" cy="25" r="22" id="progress-bar"></circle>
+    </svg>
+    <span class="progress-text" id="progress-text">0%</span>
+</div>
 <script>
 (function() {
-    const progressBar = document.getElementById('reading-progress');
-    if (!progressBar) return;
+    const progressCircle = document.getElementById('reading-progress');
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    
+    if (!progressCircle || !progressBar) return;
+    
+    const circumference = 2 * Math.PI * 22; // r=22
+    progressBar.style.strokeDasharray = circumference;
+    progressBar.style.strokeDashoffset = circumference;
     
     function updateProgress() {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        progressBar.style.width = progress + '%';
+        
+        // 滚动超过 100px 才显示
+        if (scrollTop > 100) {
+            progressCircle.classList.add('visible');
+        } else {
+            progressCircle.classList.remove('visible');
+        }
+        
+        // 更新圆形进度
+        const offset = circumference - (progress / 100) * circumference;
+        progressBar.style.strokeDashoffset = offset;
+        progressText.textContent = Math.round(progress) + '%';
     }
     
     window.addEventListener('scroll', updateProgress);

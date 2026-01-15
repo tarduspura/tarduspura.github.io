@@ -159,22 +159,23 @@ body.list:has(.home-info) .footer a {
 
 
 /* ========================================
-   阅读进度条
+   所有栏目文章卡片悬停动效
    ======================================== */
-.reading-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    z-index: 9999;
-    transition: width 0.1s ease;
+.post-entry {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* ========================================
-   首页卡片悬停动效增强
-   ======================================== */
+.post-entry:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--tertiary);
+}
+
+.dark .post-entry:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* 首页卡片悬停动效增强 */
 body.list:has(.home-info) .post-entry {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
@@ -282,4 +283,68 @@ body.list:has(.home-info) .post-entry:hover {
 
 .top-link svg {
     color: #ffffff;
+}
+
+
+/* ========================================
+   圆形阅读进度指示器
+   ======================================== */
+.reading-progress-circle {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.reading-progress-circle.visible {
+    opacity: 1;
+}
+
+.reading-progress-circle svg {
+    transform: rotate(-90deg);
+    width: 50px;
+    height: 50px;
+}
+
+.reading-progress-circle .progress-bg {
+    fill: none;
+    stroke: var(--border);
+    stroke-width: 3;
+}
+
+.reading-progress-circle .progress-bar {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 138.23;
+    stroke-dashoffset: 138.23;
+    transition: stroke-dashoffset 0.1s ease;
+}
+
+.dark .reading-progress-circle .progress-bar {
+    stroke: var(--primary);
+}
+
+.reading-progress-circle .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* 移动端隐藏圆形进度条 */
+@media (max-width: 1200px) {
+    .reading-progress-circle {
+        display: none;
+    }
 }
