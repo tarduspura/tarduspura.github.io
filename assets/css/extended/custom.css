@@ -291,10 +291,10 @@ body.list:has(.home-info) .post-entry:hover {
    ======================================== */
 .reading-progress-circle {
     position: fixed;
-    left: calc(50% - 450px);
+    left: calc(50% - 550px);
     top: 180px;
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
     z-index: 9999;
     opacity: 0;
     transition: opacity 0.3s ease;
