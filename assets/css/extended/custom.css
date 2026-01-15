@@ -291,11 +291,10 @@ body.list:has(.home-info) .post-entry:hover {
    ======================================== */
 .reading-progress-circle {
     position: fixed;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    left: calc(50% - 450px);
+    top: 180px;
+    width: 60px;
+    height: 60px;
     z-index: 9999;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -308,8 +307,8 @@ body.list:has(.home-info) .post-entry:hover {
 
 .reading-progress-circle svg {
     transform: rotate(-90deg);
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
 }
 
 .reading-progress-circle .progress-bg {
@@ -323,8 +322,8 @@ body.list:has(.home-info) .post-entry:hover {
     stroke: var(--primary);
     stroke-width: 3;
     stroke-linecap: round;
-    stroke-dasharray: 138.23;
-    stroke-dashoffset: 138.23;
+    stroke-dasharray: 163.36;
+    stroke-dashoffset: 163.36;
     transition: stroke-dashoffset 0.1s ease;
 }
 
@@ -337,14 +336,34 @@ body.list:has(.home-info) .post-entry:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--primary);
 }
 
-/* 移动端隐藏圆形进度条 */
-@media (max-width: 1200px) {
+/* 非全屏模式：改为顶部进度条 */
+@media (max-width: 1400px) {
     .reading-progress-circle {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 3px;
+        border-radius: 0;
+    }
+    
+    .reading-progress-circle svg,
+    .reading-progress-circle .progress-text {
         display: none;
+    }
+    
+    .reading-progress-circle::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 3px;
+        width: var(--progress, 0%);
+        background: var(--primary);
+        transition: width 0.1s ease;
     }
 }

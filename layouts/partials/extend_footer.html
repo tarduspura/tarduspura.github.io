@@ -1,9 +1,9 @@
 {{- /* 圆形阅读进度指示器 - 仅在文章页面显示 */ -}}
 {{- if .IsPage }}
 <div class="reading-progress-circle" id="reading-progress">
-    <svg viewBox="0 0 50 50">
-        <circle class="progress-bg" cx="25" cy="25" r="22"></circle>
-        <circle class="progress-bar" cx="25" cy="25" r="22" id="progress-bar"></circle>
+    <svg viewBox="0 0 60 60">
+        <circle class="progress-bg" cx="30" cy="30" r="26"></circle>
+        <circle class="progress-bar" cx="30" cy="30" r="26" id="progress-bar"></circle>
     </svg>
     <span class="progress-text" id="progress-text">0%</span>
 </div>
@@ -15,7 +15,7 @@
     
     if (!progressCircle || !progressBar) return;
     
-    const circumference = 2 * Math.PI * 22; // r=22
+    const circumference = 2 * Math.PI * 26; // r=26
     progressBar.style.strokeDasharray = circumference;
     progressBar.style.strokeDashoffset = circumference;
     
@@ -35,6 +35,9 @@
         const offset = circumference - (progress / 100) * circumference;
         progressBar.style.strokeDashoffset = offset;
         progressText.textContent = Math.round(progress) + '%';
+        
+        // 更新顶部进度条（非全屏模式）
+        progressCircle.style.setProperty('--progress', progress + '%');
     }
     
     window.addEventListener('scroll', updateProgress);
