@@ -1,56 +1,74 @@
 /* ========================================
    仅首页背景图样式 - PaperMod 主题
-   使用 :has 选择器精确匹配首页（有 home-info 的页面）
    ======================================== */
 
-/* 首页背景图 */
-body:has(.home-info) {
-    background-image: url('/images/bg-home.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+/* 重置 .list 的背景（首页使用这个类） */
+body.list:has(.home-info) {
+    background: url('/images/bg-home.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
     min-height: 100vh;
 }
 
-/* 首页遮罩层 */
-body:has(.home-info)::before {
+/* 深色模式首页背景 - 必须覆盖 .dark.list 的样式 */
+body.dark.list:has(.home-info) {
+    background: url('/images/bg-home.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+
+/* 首页遮罩层 - 浅色模式 */
+body.list:has(.home-info)::before {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 0;
     pointer-events: none;
 }
 
-/* 深色模式首页遮罩 */
-body.dark:has(.home-info)::before {
-    background-color: rgba(0, 0, 0, 0.6);
+/* 首页遮罩层 - 深色模式 */
+body.dark.list:has(.home-info)::before {
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+/* 确保内容在遮罩层之上 */
+body.list:has(.home-info) .main {
+    position: relative;
+    z-index: 1;
+}
+
+body.list:has(.home-info) .header {
+    position: relative;
+    z-index: 2;
+}
+
+body.list:has(.home-info) .footer {
+    position: relative;
+    z-index: 1;
 }
 
 /* ========================================
    首页导航栏适配背景
    ======================================== */
-body:has(.home-info) .header {
+body.list:has(.home-info) .header {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
-body:has(.home-info) .nav a,
-body:has(.home-info) .logo a,
-body:has(.home-info) .logo-switches button {
+body.list:has(.home-info) .nav a,
+body.list:has(.home-info) .logo a,
+body.list:has(.home-info) .logo-switches button {
     color: #ffffff !important;
 }
 
-body:has(.home-info) .nav a:hover {
+body.list:has(.home-info) .nav a:hover {
     color: #e0e0e0 !important;
 }
 
-body:has(.home-info) #theme-toggle svg {
+body.list:has(.home-info) #theme-toggle svg {
     color: #ffffff;
 }
 
@@ -87,7 +105,7 @@ body:has(.home-info) #theme-toggle svg {
 /* ========================================
    首页文章列表卡片样式
    ======================================== */
-body:has(.home-info) .post-entry {
+body.list:has(.home-info) .post-entry {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -97,44 +115,44 @@ body:has(.home-info) .post-entry {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body:has(.home-info) .post-entry:hover {
+body.list:has(.home-info) .post-entry:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-body:has(.home-info) .post-entry .entry-header h2 {
+body.list:has(.home-info) .post-entry .entry-header h2 {
     color: #ffffff;
 }
 
-body:has(.home-info) .post-entry .entry-content {
+body.list:has(.home-info) .post-entry .entry-content {
     color: #e8e8e8;
 }
 
-body:has(.home-info) .post-entry .entry-footer {
+body.list:has(.home-info) .post-entry .entry-footer {
     color: #d0d0d0;
 }
 
 /* 深色模式首页文章卡片 */
-body.dark:has(.home-info) .post-entry {
+body.dark.list:has(.home-info) .post-entry {
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-body.dark:has(.home-info) .post-entry:hover {
+body.dark.list:has(.home-info) .post-entry:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* ========================================
    首页页脚样式
    ======================================== */
-body:has(.home-info) .footer {
+body.list:has(.home-info) .footer {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: #ffffff;
 }
 
-body:has(.home-info) .footer a {
+body.list:has(.home-info) .footer a {
     color: #e0e0e0;
 }
