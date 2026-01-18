@@ -35,7 +35,7 @@ paginate = 3
   ShowBreadCrumbs = true      # 显示面包屑导航
   ShowCodeCopyButtons = true  # 代码复制按钮
   ShowShareButtons = false    # 分享按钮
-  ShowToc = true              # 显示目录
+  ShowToc = false             # 默认不显示目录
   TocOpen = false             # 目录默认折叠
 
 # 搜索功能

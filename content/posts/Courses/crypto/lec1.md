@@ -3,11 +3,12 @@ title: "Lec1:Introduction"
 date: 2025-09-25T08:23:36+08:00
 math: true
 draft: false
+ShowToc: true
 ---
 
-# 现代密码学介绍<br>
+# 现代密码学介绍
 
-## 语法<br>
+## 语法
 
 ### 元素 elements：
 
@@ -32,13 +33,14 @@ draft: false
 3.The *decryption algorithm* **Dec** takes as input a key k and a ciphertext c and outputs a plaintext m. We denote the decryption of the ciphertext c using the key k by **$Dec_k(c)$**.
 
 for every key k output by Gen and every message m ∈ M, it holds that:
-$$
-Dec_k(Enc_K(m))=m
-$$
-即：使用对应的解密算法对一个加密后的密文解密可以得到正确的明文
-<br><br>
 
-## Kerckhoffs’ principle
+$$
+Dec_k(Enc_k(m))=m
+$$
+
+即：使用对应的解密算法对一个加密后的密文解密可以得到正确的明文
+
+## Kerckhoffs' principle
 
 ### 内容：
 
@@ -59,7 +61,6 @@ $$
 - 3.使用固定的算法和私人密钥可以更好地进行大规模部署。
 
 [Auguste Kerckhoffs wiki](https://en.wikipedia.org/wiki/Auguste_Kerckhoffs)
-<br><br>
 
 ## 现代密码学原则
 >From art to science
@@ -96,17 +97,3 @@ $$
   以上两个原则可以帮助我们得以对一种加密方式的安全性进行严密的证明，与追求快速解决的不成熟、即兴的方案相比，经过严谨的定义、假设和验证的方案取代了传统密码学而成为现代密码学的根基，历史也证明了这种思想在安全方面的优越性。
 
    然而现实场景的复杂性使得密码学仍然没有脱离某种设计的艺术性，在数学证明以外，如何构建威胁模型、提出安全需求仍然是现代密码学的重点，这同样也是漏洞有可能发生，密码学仍然在进步的地方。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
