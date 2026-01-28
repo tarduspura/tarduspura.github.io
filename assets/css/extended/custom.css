@@ -446,3 +446,48 @@ body.list:has(.home-info) .post-entry:hover {
     transform: translateY(-3px);
     color: var(--primary);
 }
+
+.home-info {
+    text-align: center;
+    padding-top: 3.5rem; /* 留出空间给头像 */
+}
+
+/* 2. 核心：使用伪元素在标题上方“画”出头像 */
+.home-info .entry-header::before {
+    content: "";
+    display: block;
+    width: 130px;      /* 头像宽度 */
+    height: 130px;     /* 头像高度 */
+    
+    /* 这里请确认你的头像路径正确 */
+    background-image: url('/images/avatar.jpg'); 
+    
+    background-size: cover;
+    background-position: center center;
+    border-radius: 50%; /* 圆形 */
+    
+    /* 居中定位 */
+    margin: -1.5rem auto 1.5rem auto; 
+    
+    /* 头像边框和阴影（配合你现有的玻璃风格） */
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    
+    /* 简单的入场动画 */
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* 3. 调整标题间距 */
+.home-info .entry-header h1 {
+    margin-bottom: 0.5rem !important;
+    font-size: 2.2rem;
+}
+
+/* 4. 调整副标题样式 */
+.home-info .entry-content {
+    max-width: 600px; /* 防止文字太宽 */
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
