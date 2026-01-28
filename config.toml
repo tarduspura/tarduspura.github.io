@@ -46,22 +46,12 @@ paginate = 3
   enabled = true
   title = "Tardus Pura"
   subtitle = "知识 | 户外 | 创作"
-  imageUrl = "/images/avatar.jpg"  # 你的头像路径
+  imageUrl = "/images/avatar.jpg"  
   imageWidth = 150
   imageHeight = 150
   imageTitle = "Tardus Pura"
   
-  [[params.profileMode.buttons]]
-    name = "笔记"
-    url = "/posts"
-  
-  [[params.profileMode.buttons]]
-    name = "旅行"
-    url = "/travel"
-  
-  [[params.profileMode.buttons]]
-    name = "Her"
-    url = "/her"
+
 
 # 社交图标
 [[params.socialIcons]]
