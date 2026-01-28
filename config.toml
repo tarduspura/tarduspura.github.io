@@ -14,6 +14,12 @@ buildExpired = false
     [markup.goldmark.renderer]
       hardWraps = true  # 单个换行符也会渲染为 <br>
 
+# 中文字数统计
+[languages]
+  [languages.zh-cn]
+    languageCode = "zh-CN"
+    hasCJKLanguage = true  # 启用中日韩字符统计
+
 [minify]
   disableXML = true
   minifyOutput = true
@@ -43,8 +49,20 @@ paginate = 3
   home = ["HTML", "RSS", "JSON"]
 
 [params.homeInfoParams]
-  Title = "Hi，Tardus Pura here"
-  Content = "知识 | 户外 | 创作"
+  Title = "A sophomore @ZJU"
+  Content = """
+[![GitHub](https://img.shields.io/badge/GitHub-tarduspura-181717?style=flat&logo=github)](https://github.com/tarduspura)
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=flat&logo=gmail)](mailto:your-email@example.com)
+"""
+
+# 社交图标配置
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/tarduspura"
+
+[[params.socialIcons]]
+  name = "email"
+  url = "mailto:tarduspura@gmail.com"
 
 [params.profileMode]
   enabled = false
