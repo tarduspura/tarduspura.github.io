@@ -378,6 +378,7 @@ body.list:has(.home-info) .post-entry:hover {
    ======================================== */
 .profile {
     padding: 4rem 2rem;
+    overflow: visible;
 }
 
 .profile_inner {
@@ -389,11 +390,18 @@ body.list:has(.home-info) .post-entry:hover {
     border-radius: 50%;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
 }
 
 .profile img:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.profile .main_inner {
+    overflow: visible;
 }
 
 .profile .main_inner h1 {
