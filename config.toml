@@ -52,6 +52,10 @@ paginate = 3
 [params.assets]
   # PaperMod 会自动加载 assets/css/extended/ 目录下的 CSS 文件
   # 无需手动指定 customCSS 
+  favicon = "/favicon.ico"
+  favicon16x16 = "/favicon-16x16.png"
+  favicon32x32 = "/favicon-32x32.png"
+  apple_touch_icon = "/apple-touch-icon.png"
 
 
 [params.giscus]
