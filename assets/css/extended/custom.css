@@ -449,7 +449,8 @@ body.list:has(.home-info) .post-entry:hover {
 
 .home-info {
     text-align: center;
-    padding-top: 6rem; /* 留出空间给头像 */
+    padding-top: 3rem; /* 留出空间给头像 */
+    overflow: visible !important;
 }
 
 /* 2. 核心：使用伪元素在标题上方“画”出头像 */
