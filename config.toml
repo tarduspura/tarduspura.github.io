@@ -122,6 +122,6 @@ paginate = 3
 
 [[menu.main]]
   identifier = "search"
-  name = "🔍"
+  name = "搜索"
   url = "/search"
   weight = 9
