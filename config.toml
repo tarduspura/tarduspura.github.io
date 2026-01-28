@@ -42,25 +42,12 @@ paginate = 3
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+[params.homeInfoParams]
+  Title = "Hi，Tardus Pura here"
+  Content = "知识 | 户外 | 创作"
+
 [params.profileMode]
-  enabled = true
-  title = "Tardus Pura"
-  subtitle = "知识 | 户外 | 创作"
-  imageUrl = "/images/avatar.jpg"  
-  imageWidth = 150
-  imageHeight = 150
-  imageTitle = "Tardus Pura"
-  
-
-
-# 社交图标
-[[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/tarduspura"
-
-[[params.socialIcons]]
-  name = "email"
-  url = "mailto:fabien_mana@foxmail.com"
+  enabled = false
 
 [params.assets]
   # PaperMod 会自动加载 assets/css/extended/ 目录下的 CSS 文件
