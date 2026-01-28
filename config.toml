@@ -50,10 +50,7 @@ paginate = 3
 
 [params.homeInfoParams]
   Title = "A sophomore @ZJU"
-  Content = """
-[![GitHub](https://img.shields.io/badge/GitHub-tarduspura-181717?style=flat&logo=github)](https://github.com/tarduspura)
-[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=flat&logo=gmail)](mailto:your-email@example.com)
-"""
+  Content = ""  # 移除徽章，只保留底部社交图标
 
 # 社交图标配置
 [[params.socialIcons]]
