@@ -1,5 +1,5 @@
 baseURL = "https://tarduspura.github.io/"
-title = ""
+title = "Tardus Pura的空间"
 theme = "PaperMod"
 
 # 生成设置
@@ -93,7 +93,7 @@ paginate = 3
 # -------------------------------
 [[menu.main]]
   identifier = "home"
-  name = ""Home
+  name = "Home"
   url = "/"
   weight = 1
 
@@ -141,6 +141,6 @@ paginate = 3
 
 [[menu.main]]
   identifier = "search"
-  name = "Serach"
+  name = "Search"
   url = "/search"
   weight = 9
