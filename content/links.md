@@ -9,8 +9,8 @@ ShowBreadCrumbs: true
 
 ### 友链列表
 
-#### [gcy](https://ccc-yuan.github.io/Personal-Homepage)
-> 这么放荡不羁的男人
+#### [这么放荡不羁的蓝人](https://ccc-yuan.github.io/Personal-Homepage)
+
 
 ### 友链申请
 
