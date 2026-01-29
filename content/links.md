@@ -9,7 +9,9 @@ ShowBreadCrumbs: true
 
 ### 友链列表
 
-#### [这么放荡不羁的蓝人](https://ccc-yuan.github.io/Personal-Homepage)
+#### [放荡不羁的南人](https://ccc-yuan.github.io/Personal-Homepage)
+
+
 
 
 ### 友链申请
