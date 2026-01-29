@@ -6,7 +6,7 @@ draft: false
 
 Hi!
 
-i am Tardus Pura,who studying IS in ZJU,Hangzhou,China.
+I am Tardus Pura,who studying IS in ZJU,Hangzhou,China.
 
 Welcome to my world.
 

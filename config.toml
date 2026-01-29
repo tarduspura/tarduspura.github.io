@@ -61,6 +61,10 @@ paginate = 3
   name = "email"
   url = "mailto:tarduspura@gmail.com"
 
+[[params.socialIcons]]
+  name = "link"
+  url = "/links"
+
 [params.profileMode]
   enabled = false
 
@@ -99,7 +103,7 @@ paginate = 3
 
 [[menu.main]]
   identifier = "about"
-  name = "about"
+  name = "About"
   url = "/about"
   weight = 2
 
@@ -144,3 +148,9 @@ paginate = 3
   name = "Search"
   url = "/search"
   weight = 9
+
+[[menu.main]]
+  identifier = "links"
+  name = "Links"
+  url = "/links"
+  weight = 10
