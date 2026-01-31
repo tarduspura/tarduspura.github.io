@@ -1,5 +1,5 @@
 ---
-title: "友链 | Friends"
+title: "My Friends"
 date: 2026-01-29
 draft: false
 ShowToc: false
