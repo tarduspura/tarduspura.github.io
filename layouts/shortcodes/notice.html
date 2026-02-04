@@ -1,0 +1,36 @@
+<div class="notice {{ .Get 0 }}">
+    <div class="notice-title">
+        {{ if eq (.Get 0) "abstract" }}📋{{ end }}
+        {{ if eq (.Get 0) "info" }}ℹ️{{ end }}
+        {{ if eq (.Get 0) "warning" }}⚠️{{ end }}
+        {{ (.Get 1) | default (.Get 0 | humanize) }}
+    </div>
+    <div class="notice-content">
+        {{ .Inner | markdownify }}
+    </div>
+</div>
+
+<style>
+.notice {
+    margin: 20px 0;
+    padding: 0;
+    border-radius: 4px;
+    border-left: 5px solid #448aff;
+    background: var(--code-bg); /* 使用 PaperMod 的变量以适配深色模式 */
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-left: 5px solid #448aff;
+}
+.notice-title {
+    padding: 8px 15px;
+    font-weight: bold;
+    background: rgba(68, 138, 255, 0.1);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+    color: var(--primary);
+}
+.notice-content {
+    padding: 10px 15px;
+}
+/* 不同类型的颜色定义 */
+.notice.abstract { border-left-color: #00b0ff; }
+.notice.warning { border-left-color: #ff9100; }
+</style>

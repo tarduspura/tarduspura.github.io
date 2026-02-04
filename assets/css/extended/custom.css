@@ -510,3 +510,29 @@ body.list:has(.profile) {
     font-size: 1.1rem;
     opacity: 0.9;
 }
+
+
+/* 类mkdoc文本框 */
+.notice {
+    margin: 1.5em 0;
+    border: 1px solid var(--border);
+    border-left: 4px solid #448aff;
+    background: var(--tertiary); /* 适配 PaperMod 背景 */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.notice-title {
+    background: var(--entry);
+    padding: 7px 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.notice-content {
+    padding: 12px;
+    font-size: 0.95em;
+}
