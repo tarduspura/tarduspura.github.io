@@ -221,7 +221,7 @@ L1和L2高速缓存是通过静态随机存取存储器(SRAM,Static Random-Acces
 - 虚拟内存：主存、I/O设备的抽象表示
 - 进程：处理器、主存和I/O设备的抽象表示
 
-{{< notice abstract "Link >}}
+{{< notice abstract "Link" >}}
 - Unix：贝尔实验室的研究人员在六七十年代基于Multics的理念开发的一个简单得多的操作系统
 - Posix标准：IEEE对Unix开发设立的标准。涵盖了C语言接口、shell 程序和工具、线程及网络编程等。与一系列标准化工作一起作用，使Unix版本之间的差异已经基本消失
 {{< /notice >}}
