@@ -318,3 +318,101 @@ e.g.为一组函数规定一个简单的API
 - 为了节省处理期读取数据的时间，按层次结构划分系统的存储设备
 - 操作系统提供三个基本抽象
 - 网络提供系统间的通信手段。网络可以看作一种I/O设备
+
+
+## 第七章 Linking
+
+### 7.1 编译器驱动程序
+
+一个贯穿本章的例子：
+
+```
+// code/link/main.c
+int sum(int *a, int n);
+
+int array[2] = {1, 2};
+
+int main()
+{
+    int val = sum(array, 2);
+    return val;
+}
+
+
+// code/link/sum.c
+int sum(int *a, int n)
+{
+    int i, s = 0;
+    
+    for (i = 0; i < n; i++) {
+        s += a[i];
+    }
+    return s;
+}
+```
+
+- compiler driver(编译器驱动程序)：大多编译系统会提供，它会代表用户在需要时调用预处理器、编译器、汇编器和链接器。
+
+```
+// 在shell中输入下列命令来调用GCC驱动程序
+linux> gcc -Og -o prog main.c sum.c
+```
+
+```
+// 1.cpp(c preprocessor)将c源程序翻译成一个ASCLL码的中间文件main.i
+// 某些GCC版本中，cpp被集成到compiler driver当中
+cpp [other arguments] main.c /tmp/main.i
+
+// 2.驱动运行ccl(c compiler)，将main.i翻译成一个ASCLL码汇编语言文件main.s
+cc1 /tmp/main.i -Og [other arguments] -o /tmp/main.s
+
+// 3.assembler将main.s翻译成一个可重定位目标文件main.o，sum.o同理
+as [other arguments] -o /tmp/main.o /tmp/main.s
+
+// 4.最后运行链接器程序ld，将将 main.o 和 sum.o 以及一些必要的系统目标文件组合起来，创建一个可执行目标文件（executable object file）prog
+ld -o prog [system object files and args] /tmp/main.o /tmp/sum.o
+```
+
+上述程序的完整编译流程
+![static-link](/images/csapp7.1.1.jpg)
+
+
+- 运行可执行文件prog，要在linux shell的命令行上输入：``linux> ./prog``。然后shell调用os中一个叫做loader的函数，它负责（1）复制EOF中的代码和数据到内存。（2）移交控制权给这个程序的开头。
+
+
+### 7.2 静态链接
+
+- static linker：
+- 参数：（1）一组可重定位目标文件。（2）命令行参数
+- 输出：一个完全链接的、可以加载和运行的可执行目标文件
+
+
+为了构造可执行文件，链接器必须完成两个主要任务：
+（1）符号解析(symbol resolution)：目标文件定义和引用符号，每个符号对应于一个函数、一个全局变量或一个静态变量（即 C 语言中任何以 static 属性声明的变量）。目的是将每个符号引用正好和一个符号定义关联起来。
+（2）重定位(relocation)：cl和as生成从地址0开始的code和section(continueous byte array)。关联符号定义与内存地址（由as生成的relocation entry指令规定），并将符号引用指向对应地址。
+
+
+- 目标文件：纯粹的字节块（section）的集合，有data、code、负责引导linker和loader的数据结构等section。
+- 链接器负责将所有的section按运行时顺序连接起来，并修改data section和code section中的各种位置。
+
+### 7.3 目标文件
+
+三种形式：
+- relocatable：code+data，编译时可与其他可重定位of合并生成eof
+- executable(EOF)：code+data，可以直接复制到内存并执行
+- shared：特殊类型的rof，可以在加载或运行时动态地加载进内存并链接
+
+- cl和as生成eof和sof
+- linker生成eof
+
+{{< notice abstract "目标文件格式" >}}
+- 从贝尔实验室诞生的第一个Unix系统使用的是a.out格式（直到今天，可执行文件仍然称为a.out文件）。
+- Windows使用可移植可执行（Portable Executable，PE）格式。
+- MacOS-X使用Mach-O格式。
+- 现代x86-64Linux和Unix系统使用可执行可链接格式（Executable and Linkable Format，ELF）
+{{< /notice >}}
+
+
+### 7.4 可重定位目标文件
+
+- ELF：
