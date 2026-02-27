@@ -226,6 +226,12 @@ body.list:has(.home-info) .post-entry:hover {
     padding: 1rem;
 }
 
+/* 正文换行保留：让网页尽量贴近 Markdown 源文件中的换行 */
+.post-content p,
+.post-content li {
+    white-space: pre-wrap;
+}
+
 /* 引用块美化 */
 .post-content blockquote {
     border-left: 4px solid #667eea;

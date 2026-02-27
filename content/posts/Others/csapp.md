@@ -474,7 +474,7 @@ typedef struct {
 } Elf64_Symbol;
 ```
 
-- 每个符号都被分配到目标文件的某个节，由 section 字段表示，该字段也是一个到section header的索引
+- 每个符号都被分配到目标文件的某个节，由section字段表示，该字段也是一个到section header的索引
 
 - 三个特殊的pseudosection（不在头部表中/只有可重定位目标文件中才有）：
 （1）ABS 代表不该被重定位的符号
@@ -483,3 +483,67 @@ typedef struct {
 
 - COMMON：未初始化的全局变量
 - .bss：未初始化的静态变量，以及初始化为0的全局或静态变量
+
+
+下面用一个例子来更好地说明：
+
+```C
+void swap();
+
+int buf[2] = {1, 2};
+
+int main()
+{
+    swap();
+    return 0;
+}
+```
+
+```C
+extern int buf[];
+
+int *bufp0 = &buf[0];
+int *bufp1;
+
+void swap()
+{
+    int temp;
+    
+    bufp1 = &buf[1];
+    temp = *bufp0;
+    *bufp0 = *bufp1;
+    *bufp1 = temp;
+}
+```
+
+| 符号 | .symtab 条目? | 符号类型 | 在哪个模块中定义 | 节 |
+| :--- | :---: | :---: | :---: | :---: |
+| buf | ✔️ | 外部 | main.o | .data |
+| bufp0 | ✔️ | 全局 | swap.o | .data |
+| bufp1 | ✔️ | 全局 | swap.o | COMMON |
+| swap | ✔️ | 全局 | swap.o | .text |
+| temp | ❌ | — | — | — |
+
+
+
+- .symtab中有什么：global/external/local(带static的var/func) symbols
+
+- .symtab中没有什么：定义在函数当中且没有static修饰的变量、局部变量
+
+
+{{< notice abstract "变量类型" >}}
+
+- 全局变量
+（1）
+
+{{< /notice >}}
+
+
+
+### 7.6 符号解析
+
+- **局部符号**：编译器只允许每个模块中每个局部符号有一个定义。
+- **全局符号**：假设该符号实在其他某个模块中定义的。
+
+- Problem：多个目标文件可能会定义名字相同的全局符号。
+- Solution：标志一个错误 or 以某种方法选出一个定义并抛弃其他定义
