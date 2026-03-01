@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>项目 on Tardus Pura 的个人空间</title>
-    <link>http://localhost:1313/projects/</link>
-    <description>Recent content in 项目 on Tardus Pura 的个人空间</description>
-    <generator>Hugo -- 0.150.0</generator>
-    <language>en</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <title>项目 on Tardus Pura的空间</title>
+    <link>https://tarduspura.me/projects/</link>
+    <description>Recent content in 项目 on Tardus Pura的空间</description>
+    <generator>Hugo -- 0.146.0</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 12 Feb 2026 22:36:52 +0800</lastBuildDate>
+    <atom:link href="https://tarduspura.me/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Calender</title>
+      <link>https://tarduspura.me/projects/calender/</link>
+      <pubDate>Thu, 12 Feb 2026 22:36:52 +0800</pubDate>
+      <guid>https://tarduspura.me/projects/calender/</guid>
+      <description>&lt;h1 id=&#34;医院排班系统项目综述&#34;&gt;医院排班系统项目综述&lt;/h1&gt;
+&lt;h2 id=&#34;一项目背景与目标&#34;&gt;一、项目背景与目标&lt;/h2&gt;
+&lt;p&gt;本项目是一个面向本地使用场景的医院门诊排班编辑工具，核心目标是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;快速录入并维护一周（周一到周日）上午/下午排班信息；&lt;/li&gt;
+&lt;li&gt;在单页可视化编辑中完成拖拽调整、修改与删除；&lt;/li&gt;
+&lt;li&gt;一键导出高分辨率排班图片，便于院内发布与传播；&lt;/li&gt;
+&lt;li&gt;提供 Windows 端桌面应用形态，降低非技术用户使用门槛。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;项目在功能上强调“高效编辑 + 高质量导出 + 本地可分发”。&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

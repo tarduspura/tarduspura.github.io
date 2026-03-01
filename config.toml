@@ -1,6 +1,7 @@
 baseURL = "https://tarduspura.me/"
 title = "Tardus Pura的空间"
 theme = "PaperMod"
+defaultContentLanguage = "zh-cn"
 
 # 生成设置
 enableRobotsTXT = true

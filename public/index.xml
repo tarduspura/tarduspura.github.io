@@ -1,139 +1,146 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tardus Pura 的个人空间</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Tardus Pura 的个人空间</description>
-    <generator>Hugo -- 0.150.0</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 15 Oct 2025 01:24:50 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <title>Tardus Pura的空间</title>
+    <link>https://tarduspura.me/</link>
+    <description>Recent content on Tardus Pura的空间</description>
+    <generator>Hugo -- 0.146.0</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 12 Feb 2026 22:36:52 +0800</lastBuildDate>
+    <atom:link href="https://tarduspura.me/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>极乐的圣特雷莎</title>
-      <link>http://localhost:1313/contemplate/art/archi1/</link>
-      <pubDate>Wed, 15 Oct 2025 01:24:50 +0800</pubDate>
-      <guid>http://localhost:1313/contemplate/art/archi1/</guid>
-      <description>&lt;p&gt;在书上看见这件雕塑作品的照片，一下便被那种神圣的舞台感和极度大胆的对于迷醉、狂乱的神情的刻画所吸引，所以想在这篇文章中整理更多的信息和感受。&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&amp;ldquo;一个艺术家想要成功必须具备三个条件：一是极早看到美并抓住它，二是工作勤奋，三是经常得到精确的指教。   ————乔瓦尼·洛伦佐·贝尼尼&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;基本信息&#34;&gt;基本信息&lt;/h3&gt;
+      <title>Calender</title>
+      <link>https://tarduspura.me/projects/calender/</link>
+      <pubDate>Thu, 12 Feb 2026 22:36:52 +0800</pubDate>
+      <guid>https://tarduspura.me/projects/calender/</guid>
+      <description>&lt;h1 id=&#34;医院排班系统项目综述&#34;&gt;医院排班系统项目综述&lt;/h1&gt;
+&lt;h2 id=&#34;一项目背景与目标&#34;&gt;一、项目背景与目标&lt;/h2&gt;
+&lt;p&gt;本项目是一个面向本地使用场景的医院门诊排班编辑工具，核心目标是：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;作品名称：L’Estasi di Santa Teresa/圣特雷莎的狂喜&lt;/li&gt;
-&lt;li&gt;艺术家：Gian Lorenzo Bernini（贝尼尼）, 1598–1680&lt;/li&gt;
+&lt;li&gt;快速录入并维护一周（周一到周日）上午/下午排班信息；&lt;/li&gt;
+&lt;li&gt;在单页可视化编辑中完成拖拽调整、修改与删除；&lt;/li&gt;
+&lt;li&gt;一键导出高分辨率排班图片，便于院内发布与传播；&lt;/li&gt;
+&lt;li&gt;提供 Windows 端桌面应用形态，降低非技术用户使用门槛。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img alt=&#34;贝尼尼&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/archi1-5.jpg&#34;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;创作时间：1647-1652年&lt;/li&gt;
-&lt;li&gt;材质：白色大理石（主体），镀金青铜（后侧光线），彩色大理石装饰&lt;/li&gt;
-&lt;li&gt;尺寸：约3.5米高&lt;/li&gt;
-&lt;li&gt;所在地：意大利罗马，胜利之后圣母堂（Santa Maria della Vittoria）内的科尔罗纳小堂（Cornaro Chapel）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt=&#34;整体&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/archi1-2.jpg&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;历史与委托背景&#34;&gt;历史与委托背景&lt;/h3&gt;
-&lt;p&gt;这座雕塑是贝尼尼应红衣主教费德里科·科尔纳罗（Federico Cornaro）的委托，为其家族在教堂内的私人礼拜堂所创作。科尔纳罗希望以一种震撼人心的方式表达天主教神秘主义的神圣体验，同时也彰显家族的虔诚与地位。
-当时正值反宗教改革（Counter-Reformation）时期，天主教会大力推动艺术作为传播信仰的工具。贝尼尼作为教皇乌尔班八世和亚历山大七世最信任的艺术家，是这一使命的核心人物。&lt;/p&gt;
-&lt;h3 id=&#34;雕塑内容&#34;&gt;雕塑内容&lt;/h3&gt;
-&lt;p&gt;6世纪西班牙神秘主义者、加尔默罗会修女圣特蕾莎（Saint Teresa of Ávila, 1515–1582）在自传《灵心城堡》（The Interior Castle）中描述的一次神视经历：&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;一位天使……手持一支金色长矛，矛尖燃着火焰。他数次将矛刺入我的心脏，穿透我的五脏六腑。当他拔出时，仿佛把我的内脏也带走了，让我完全沉浸在上帝之爱的甜蜜痛苦中&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;贝里尼通过卓绝的技艺以及无比的创造力使用冰冷的大理石和青铜还原甚至可以说升华了这样一段历史场景。在礼拜堂深处的祭台中央坐落着这座堪称辉煌的雕塑作品，在我的想象当中，它的存在使得朝拜者在走入礼拜堂后无法被周遭缭乱繁复的巴洛克风格装饰所打扰——天使、圣徒、美丽驳杂的彩色大理石和装饰壁画都不再具有魅力——而是会被这座神圣、有力的雕塑所吸引。
-和圣特雷莎的自述一样，这件作品兼具神圣与神秘、超升与伤害、迷醉和神恩&amp;hellip;.金箭在这里引入了一种传统雕塑所不具备的危险和张力，雕塑不再只能是严肃、沉静、深刻的，在贝尼尼的手下，雕塑反映出了雅斯贝尔斯所谓“边缘情况”的形体感受，在这里，情绪被拉到人类感受的极限，时间被凝固到绝对的一刻。&lt;/p&gt;
-&lt;p&gt;背后密密排列的镀金青铜构成的圣光和彩色大理石铺垫的背景赋予了雕塑浮华的舞台感，使用金属来模拟圣光，气体的飘渺感被青铜耀眼、刚健的风格代替。在传统雕塑中本该下垂的衣摆在这里却依着人体形态扭曲、旋转，共同构成这件作品的情绪风格。特蕾莎迷醉、狂喜的神态让我想到米开朗琪罗的拉奥孔。但在拉奥孔那里需要用浓墨重彩的皱纹来描绘的情感巨潮，在贝尼尼手下变为了上翻的眼球、微妙张开的嘴巴，特蕾莎单纯、平滑的神情毫不失去情感的烈度。这种从宗教性的痛苦中萌生的畸形的极乐或许满足了人类灵魂深处和奴性近似的情欲，因此，在这种程度上，特蕾莎既是极度宗教的，又是极度人性的。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;面部&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/archi1-1.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;拉奥孔&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/archi1-4.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;在雕塑构图上，手持金箭的天使和瘫软在地的特蕾莎仿佛漂浮在半空，两个角色的位置既符合宗教意义上的压制，又达成了审美感受上的平衡。雕塑舞台般的气质和难以把握的情绪弥漫在小礼拜堂封闭、相对狭窄的空间当中，一切置身于这座礼拜堂中的灵魂——即使对雕塑背后的宗教意义毫不知情——或许都会不自觉地感受到情感上一种难以呼吸的悸动。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;近景&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/archi1-3.jpg&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;项目在功能上强调“高效编辑 + 高质量导出 + 本地可分发”。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>10.8 作啫</title>
-      <link>http://localhost:1313/her/restaurant/10.8/</link>
-      <pubDate>Sun, 12 Oct 2025 23:42:20 +0800</pubDate>
-      <guid>http://localhost:1313/her/restaurant/10.8/</guid>
-      <description>&lt;p&gt;国庆的最后一顿饭。我从尖沙咀七小时一根香蕉疯狂赶路，g从宝鸡也是早上八点开始，火车一路坐回杭州，晚上七点钟才到西站。当我背着半书包的小礼物在西溪天街负一楼的K22酸奶店门口看到她接过两袋酸奶（注意！是两袋）————旁边停放着她其貌不扬但死重的白色行李箱————的时候，已经接近八点了。我们在四五楼挑挑拣拣，最后走进了作啫，进去的时候客人已经不多，到吃完起身我们已经是店里最后的客人了，店员们不是已经在打扫卫生就是在等着我们离开然后好打扫卫生。
-嗯，新的故事就又从这顿饭开始。&lt;/p&gt;
-&lt;h3 id=&#34;黑胡椒牛肉啫啫煲&#34;&gt;黑胡椒牛肉啫啫煲&lt;/h3&gt;
-&lt;p&gt;&lt;img alt=&#34;黑胡椒牛肉&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/zuojue1.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;食材：牛肉粒、京葱、大蒜、小米椒
-口味：整个锅端上来的时候锅气很足，确实是juejue作响，服务员搅拌的时候油还溅到我手上了，很有热火朝天的感觉。京葱松软香甜（不吃葱的某人有难了），牛肉粒香气很足，但肉质有点过于嫩滑了？不知道是什么原因。总体是一个咸鲜口，还是很好吃的。
-评分：4/5&lt;/p&gt;
-&lt;h3 id=&#34;空心菜啫啫煲&#34;&gt;空心菜啫啫煲&lt;/h3&gt;
-&lt;p&gt;&lt;img alt=&#34;空心菜&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/zuojue2.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;食材：空心菜&amp;hellip;大蒜（哪都有你）
-口味：空心菜很入味，咸口调的恰到好处，口感也很软嫩，吃不出来什么渣渣。一口下去，绿油油的菜叶裹着薄薄一层热油，虽然是蔬菜但吃着相当上瘾啊。
-评分：4/5&lt;/p&gt;
-&lt;h3 id=&#34;红米脆虾卷&#34;&gt;红米脆虾卷？&lt;/h3&gt;
-&lt;p&gt;&lt;img alt=&#34;红米脆虾卷&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/zuojue3.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;食材：虾、脆香米、神秘配方&amp;hellip;
-口味：这道菜主要的亮点在于口感：酥脆香甜的红色外皮和很有嚼感的脆香米，配合内层软嫩的虾肉，让整个口感层次非常丰富。调味就是很正常的广式点心味道。
-评分：4/5&lt;/p&gt;
-&lt;h3 id=&#34;咸蛋黄鸡翅&#34;&gt;咸蛋黄鸡翅&lt;/h3&gt;
-&lt;p&gt;&lt;img alt=&#34;鸡翅&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/zuojue4.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;无需多言，口味经典，一人吃了五只。“等下长翅膀飞走了，但因为吃了奇数只所以飞的歪歪扭扭&amp;hellip;.”出门后g这样说。&lt;/p&gt;
-&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
-&lt;p&gt;饭桌上给g像上菜一样掏礼物出来，唱片、被误当作冰箱贴的胸针、龙猫小盒子&amp;hellip;我不知道什么时候才会不迷恋于她接过礼物时惊喜的表情。晚上她说，那种表情不单单是因为这礼物本身，更因为她在一瞬间想象到我在陌生的地点挑来选去的样子&amp;hellip;&lt;/p&gt;</description>
+      <title>Agent</title>
+      <link>https://tarduspura.me/posts/tech/agent/</link>
+      <pubDate>Thu, 12 Feb 2026 16:56:10 +0800</pubDate>
+      <guid>https://tarduspura.me/posts/tech/agent/</guid>
+      <description>&lt;h2 id=&#34;skill&#34;&gt;Skill&lt;/h2&gt;
+&lt;h3 id=&#34;definition&#34;&gt;Definition&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Agent Skills are &lt;strong&gt;modular capabilities&lt;/strong&gt; that extend Claude&amp;rsquo;s functionality.Each Skill packages &lt;strong&gt;instructions&lt;/strong&gt;, &lt;strong&gt;metadata&lt;/strong&gt;, and &lt;strong&gt;optional resources&lt;/strong&gt;(scripts, templates) that Claude uses &lt;strong&gt;automatically&lt;/strong&gt; when relevant.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;format&#34;&gt;Format&lt;/h3&gt;
+&lt;p&gt;!(format)[/images/skill-1.jpg]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SKILL.md为第一指引（有时候还会有一些子技能）&lt;/li&gt;
+&lt;li&gt;结合任务情况，判断何时需要调用代码脚本（scripts）、翻阅参考文档（ref.）、使用素材资源（assets）&lt;/li&gt;
+&lt;li&gt;规划 - 执行 - 观察，循环直到完成任务目标&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;value&#34;&gt;Value&lt;/h3&gt;
+&lt;p&gt;1.自然语言编写&lt;/p&gt;</description>
     </item>
     <item>
-      <title>2025.9.30 银泉小乐惠</title>
-      <link>http://localhost:1313/her/restaurant/9-30/</link>
-      <pubDate>Fri, 03 Oct 2025 22:32:07 +0800</pubDate>
-      <guid>http://localhost:1313/her/restaurant/9-30/</guid>
-      <description>&lt;p&gt;国庆前真正意义上的最后一顿饭——虽然第二天还在风味吃了一顿被当作午饭的早饭——因为我们晚上都有晚课，没法好好挑个餐厅尽兴地享受最后的晚餐。但又不想把这种时刻只是交给银泉的瘦肉丸、东区一楼的烧腊饭这种过于日常的食物。稍加思考后，我们把银泉3楼作为最后的目的地。
-银泉三楼有“食天一隅”和“小乐惠”两间餐厅，我俩都只吃过一次小乐惠，但从前听学长说过关于前者的“坏话”，因此我还是把g拉进了小乐惠——性价比不错的川菜餐厅。
-&lt;img alt=&#34;一张图片&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/9-30-1.jpg&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;番茄炒蛋&#34;&gt;番茄炒蛋&lt;/h3&gt;
-&lt;p&gt;&lt;img alt=&#34;番茄炒蛋&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/9-30-2.jpg&#34;&gt;&lt;/p&gt;
+      <title>CSapp</title>
+      <link>https://tarduspura.me/posts/others/csapp/</link>
+      <pubDate>Tue, 03 Feb 2026 20:47:16 +0800</pubDate>
+      <guid>https://tarduspura.me/posts/others/csapp/</guid>
+      <description>&lt;p&gt;打算利用寒假的时间加深一点关于计算机系统的理解，在这里记一些关于CSapp的读书笔记，一方面加深理解，一方面可以供大家参考。&lt;br&gt;
+&lt;a href=&#34;https://hansimov.gitbook.io/csapp&#34;&gt;原书导航(3-6章施工中)&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;computer-systemsa-programmers-perspective&#34;&gt;Computer Systems∶A Programmer&amp;rsquo;s Perspective&lt;/h1&gt;
+&lt;h2 id=&#34;导论&#34;&gt;导论&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;原课程&lt;/strong&gt;：&lt;a href=&#34;https://csdiy.wiki/en/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP&#34;&gt;CMU 15-213&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;作者&lt;/strong&gt;：Randal E. Bryant, David R. O&amp;rsquo;Hallaron&lt;br&gt;
+&lt;strong&gt;出版时间&lt;/strong&gt;：2002/2010-2011/2015&lt;br&gt;
+&lt;strong&gt;需要的背景知识&lt;/strong&gt;：C语言基础&lt;br&gt;
+&lt;strong&gt;目标&lt;/strong&gt;：贯通地介绍执行x86-64机器代码的系统；增强工程能力&lt;br&gt;
+&lt;strong&gt;目录&lt;/strong&gt;：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>My Friends</title>
+      <link>https://tarduspura.me/links/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://tarduspura.me/links/</guid>
+      <description>&lt;h3 id=&#34;友链列表&#34;&gt;友链列表&lt;/h3&gt;
+&lt;h4 id=&#34;放荡不羁的南人&#34;&gt;&lt;a href=&#34;https://ccc-yuan.github.io/Personal-Homepage&#34;&gt;放荡不羁的南人&lt;/a&gt;&lt;/h4&gt;
+&lt;h3 id=&#34;友链申请&#34;&gt;友链申请&lt;/h3&gt;
+&lt;p&gt;如果你想和我交换友链，欢迎通过以下方式联系我：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;口味：进嘴第一口g就睁大了眼睛，见状我也挖了一筷子，很快就知道g露出这样表情的原因。那种经典、落胃，锅气饱满的咸香口味伴随着番茄块酸度适当的汁水和一勾薄芡后浓厚的汤汁儿在口腔当中弥漫，回味是一种不齁的土咸口味，让我的味蕾感到持续的安定和满足。如此简单的食材搭配，却可以历久弥新，不是没有道理。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;推荐指数：4.5/5&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;贵州酸汤鱼&#34;&gt;贵州酸汤鱼&lt;/h3&gt;
-&lt;p&gt;&lt;img alt=&#34;贵州酸汤鱼&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/9-30-3.jpg&#34;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;食材：黑鱼？、金针菇、豆芽&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;口味：和在黔夺夺吃到的酸汤相比，这更像是番茄汤。在这样的烧法下，鱼刺显得有点过多了，每吃一口都要抿老半天。其他部分就是中规中矩。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;推荐指数：3/5&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;牛肉香锅&#34;&gt;牛肉香锅&lt;/h3&gt;
-&lt;p&gt;&lt;img alt=&#34;牛肉香锅&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/9-30-4.jpg&#34;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;食材：牛肉、土豆、藕、香菜、花椒、芝麻&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;口味：厚重的咸、香、辣的味道，随着汤汁被小火进一步浓缩，牛肉吃到后面有点过咸。但牛肉底下的土豆和藕片吸满了汤汁，本来难以入味的食材现在变得恰到好处。g是土豆脑袋，这土豆已经被评为丈夫级别了，吃到最后牛肉不管了，一直叫我在锅底帮忙找土豆。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;推荐指数：4/5&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;炸荠菜牛肉卷&#34;&gt;炸荠菜牛肉卷？&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;口味：蘸了甜辣酱以后吃起来味道还是很平衡的。外皮和长条的春卷类似，两个口上有轻盈的薄酥，馅儿的口感很软糯，口味很入味。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;推荐指数：4/5&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;吃完饭后，g又美美遗忘自己新买两天的耳钉，幸好第二天去给她找到了。&lt;/li&gt;
-&lt;li&gt;g忘了填爱心社的问卷，吃饭中间还填了半个长长的问卷，然后一语成谶，晚上就被call去面试了。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/tarduspura&#34;&gt;tarduspura&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;: &lt;a href=&#34;mailto:tarduspura@gmail.com&#34;&gt;tarduspura@gmail.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     <item>
+      <title>吃穿宝鸡第一弹</title>
+      <link>https://tarduspura.me/her/restaurant/26-1-21/</link>
+      <pubDate>Tue, 27 Jan 2026 01:40:24 +0800</pubDate>
+      <guid>https://tarduspura.me/her/restaurant/26-1-21/</guid>
+      <description>&lt;h2 id=&#34;day1121&#34;&gt;Day1(1.21)&lt;/h2&gt;
+&lt;h3 id=&#34;养生牛肉汤锅&#34;&gt;养生牛肉汤锅&lt;/h3&gt;
+&lt;p&gt;在唐潮城边徘徘又徊徊，在小六汤包（作为第一顿有点简单）、牛肉汤锅（太健康，“有点淡”）、月满大江和码头故事（太辣）之间来回横跳数分钟之后，我们还是凭着就近原则走进了这家牛肉汤锅——小瓶盖高考完的那顿晚饭也是在这儿吃的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>银河帝国中的语言、词学和翻译</title>
+      <link>https://tarduspura.me/contemplate/create/essay/empire/</link>
+      <pubDate>Mon, 26 Jan 2026 01:09:37 +0800</pubDate>
+      <guid>https://tarduspura.me/contemplate/create/essay/empire/</guid>
+      <description>&lt;h3 id=&#34;1宝绮思译名的由来&#34;&gt;1.宝绮思译名的由来&lt;/h3&gt;
+&lt;h3 id=&#34;2索拉利与索拉里斯&#34;&gt;2.索拉利与索拉里斯&lt;/h3&gt;
+&lt;p&gt;在从西安回杭州的飞机上，我靠《银河帝国》打发时间。思绪随着崔维兹三人(Golan Trevize, Janov Pelorat, Bliss)在浩瀚的银河当中遨游，他们离开康普隆，跟随着康普隆学者米特尔·霍姆（Mitza Lizalor）给出的坐标指引寻找地球的坐标————想到我正被尺度困在他们苦苦寻找的这颗星球上，我感受到了阿西莫夫在这里设计的带着自嘲的幽默————他们造访的第二组坐标将他们带到了第50颗也是最年轻的太空人星球索拉利（Solaria）。索拉利人雌雄同体，十分依赖机器人，并且具有独特的转换腺（transducer lobes），可以自如地控制能量的转换。同时，整个星球发展出了一种极端的个体主义，索拉利星人讨厌直接的接触，整颗星球上只容纳了约1500名索拉利星人。&lt;br&gt;
+直到我看到Bliss失手杀掉庄园主Bander和三个守卫机器人，趁乱带上Fallom，崔维兹驾驶远星号，以毫厘之差逃出生天之时，我才意识到索拉利这个名字仿佛有些熟悉&amp;hellip;对了，是《索拉里斯星》。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Last breakfast</title>
+      <link>https://tarduspura.me/her/restaurant/26-1-17/</link>
+      <pubDate>Sun, 18 Jan 2026 17:36:00 +0800</pubDate>
+      <guid>https://tarduspura.me/her/restaurant/26-1-17/</guid>
+      <description>&lt;p&gt;相比而言，大二上是一个非常短小的学期，开学晚，放假也早，很快就到了和她暂别的日子。（几天后我就又到宝鸡去了）1月17日，杭州收了冬日的晴光，翻出一片阴云惨淡、萧瑟潮湿的气候，倒也衬得我们淡淡的离愁。&lt;br&gt;
+前一天晚上半夜，电脑的WLAN突然断联，线上联系咸鱼上的技术人员，配合着一顿捣鼓，到了将近凌晨三点才在删除了注册表中的虚拟机信息，并重新安装了从mgh电脑上下载并拷过来的驱动才终于把我的校园网找回来。所以五个小时之后的“告别早餐”吃的我非常有救赎感啊。&lt;br&gt;
+由于肠微分太好吃以及太久没有领略食堂早饭的缘故，不死心又拿了风味餐厅的肉末鸡蛋肠粉。结果不出所料，不算难吃，但汤汁比较寡淡，肠粉本身也没有亮点，仅仅是勉强可以吃的水平。风味餐厅的煎蛋也是发挥稳定，又凉又油，但谁让我爱吃鸡蛋呢，明知山也拦不住我大嚼下肚。&lt;br&gt;
+但，毕竟这顿早饭不是为了品鉴，而是为了送别。匆匆吃罢，在白沙坐上出租车，到西溪湿地北去坐19号线————国庆节结束我也是从相同的地方出站，打车到西溪天街，在负一楼见到她，如今是我要送她离开————路上，她挽着我的手，我靠着她溪水般铺展的长发，仿佛我们只是打车去西随便什么地方一起吃饭。&lt;br&gt;
+过去的一切在当下都被压缩到一个短到无法感知的瞬间，当地铁从我的眼前滑去，取代眼花缭乱的车厢景象的是我静止、模糊的身影。我转身离去，尝试告诉自己分别其实也并没有什么。&lt;br&gt;
+&lt;img alt=&#34;图片&#34; loading=&#34;lazy&#34; src=&#34;https://tarduspura.me/images/26-1-17.jpg&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>木叶町1.11</title>
+      <link>https://tarduspura.me/her/restaurant/26-1-11/</link>
+      <pubDate>Thu, 15 Jan 2026 13:22:52 +0800</pubDate>
+      <guid>https://tarduspura.me/her/restaurant/26-1-11/</guid>
+      <description>&lt;p&gt;考完大物，考试周仅剩大物实验和半开卷sys两门考试，我俩又进入传统开香槟环节。当然啦，相比于半年前的金匠，这一回在浙港国际吃一次木叶町只是把香槟拿出来抚摸一下。她前一天睡得很晚，前去吃饭的路上已经是有点头重脚轻、勉力支撑，回去以后从两点睡到八点便是明证。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>极乐的圣特雷莎</title>
+      <link>https://tarduspura.me/contemplate/art/archi1/</link>
+      <pubDate>Wed, 15 Oct 2025 01:24:50 +0800</pubDate>
+      <guid>https://tarduspura.me/contemplate/art/archi1/</guid>
+      <description>&lt;p&gt;在书上看见这件雕塑作品的照片，一下便被那种神圣的舞台感和极度大胆的对于迷醉、狂乱的神情的刻画所吸引，所以想在这篇文章中整理更多的信息和感受。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&amp;ldquo;一个艺术家想要成功必须具备三个条件：一是极早看到美并抓住它，二是工作勤奋，三是经常得到精确的指教。   ————乔瓦尼·洛伦佐·贝尼尼&amp;rdquo;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>10.8 作啫</title>
+      <link>https://tarduspura.me/her/restaurant/10-8/</link>
+      <pubDate>Sun, 12 Oct 2025 23:42:20 +0800</pubDate>
+      <guid>https://tarduspura.me/her/restaurant/10-8/</guid>
+      <description>&lt;p&gt;国庆的最后一顿饭。我从尖沙咀七小时一根香蕉疯狂赶路，g从宝鸡也是早上八点开始，火车一路坐回杭州，晚上七点钟才到西站。当我背着半书包的小礼物在西溪天街负一楼的K22酸奶店门口看到她接过两袋酸奶（注意！是两袋）————旁边停放着她其貌不扬但死重的白色行李箱————的时候，已经接近八点了。我们在四五楼挑挑拣拣，最后走进了作啫，进去的时候客人已经不多，到吃完起身我们已经是店里最后的客人了，店员们不是已经在打扫卫生就是在等着我们离开然后好打扫卫生。&lt;br&gt;
+嗯，新的故事就又从这顿饭开始。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025.9.30 银泉小乐惠</title>
+      <link>https://tarduspura.me/her/restaurant/9-30/</link>
+      <pubDate>Fri, 03 Oct 2025 22:32:07 +0800</pubDate>
+      <guid>https://tarduspura.me/her/restaurant/9-30/</guid>
+      <description>&lt;p&gt;国庆前真正意义上的最后一顿饭——虽然第二天还在风味吃了一顿被当作午饭的早饭——因为我们晚上都有晚课，没法好好挑个餐厅尽兴地享受最后的晚餐。但又不想把这种时刻只是交给银泉的瘦肉丸、东区一楼的烧腊饭这种过于日常的食物。稍加思考后，我们把银泉3楼作为最后的目的地。&lt;br&gt;
+银泉三楼有“食天一隅”和“小乐惠”两间餐厅，我俩都只吃过一次小乐惠，但从前听学长说过关于前者的“坏话”，因此我还是把她拉进了小乐惠——性价比不错的川菜餐厅。&lt;br&gt;
+&lt;img alt=&#34;一张图片&#34; loading=&#34;lazy&#34; src=&#34;https://tarduspura.me/images/9-30-1.jpg&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>ZJU常用网站导航</title>
-      <link>http://localhost:1313/guide/zjuguide/</link>
+      <link>https://tarduspura.me/guide/zjuguide/</link>
       <pubDate>Tue, 30 Sep 2025 13:47:42 +0800</pubDate>
-      <guid>http://localhost:1313/guide/zjuguide/</guid>
+      <guid>https://tarduspura.me/guide/zjuguide/</guid>
       <description>&lt;h3 id=&#34;教学&#34;&gt;教学&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://courses.zju.edu.cn&#34;&gt;学在浙大&lt;/a&gt;&lt;/li&gt;
@@ -158,111 +165,45 @@
     </item>
     <item>
       <title>2025.9.29 COMMUNE幻狮</title>
-      <link>http://localhost:1313/her/restaurant/9-29/</link>
+      <link>https://tarduspura.me/her/restaurant/9-29/</link>
       <pubDate>Tue, 30 Sep 2025 10:57:57 +0800</pubDate>
-      <guid>http://localhost:1313/her/restaurant/9-29/</guid>
-      <description>&lt;p&gt;今天应该是她国庆回家前在杭州一块儿吃的最后一顿正儿八经点的饭了，上周逛过乐堤港之后就让我想起这家店来。幻狮虽然是一间酒吧，但我这样一个酒精趴菜对它的印象更多的是很乡村的装潢和正宗、美味的餐品，这次实我第二次来，它也没有让我失望&lt;/p&gt;
-&lt;h2 id=&#34;菜品&#34;&gt;菜品&lt;/h2&gt;
-&lt;h3 id=&#34;那坡里海鲜沙拉&#34;&gt;那坡里海鲜沙拉&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;食材：鲜虾、鱿鱼圈、土豆泥、芝麻菜、菌菇、番茄、鸡蛋&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;— 口味：整体是个比较清口的凉盘，但可能处理过程比较简单，所以鱿鱼圈会有点海腥味，并且鱿鱼圈下面的土豆泥也会沾上这种味道，放久了入口会有点不和谐。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;推荐指数：⭐⭐&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;奶油蘑菇汤&#34;&gt;奶油蘑菇汤&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;食材：橄榄油、蘑菇碎、奶油、松露？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;口味：味道温雅、正宗，没有科技感很重的冲调感，蘑菇碎让汤喝上去更有质感，很朴实无华的奶油蘑菇味。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;推荐指数：⭐⭐⭐&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;金沙炸鸡全翅&#34;&gt;金沙炸鸡全翅&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;食材：鸡全翅*4、神奇的裹粉、番茄粉？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;口味：鸡翅完美诠释了什么叫做外脆里嫩，亮点在于酥皮的调味，有种咸蛋黄和番茄粉综合的味道，咸香而不失清爽，我们都觉得非常好吃。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;推荐指数：⭐⭐⭐⭐⭐&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;碳烤猪肋排&#34;&gt;碳烤猪肋排&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;食材：猪肋排、酸黄瓜、番茄酱、薯条、辣椒圈&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;口味：猪肋排整体是一个非常软糯的口感，酱汁是经典咸甜口味的bbq酱料。出彩的地方是猪排上撒了些许小米辣，一小颗小米辣，一片酸黄瓜，一口下去猪肋排的口味瞬间丰富了好多个层次。薯条无功无过。g说很喜欢吃酸黄瓜（嚼嚼嚼&amp;hellip;）&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;-推荐指数：⭐⭐⭐⭐&lt;/p&gt;
-&lt;h3 id=&#34;蓝莓蛋糕&#34;&gt;蓝莓蛋糕&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;食材：蓝莓、奶油、以及其他一些诡异的添加物（不懂）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;口味：一小块三角形的小蛋糕，糕体比较硬，挖起来像冰激凌，上下分为三层，最上方是果酱和蓝莓果肉，中间一大层类似口感丝滑的蓝莓慕斯，有点很高级的咸味，最底层如果没记错是松软的蛋糕。整体口感层级丰富，味型很高级，g爱不释手。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;推荐指数：⭐⭐⭐⭐&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;小插曲&#34;&gt;小插曲&lt;/h2&gt;
-&lt;p&gt;借着上厕所的理由把提前买好的乐高取回来，走到位置上的过程中没让g发现手里的大袋子，于是就把乐高偷偷放在桌底，还是没有发现&amp;hellip;送礼大成功啊！！！&lt;/p&gt;</description>
+      <guid>https://tarduspura.me/her/restaurant/9-29/</guid>
+      <description>&lt;p&gt;今天应该是她国庆回家前在杭州一块儿吃的最后一顿正儿八经点的饭了，上周逛过乐堤港之后就让我想起这家店来。幻狮虽然是一间酒吧，但我这样一个酒精趴菜对它的印象更多的是很乡村的装潢和正宗、美味的餐品，这次实我第二次来，它也没有让我失望&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>9-28-Dairy</title>
+      <link>https://tarduspura.me/her/location/9-28-dairy/</link>
+      <pubDate>Sun, 28 Sep 2025 20:45:51 +0800</pubDate>
+      <guid>https://tarduspura.me/her/location/9-28-dairy/</guid>
+      <description>&lt;h3 id=&#34;工联cc人也太好了吧&#34;&gt;工联CC——人也太好了吧&lt;/h3&gt;
+&lt;p&gt;       很多时候，翘课之后说走就走的决定可能只是来自一杯制作时间被拖得过长的咖啡。本来应该坐在西教苦思数据结构的时间，我和她却坐在前往湖滨的出租车上，电车启动和制动都快的让人很不舒服，车内虽然开着空调但空气也不是很流通。湖滨银泰离紫金港颇有一段距离，终于，就在她快要恶心的不行之前，我们到达了目的地。下车，缓一缓，穿过湖滨最拥挤的十字路口，来第一次认认真真地逛这座存在感非常高，但我从来都没有认认真真逛过的建筑。&lt;br&gt;
+ps：当天回来，第一版写了大半，但因为某些技术原因（忘记保存了），辛苦写下的文字都变成01洪流当中无意义的符号被无情地冲刷干净了。这样的体验很容易让人泄了气，便懒于再重写一遍，而这一懒就是四个月————这四个月是多么的丰满和可触————如今有很多细节其实已经记的不那么真切了，我就在下面给出一些关键词吧，无论多久，看到这些关键词我总能回忆起到那个时刻对于这一次出行的记忆。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2025-9-27 Dairy</title>
-      <link>http://localhost:1313/travel/rock/9-27-dairy/</link>
+      <link>https://tarduspura.me/travel/rock/9-27-dairy/</link>
       <pubDate>Sat, 27 Sep 2025 15:40:45 +0800</pubDate>
-      <guid>http://localhost:1313/travel/rock/9-27-dairy/</guid>
+      <guid>https://tarduspura.me/travel/rock/9-27-dairy/</guid>
       <description>&lt;h2 id=&#34;攀岩队面试&#34;&gt;攀岩队面试&lt;/h2&gt;
-&lt;p&gt;面试前有种不安和自满都过度膨胀的感觉。但当拍满镁粉的手掌放上线路第一个岩点粗糙凹陷的那一刻，挥之不去的紧张情绪、前一天过度攀爬还未完全恢复过来的小臂的酸疼都无影无踪了。留在我脑子里的，只有向上的欲望，又或是一片空白，只让重力、手指和足尖决定我的动态。
-身处高空，用四根手指挂在凸出的岩点上，心跳随力量的流逝在不断加速，这种前所未有的感觉注定了这是一项神奇的运动，我想我会一直坚持下去。&lt;/p&gt;
-&lt;p&gt;难度攀岩的哲学在我看来可以用一句有些中二的话来总结:&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;“失败前我还是想看看我离终点究竟多远”&lt;/em&gt;&lt;/p&gt;</description>
+&lt;p&gt;面试前有种不安和自满都过度膨胀的感觉。但当拍满镁粉的手掌放上线路第一个岩点粗糙凹陷的那一刻，挥之不去的紧张情绪、前一天过度攀爬还未完全恢复过来的小臂的酸疼都无影无踪了。留在我脑子里的，只有向上的欲望，又或是一片空白，只让重力、手指和足尖决定我的动态。&lt;br&gt;
+身处高空，用四根手指挂在凸出的岩点上，心跳随力量的流逝在不断加速，这种前所未有的感觉注定了这是一项神奇的运动，我想我会一直坚持下去。&lt;/p&gt;</description>
     </item>
     <item>
       <title>第二版前言</title>
-      <link>http://localhost:1313/contemplate/learn/sciofjoy/foreword/</link>
+      <link>https://tarduspura.me/contemplate/learn/sciofjoy/foreword/</link>
       <pubDate>Thu, 25 Sep 2025 21:00:40 +0800</pubDate>
-      <guid>http://localhost:1313/contemplate/learn/sciofjoy/foreword/</guid>
+      <guid>https://tarduspura.me/contemplate/learn/sciofjoy/foreword/</guid>
       <description>&lt;h2 id=&#34;生命阶段&#34;&gt;生命阶段&lt;/h2&gt;
-&lt;p&gt;1881年夏天，尼采38岁，在瑞士的Sils-Maria经历了高昂、轻快的精神状态，长期困扰他的偏头疼、眼疾和胃病此时开始逐渐恶化。1882年，尼采辞去了巴塞尔大学古典语言学教授的职位，开始过着游牧式的写作生活。正式在这一年，《快乐的科学》初版发行。&lt;!-- raw HTML omitted --&gt;
-“上帝已死”的著名宣言正是在本书中提出的，此时的尼采离开了学术岗位、健康开始恶化但精神极其旺盛，他的思想也在这一时期开始发生转向，此书正是在这样的精神状态和生命状态中孕育的。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h2 id=&#34;痊愈&#34;&gt;痊愈&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;因为痊愈就是最出乎意料的事。“快乐的科学”：意味着一种精神的农神节，这种精神坚韧地抵抗了一种可怕的、长久的压力————坚忍地、严峻地冷酷地，毫不屈服，但又毫无希望————，而现在一下子受到希望的突袭，那种痊愈的希望，那种痊愈的醉态。&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;真理与疾病&#34;&gt;真理与疾病&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;通过对疾病的讨论（尼采本人有丰富的疾病经验，这也使得疾病成为了他的一个重要名词）肉体感受（痛苦、激情）开始被放置到一个更加崇高的地位。
-&lt;em&gt;以往一切哲学思考根本都无关乎“真理”，而是关乎某种别的东西，我们可以说，是关乎健康、将来、成长、权力、生命&amp;hellip;&amp;hellip;&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;em&gt;我们哲学家不能像民众那样，随意地把灵魂与肉体分开，我们更不能随意地把灵魂与精神区分开来&amp;hellip;我们必须持续地从自己的痛苦中分娩出自己的思想&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;我怀疑，这样一种痛苦是否“具有改善作用”————；不过我知道，这种痛苦使我们变得深刻&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;生命本身成为了一个难题&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在序言的最后，尼采也对当时人们沉醉于“浪漫主义的骚动和感官迷乱”的丑态极尽尖酸地用反话进行讽刺。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;em&gt;今天，对我们来说，不想赤裸裸地观看一切，不想参与一切，不想理解和“知道”一切，这才是一件得体的事情&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;我们再也不相信，如果人们一把撤掉真理的面纱，真理依然是真理&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;这些希腊人是肤浅的————出于深刻！&lt;/em&gt;&lt;/p&gt;</description>
+&lt;p&gt;1881年夏天，尼采38岁，在瑞士的Sils-Maria经历了高昂、轻快的精神状态，长期困扰他的偏头疼、眼疾和胃病此时开始逐渐恶化。1882年，尼采辞去了巴塞尔大学古典语言学教授的职位，开始过着游牧式的写作生活。正式在这一年，《快乐的科学》初版发行。&lt;!-- raw HTML omitted --&gt;&lt;br&gt;
+“上帝已死”的著名宣言正是在本书中提出的，此时的尼采离开了学术岗位、健康开始恶化但精神极其旺盛，他的思想也在这一时期开始发生转向，此书正是在这样的精神状态和生命状态中孕育的。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lec1:Introduction</title>
-      <link>http://localhost:1313/posts/courses/crypto/lec1/</link>
+      <link>https://tarduspura.me/posts/courses/crypto/lec1/</link>
       <pubDate>Thu, 25 Sep 2025 08:23:36 +0800</pubDate>
-      <guid>http://localhost:1313/posts/courses/crypto/lec1/</guid>
-      <description>&lt;h1 id=&#34;现代密码学介绍&#34;&gt;现代密码学介绍&lt;!-- raw HTML omitted --&gt;&lt;/h1&gt;
-&lt;h2 id=&#34;语法&#34;&gt;语法&lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
+      <guid>https://tarduspura.me/posts/courses/crypto/lec1/</guid>
+      <description>&lt;h1 id=&#34;现代密码学介绍&#34;&gt;现代密码学介绍&lt;/h1&gt;
+&lt;h2 id=&#34;语法&#34;&gt;语法&lt;/h2&gt;
 &lt;h3 id=&#34;元素-elements&#34;&gt;元素 elements：&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;$ \mathcal{M} $&lt;/strong&gt;: message space&lt;/li&gt;
@@ -277,67 +218,45 @@
 &lt;li&gt;&lt;strong&gt;encryption scheme&lt;/strong&gt;: 加密方案&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;功能-functionality&#34;&gt;功能 functionality：&lt;/h3&gt;
-&lt;p&gt;1.The &lt;em&gt;key-generation&lt;/em&gt; algorithm &lt;strong&gt;Gen&lt;/strong&gt; is a probabilistic algorithm that outputs a key k chosen according to some distribution.&lt;/p&gt;
-&lt;p&gt;2.The &lt;em&gt;encryption algorithm&lt;/em&gt; &lt;strong&gt;Enc&lt;/strong&gt; takes as input a key k and a message m and outputs a ciphertext c. We denote by &lt;strong&gt;$Enc_k(m)$&lt;/strong&gt; the encryption of the plaintext m using the key k.&lt;/p&gt;</description>
+&lt;p&gt;1.The &lt;em&gt;key-generation&lt;/em&gt; algorithm &lt;strong&gt;Gen&lt;/strong&gt; is a probabilistic algorithm that outputs a key k chosen according to some distribution.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Website</title>
-      <link>http://localhost:1313/contemplate/art/website/</link>
+      <link>https://tarduspura.me/contemplate/art/website/</link>
       <pubDate>Wed, 24 Sep 2025 21:51:59 +0800</pubDate>
-      <guid>http://localhost:1313/contemplate/art/website/</guid>
-      <description>&lt;p&gt;​        在时间和空间的限制被打破以前，对于那些臻美的油画、雕像、建筑、装饰&amp;hellip;我们往往难以亲临现场用肉眼观摩。幸而技术的成熟和热爱艺术的人们的贡献，以下这些网站中提供了高质量的艺术品图片，让我们通过屏幕也可以领略到那些厚重的笔触和神圣的色彩。&lt;/p&gt;
-&lt;p&gt;​         Enjoy your journey!&lt;/p&gt;
-&lt;h2 id=&#34;油画&#34;&gt;油画:&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;油画集萃&lt;/strong&gt;:&lt;a href=&#34;https://gallerix.asia/&#34;&gt;gallerix&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;雕塑与建筑&#34;&gt;雕塑与建筑：&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;现代雕塑&lt;/strong&gt;:&lt;a href=&#34;https://hirshhorn.si.edu&#34;&gt;史密森尼赫尔斯霍恩博物馆与雕塑花园&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;博物馆&#34;&gt;博物馆：&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;综合艺术&lt;/strong&gt;:&lt;a href=&#34;https://www.metmuseum.org/art/collection&#34;&gt;大都会&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;欧美艺术&lt;/strong&gt;:&lt;a href=&#34;https://www.nga.gov&#34;&gt;国家美术馆&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;现代艺术&lt;/strong&gt;:&lt;a href=&#34;https://www.moma.org&#34;&gt;现代艺术博物馆&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;综合艺术&lt;/strong&gt;:&lt;a href=&#34;https://www.rijksmuseum.nl&#34;&gt;荷兰国立博物馆&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <guid>https://tarduspura.me/contemplate/art/website/</guid>
+      <description>&lt;p&gt;​        在时间和空间的限制被打破以前，对于那些臻美的油画、雕像、建筑、装饰&amp;hellip;我们往往难以亲临现场用肉眼观摩。幸而技术的成熟和热爱艺术的人们的贡献，以下这些网站中提供了高质量的艺术品图片，让我们通过屏幕也可以领略到那些厚重的笔触和神圣的色彩。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Learnmore</title>
-      <link>http://localhost:1313/posts/others/learnmore/</link>
+      <link>https://tarduspura.me/posts/others/learnmore/</link>
       <pubDate>Wed, 24 Sep 2025 16:44:44 +0800</pubDate>
-      <guid>http://localhost:1313/posts/others/learnmore/</guid>
+      <guid>https://tarduspura.me/posts/others/learnmore/</guid>
       <description>&lt;p&gt;由于笔者的水平和精力非常有限，因此在Learnmore分类中存放了大佬们一些令我受益匪浅的博客,希望可以有所帮助：&lt;/p&gt;
 &lt;h2 id=&#34;笔记网站&#34;&gt;笔记网站&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Tony Crane&lt;/strong&gt;
-&lt;a href=&#34;https://note.tonycrane.cc/&#34;&gt;笔记网站&lt;/a&gt;,
+&lt;p&gt;&lt;strong&gt;Tony Crane&lt;/strong&gt;&lt;br&gt;
+&lt;a href=&#34;https://note.tonycrane.cc/&#34;&gt;笔记网站&lt;/a&gt;,&lt;br&gt;
 &lt;a href=&#34;https://tonycrane.cc/&#34;&gt;个人主页&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;forgelia&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;forgelia&lt;/strong&gt;&lt;br&gt;
 &lt;a href=&#34;https://forliage.github.io/&#34;&gt;笔记网站&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://tarduspura.me/about/</link>
       <pubDate>Wed, 24 Sep 2025 11:05:47 +0800</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://tarduspura.me/about/</guid>
       <description>&lt;p&gt;Hi!&lt;/p&gt;
-&lt;p&gt;i am Tardus Pura,who studying IS in ZJU,Hangzhou,China.&lt;/p&gt;
+&lt;p&gt;I am Tardus Pura,who studying IS in ZJU,Hangzhou,China.&lt;/p&gt;
 &lt;p&gt;Welcome to my world.&lt;/p&gt;
-&lt;p&gt;Feel free to explore and contact with me!&lt;/p&gt;
-&lt;h2 id=&#34;contact-me&#34;&gt;Contact Me:&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/tarduspura&#34;&gt;@tarduspura&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;E-mail&lt;/strong&gt;: &lt;a href=&#34;mailto:fabien_mana@foxmail.com&#34;&gt;fabien_mana@foxmail.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我不想去送死，我只是想看看我是不是真的活着&lt;/p&gt;&lt;/blockquote&gt;</description>
+&lt;p&gt;I am making great efforts to forge ahead on the path of CS learning, trying hard to learn more and create more.&lt;/p&gt;
+&lt;p&gt;Tags: Body phylosophy, All kinds of art, In love&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Feel free to explore and contact with me!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
