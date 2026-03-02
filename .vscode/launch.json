@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/study/项目/Hugo_site/personal-site/content/posts/Others",
-      "program": "d:/study/项目/Hugo_site/personal-site/content/posts/Others/build/Debug/outDebug",
+      "cwd": "d:/study/项目/Hugo_site/personal-site/content/posts/Article",
+      "program": "d:/study/项目/Hugo_site/personal-site/content/posts/Article/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
