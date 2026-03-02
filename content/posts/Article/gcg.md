@@ -1,7 +1,7 @@
 ---
 title: "Universal and Transferable Adversarial Attacks on Aligned Language Models"
 date: 2026-02-26T23:02:05+08:00
-draft: true
+draft: false
 ---
 
 
