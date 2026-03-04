@@ -120,15 +120,21 @@ CPU的性能取决于：
 
 - basic idea
 
-Exe time_new_ = Exe time_can not be enhanced_ + Exe time_enhanced_
-              = $Exe time_old_ * ((1 - Fraction_enhanced_) + \frac{Franction_enhanced_}{Speedup_enhanced_})$
+令 $T_{old}$ 为优化前执行时间，$T_{new}$ 为优化后执行时间，
+$f$ 为可优化部分占比，$S$ 为该部分的加速比，则：
 
 $$
-Speedup_overall_ = \frac{Execution time_old_}{Execution_new_}
-                 = \frac{1}{(1 - Fraction_enhanced_) + \frac{Fraction_enhanced_}{Speedup_enhanced_}}
+T_{new} = T_{old}\left((1-f)+\frac{f}{S}\right)
 $$
 
-$Speedup_overall_ < \frac{1}{1-Fraaction_enhanced_}$
+$$
+	ext{Speedup}_{overall} = \frac{T_{old}}{T_{new}}
+=\frac{1}{(1-f)+\frac{f}{S}}
+$$
+
+$$
+	ext{Speedup}_{overall}<\frac{1}{1-f}
+$$
 
 
 ### 1.5 Great Architecture Ideas
