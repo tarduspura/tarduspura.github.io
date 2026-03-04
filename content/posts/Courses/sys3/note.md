@@ -123,18 +123,11 @@ CPU的性能取决于：
 令 $T_{old}$ 为优化前执行时间，$T_{new}$ 为优化后执行时间，
 $f$ 为可优化部分占比，$S$ 为该部分的加速比，则：
 
-$$
-T_{new} = T_{old}\left((1-f)+\frac{f}{S}\right)
-$$
+$$T_{new} = T_{old}\left((1-f)+\frac{f}{S}\right)$$
 
-$$
-	ext{Speedup}_{overall} = \frac{T_{old}}{T_{new}}
-=\frac{1}{(1-f)+\frac{f}{S}}
-$$
+$$\text{Speedup}_{overall} = \frac{T_{old}}{T_{new}} = \frac{1}{(1-f)+\frac{f}{S}}$$
 
-$$
-	ext{Speedup}_{overall}<\frac{1}{1-f}
-$$
+$$\text{Speedup}_{overall}<\frac{1}{1-f}$$
 
 
 ### 1.5 Great Architecture Ideas
