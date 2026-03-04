@@ -5,10 +5,9 @@ draft: false
 ---
 
 
-这篇笔记聚焦“对齐（aligned）LLM 的通用（universal）+可迁移（transferable）对抗攻击”，以及它为什么对**“只靠对齐微调就能安全”**的直觉构成挑战。
-关键词：jailbroken; adversarial suffix; affirmative prefix; GCC; Universal and Transformable
+关键词：jailbroken ; adversarial suffix ; affirmative prefix ; GCC ; Universal and Transformable
 
-## 0. 基础信息（Paper Card）
+## 0. Paper Card
 
 - 标题：Universal and Transferable Adversarial Attacks on Aligned Language Models
 - 作者：Andy Zou, Zifan Wang, Nicholas Carlini, Milad Nasr, J. Zico Kolter, Matt Fredrikson
@@ -21,16 +20,16 @@ draft: false
 **总结**：作者提出了一种对离散token进行优化的对抗后缀生成方法（Greedy Coordinate Gradient, GCG），能自动训练出**后缀式的对抗提示**，以诱导大模型输出有害字符串或选择遵循有害指令，并通过聚合训练，在多提示词和多种商用大模型上都取得了不错的泛化能力。
 
 
-## 1. 背景：对齐、拒答与“对抗对齐”
+## 1. 背景：对齐与对抗对齐
 
-对齐（RLHF / Constitutional AI 等）在常规输入下能显著降低模型输出不当内容的概率，但论文强调：
+对齐在**常规输入**下能显著降低模型输出不当内容的概率，但论文强调：
 
-- 这更像是对“自然分布上的提示”进行约束；
+- 这更像是对**自然分布上的提示**进行约束；
 - 一旦允许攻击者在输入里加入额外 token（尤其是通用 suffix），模型可能存在稳定的“绕过路径”。
 
-这与视觉对抗样本历史很像：系统在自然输入上很强，但对刻意构造的输入脆弱。
+这与视觉对抗样本很像：系统在自然输入上很强，但对刻意构造的输入脆弱。
 
-## 2. 问题形式化：把“越狱 suffix”写成优化问题
+## 2. 形式化
 
 ### 2.1 语言模型概率记号
 
@@ -42,13 +41,15 @@ $$p(x_{n+1}\mid x_{1:n}),\quad x_i\in\{1,\dots,V\}$$
 
 $$p(x_{n+1:n+H}\mid x_{1:n}) = \prod_{i=1}^{H} p(x_{n+i}\mid x_{1:n+i-1})$$
 
-### 2.2 目标：诱导“肯定式开头”而非直接指定完整有害输出
+### 2.2 Affirmative prefix
 
-论文一个关键工程选择是：不要求模型输出某个完整目标字符串（过强且不通用），而是让模型的回复**以一段肯定式前缀开头**（例如“Sure, here is …”并复述用户请求），从而更容易触发后续顺从。
+论文一个关键工程选择是：要求模型输出某个完整目标字符串的目标过强而且不够通用，于是本文的目标在于让模型的回复**以一段肯定式前缀开头**（e.g. Sure, here is），从而更容易触发后续顺从。
 
-把目标前缀 token 记为 $x_{n+1:n+H^*}^*$，攻击损失定义为目标前缀的负对数似然：
+把目标前缀 token 记为 $x_{n+1:n+H^}^$，攻击损失定义为目标前缀的负对数似然：
 
-$$\mathcal{L}(x_{1:n}) = -\log p\big(x_{n+1:n+H^*}^*\mid x_{1:n}\big)$$
+$$
+\mathcal{L}(x_{1:n}) = -\log p\big(x_{n+1:n+H^*}^*\mid x_{1:n}\big)
+$$
 
 于是目标就转换成了最小化负对数似然（即最大化生成肯定前缀的概率）。
 
@@ -58,9 +59,9 @@ $$\mathcal{L}(x_{1:n}) = -\log p\big(x_{n+1:n+H^*}^*\mid x_{1:n}\big)$$
 
 $$\min_{x_{\mathcal{I}}\in\{1,\dots,V\}^{|\mathcal{I}|}}\ \mathcal{L}(x_{1:n})$$
 
-直观上：用户问题保持不变，攻击者只在末尾附加/替换一段 suffix token，使得模型“更倾向以肯定式开头”。
+直观上保持用户问题不变，攻击者在末尾附加或替换一段 suffix token，使得模型**更倾向以肯定式开头**。
 
-## 3. 方法：Greedy Coordinate Gradient（GCG）离散优化
+## 3. Greedy Coordinate Gradient（GCG）
 
 - 难点：输入是离散 token，无法直接对 token 做连续梯度下降。
 
@@ -71,7 +72,7 @@ GCG 的核心思路是：
 
 $$\nabla_{e_{x_i}}\mathcal{L}(x_{1:n})\in\mathbb{R}^{V}$$
 
-3) 用“线性化近似”挑出**最可能降低 loss 的候选替换 token**（Top-$k$ 个负梯度最大的坐标）；
+3) 用线性化近似挑出**最可能降低loss的候选替换 token**（Top-$k$ 个负梯度最大的坐标）；
 4) 在这些候选里做小规模的真实前向评估，选出最优替换。
 
 与 AutoPrompt 的区别（论文强调“看似微小但非常关键”）：
@@ -153,26 +154,6 @@ $$\min_{p_{1:\ell}}\sum_{j=1}^{m_c} \mathcal{L}_j\big(x^{(j)}_{1:n_j}\ \|\ p_{1:
 1) **对抗训练 / 红队自动化纳入训练**：把这类 suffix 搜索当作训练内环，持续更新。
 2) **检测器不是终局**：输入过滤器在视觉对抗史上反复被绕过；LLM 里也可能演变成“同时攻击检测器+模型”。
 3) **评测要更贴近威胁模型**：只测自然提示的安全性会高估鲁棒性；需要“自动化可扩展攻击”的评测。
-
-## 8. 引用（BibTeX）
-
-```bibtex
-@misc{zou2023universaltransferableadversarialattacks,
-	title={Universal and Transferable Adversarial Attacks on Aligned Language Models},
-	author={Andy Zou and Zifan Wang and Nicholas Carlini and Milad Nasr and J. Zico Kolter and Matt Fredrikson},
-	year={2023},
-	eprint={2307.15043},
-	archivePrefix={arXiv},
-	primaryClass={cs.CL},
-	url={https://arxiv.org/abs/2307.15043}
-}
-```
-
-## 9. 我下一步想补的（可选）
-
-- 把 Algorithm 1/2 用更“可实现”的伪代码重写一遍，并标注计算复杂度（前向次数 vs 反向次数）。
-- 梳理与 Wallace et al. 2019（Universal Adversarial Triggers）/ AutoPrompt 的具体差异：到底哪个改动带来主要收益。
-- 结合自己跑一次最小复现实验：在本地开源 chat 模型上验证“early stopping 对迁移”的影响（只做安全任务，不生成任何有害内容）。
 
 
 

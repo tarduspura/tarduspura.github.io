@@ -642,3 +642,258 @@ linux>gcc -static -o prog2c main2.o ./libvector.a
 
 #### 7.6.3 链接器如何使用静态库来解析引用
 
+符号解析阶段，Linker按命令行上出现的顺序从左至右扫描.o和.a文件，在扫描中，Linker会维护三个集合：
+1.集合E：该集合中的文件会被合并起来形成可执行文件。
+2.集合U：**U**nresolved。引用了但是尚未定义的符号集合。
+3.集合D：**D**fined。在输入文件中已定义的符号集合。
+
+- 解析步骤：
+1.初始时三个集合都为空
+2.解析当前输入文件f，判断其为.o还是.a文件
+3.若f为.o文件，把f添加到E，修改U和D来反映f中的符号定义和引用，更新f。若f为.a文件（存档文件），则进行4中的操作
+4.对f中的每一个成员m执行：尝试匹配m定义的符号和U中未解析的符号，若匹配成功，则将对应的符号从U集合移入D集合，并将m移入E集合。
+5.简单丢弃不在E中的所有目标文件，更新f。
+6.遍历每一个f之后，若U不为空，则抛出一个错误并终止；若U为空则合并和重定位E中的目标文件，构建输出的可执行文件
+
+- 困境：定义一个符号的库出现在引用这个符号的目标文件之前，那么引用就不能被解析，链接会失败
+例如：
+```bash
+linux> gcc static ./libvector.a main2.c
+/tmp/cc9XH6Rp.o: In function 'main':
+/tmp/cc9XH6Rp.o（.text+0x18）: undefined reference to 'addvec'
+```
+这需要在书写命令行引用的时候需要根据符号定义和引用的情况对目标文件和存档文件进行适当的排序，即**“引用在前，定义在后”**。
+
+### 7.7 重定位
+
+符号解析之后：代码中的每一个符号引用正好可以和一个符号定义（在目标文件的symbol table中的一个结构体元素）对应起来
+
+
+重定位由两部分组成：分配运行时地址 + 指向运行时地址
+
+1.重定位节和符号定义
+- 链接器将所有相同类型的节合并为同一类型的新的聚合节，然后链接器将运行时内存地址赋给新的聚合节，即赋给输入模块定义的**每个节**和**每个符号**。
+- 这一步完成之后，程序中的每条指令和全局变量都有唯一的运行时内存地址了
+
+2.重定位节中的符号引用
+- 链接器依赖可重定位目标模块中的**重定位条目**(relocation entry)数据结构，来修改代码节和数据节中对每个符号的引用，使得它们**指向正确的运行时地址**。
+
+
+#### 7.7.1 重定位条目
+
+无论何时汇编器遇到对最终位置未知的目标引用，他就会生成一个relocation entry，告诉链接器在将目标文件合并成可执行文件时如何修改这个引用。
+- relocation entry of codes : .rel.text
+- relocation entry of datas : .rel.data
+
+ELF重定位条目的格式：
+```C
+typedef struct {
+    long offset;    /* Offset of the reference to relocate */
+    long type:32,   /* Relocation type */
+         symbol:32; /* 被修改的引用应该指向的符号 */
+    long addend;    /* Constant part of relocation expression */
+} Elf64_Rela;
+```
+
+ELF定义了**32**种重定位类型，考虑其中最基本的两种：
+
+- R_X86_64_PC32：重定位一个使用32位PC相对地址的引用
+- R_X86_64_32：重定位一个使用32位绝对地址的引用
+
+#### 7.7.2 重定位符号引用
+
+重定位算法(Pseudocode)：
+```
+foreach section s {
+    foreach relocation entry r {
+        refptr = s + r.offset;  /* ptr to reference to be relocated */
+    
+        /* Relocate a PC-relative reference */
+        if (r.type == R_X86_64_PC32){
+            refaddr = ADDR(s) + r.offset; /* ref's run-time address */
+            *refptr = (unsigned) (ADDR(r.symbol) + r.addend - refaddr);
+        }
+
+        /* Relocate an absolute reference */
+        if (r.type ==R_X86_64_32)
+            *refptr = (unsigned) (ADDR(r.symbol) + r.addend);
+    }
+}
+```
+其中：
+- ADDR(s)和ADDR(r.symbol)是链接器为每个节和每个符号选择的运行时地址
+
+链接器如何使用使用这个算法来重定位[7-1图](#7.1-编译器驱动程序)中的引用
+
+```assembly
+0000000000000000 <main>:         
+   0:   48 83 ec 08             sub    $0x8,%rsp
+   4:   be 02 00 00 00          mov    $0x2,%esi
+   9:   bf 00 00 00 00          mov    $0x0,%edi        %edi = &array
+                        a: R_X86_64_32 array            Relocation entry
+   e:   e8 00 00 00 00          callq  13 <main+0x13>   sum()
+                        f: R_X86_64_PC32 sum-0x4        Relocation entry
+  13:   48 83 c4 08             add $0x8,%rsp
+  17:   c3                      retq
+```
+可以看到3和5行的机器码都是00...，这是为填入重定位后正确的运行时地址预留的占位符
+
+1.重定位PC相对引用
+
+（1）上图第6行中，main函数调用sum.o中定义的sum函数。call指令开始于节偏移0xe的地方，1字节的操作码0xe8后面跟着的是对目标sum的32位PC相对引用的占位符。
+
+（2）重定位条目为：
+```C
+r.offset = 0xf
+r.symbol = sum
+r.type   = R_X86_64_PC32  
+r.addend = -4    //补偿重定位位置和下一条指令地址之间的差值
+```
+这些字段告诉链接器修改开始于偏移量0xf处的32位PC相对引用，使其运行时指向sum例程
+
+（3）现在假设链接器已经确定
+```C
+ADDR(s) = ADDR(.text) = 0x4004d0
+ADDR(r.symbol) = ADDR(sum) = 0x4004e8
+```
+
+（4）使用重定位算法
+
+首先计算出引用的运行时地址：
+```C
+refaddr = ADDR(s)  + r.offset
+        = 0x4004d0 + 0xf
+        = 0x4004df
+```
+
+然后更新该引用，使得它在运行时指向sum程序
+```C
+*refptr = (unsigned) (ADDR(r.symbol) + r.addend - refaddr)
+        = (unsigned) (0x4004e8       + (-4)     - 0x4004df)
+        = (unsigned) (0x5)
+```
+（5）在得到的可执行目标文件中，call指令有如下的重定位形式：
+```C
+4004de:  e8 05 00 00 00      callq  4004e8 <sum>       sum()
+```
+(4004de = <main> + e)
+
+（6）为了执行这条指令，CPU执行以下的步骤：
+- 将PC压入栈中
+- PC ← PC + 0x5 = 0x4004e3 + 0x5 = 0x4004e8
+（0x400e3 = 0x400de + 4）
+
+- 本质上在于计算后只留下ADDR(r.symbol)
+
+2.重定位绝对引用
+
+（1）第4行中，mov指令将array的地址复制到寄存器%edi中，mov指令开始于节偏移量0x9的位置，0xbf是1字节的操作码，后面跟着对array32位绝对引用的占位符
+
+（2）对应的占位符条目r包括4个字段
+```C
+r.offset = 0xa
+r.symbol = array
+r.type   = R_X86_64_32
+r.addend = 0
+```
+
+（3）假设链接器已经确认已经确定
+```C
+ADDR(r.symbol) = ADDR(array) = 0x601018
+```
+
+（4）使用重定位算法修改引用：
+```C
+*refptr = (unsigned) (ADDR(r.symbol) + r.addend)
+        = (unsigned) (0x601018       + 0)
+        = (unsigned) (0x601018)
+```
+
+（5）在得到的可执行目标文件中，该引用有以下重定位形式：
+```assembly
+4004d9:  bf 18 10 60 00	      mov   $0x601018,%edi         %edi = &array
+```
+
+重定位之后的.text节和.data节如下：
+
+(a).text节（小端序）
+```assembly
+00000000004004d0 <main>:
+  4004d0:  48 83 ec 08          sub    $0x8,%rsp
+  4004d4:  be 02 00 00 00       mov    $0x2,%esi
+  4004d9:  bf 18 10 60 00       mov    $0x601018,%edi    %edi = &array
+  4004de:  e8 05 00 00 00       callq  4004e8 <sum>      sum()
+  4004e3:  48 83 c4 08          add    $0x8,%rsp
+  4004e7:  c3                   retq
+
+00000000004004e8 <sum>:
+  4004e8:  b8 00 00 00 00       mov    $0x0,%eax
+  4004ed:  ba 00 00 00 00       mov    $0x0,%edx
+  4004f2:  eb 09                jmp    4004fd <sum+0x15>
+  4004f4:  48 63 ca             movslq %edx,%rcx
+  4004f7:  03 04 8f             add    (%rdi,%rcx,4),%eax
+  4004fa:  83 c2 01             add    $0x1,%edx
+  4004fd:  39 f2                cmp    %esi,%edx
+  4004ff:  7c f3                jl     4004f4 <sum+0xc>
+  400501:  f3 c3                repz retq
+```
+
+(b).data节
+```assembly
+0000000000601018 <array>:
+  601018:  01 00 00 00 02 00 00 00
+```
+
+A. 第5行被重定位引用的十六进制地址为0x4004df。（操作符e8地址为0x4004de，所以存放的偏移量地址为0x4004de + 1 = 0x4004df）
+B. 第5行被重定位引用的十六进制值为0x5。记住，反汇编列表给岀的引用值是用小端法字节顺序表示的。
+
+本质上，跳转指令中存放的值，恰好是从这条指令结束后的一个位置开始到跳转位置的步长
+
+
+
+### 7.8 可执行目标文件
+
+典型的ELF可执行目标文件中的各类信息
+![ELF](/images/csapp7.8.1.jpg)
+
+格式与可重定位目标文件有点类似：
+1..text、.rodata 和 .data 节与可重定位目标文件中的节是相似的，除了这些节已经被重定位到它们最终的运行时内存地址以外。
+2..init节定义了一个小函数，叫做_init，程序的初始代码会调用它
+3.因为可执行文件式**完全链接的**，所以其不再需要.rel节
+
+- ELF可执行文件被设计的很容易加载到内存：可执行文件的连续的chunk被映射到连续的内存段。
+
+程序头部表（program header table）描述了这种映射关系：
+```bash
+Read-only code segment
+LOAD off    0x0000000000000000 vaddr 0x0000000000400000 paddr 0x0000000000400000 align 2**21
+     filesz 0x000000000000069c memsz 0x00000oo000o0069c flags r-x
+
+Read/write data segment
+LOAD off    0x0000000000000df8 vaddr 0x0000000000600df8 paddr 0x0000000000600df8 align 2**21
+     filesz 0x0000000000000228 memsz 0x0000000000000230 flags rw-
+```
+- off：目标文件中的偏移
+- vaddr/paddr：内存地址
+- align：对齐要求
+- filesz：目标文件中的段大小
+- memsz：内存中的段大小
+- flags：运行时访问权限
+
+对于任何段s，链接器在选择起始地址vaddr时，需要使得：
+**vaddr mod align = off mod align**
+比如上方第一段中，off = 0xdf8 , vaddr = 0x600df8 , align = 2^21^ = 0x200000
+
+- 这样的对齐要求使得目标文件中的段可以很有效率地传送到内存当中（具体原因和虚拟内存的组织方式有关）
+
+
+
+
+
+
+
+
+
+
+
+
