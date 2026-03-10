@@ -65,13 +65,13 @@ jobs:
           # 3. Blog (Hugo)
           echo "Building Blog site..."
           cd sites/blog
-          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/blog/" -d ../../public/blog
+          hugo --minify --baseURL "https://tarduspura.me/blog/" -d ../../public/blog
           cd ../..
 
           # 4. Her (Hugo)
           echo "Building Her site..."
           cd sites/her
-          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/her/" -d ../../public/her
+          hugo --minify --baseURL "https://tarduspura.me/her/" -d ../../public/her
           cd ../..
 
           # 5. 共享资源
