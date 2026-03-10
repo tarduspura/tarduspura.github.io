@@ -51,6 +51,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 2rem 4rem;
+      padding-top: 4rem;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -187,7 +188,7 @@
       header {
         flex-direction: column;
         gap: 1.5rem;
-        padding: 1.5rem 2rem;
+        padding: 4.5rem 2rem 1.5rem;
       }
       nav { gap: 2rem; }
       .site-title { font-size: 2.2rem; }
@@ -210,7 +211,17 @@
   </a>
 
   <header>
-    <a href="{{ .Site.BaseURL }}" class="site-title">Her ♡</a>
+    <a href="{{ .Site.BaseURL }}" class="site-title">
+      {{- if eq .Section "location" -}}
+        On the road ♡
+      {{- else if eq .Section "restaurant" -}}
+        Yummy! ♡
+      {{- else if eq .Section "things" -}}
+        Time Machine... ♡
+      {{- else -}}
+        Her ♡
+      {{- end -}}
+    </a>
     <nav>
       <a href="{{ "location/" | relURL }}" {{ if eq .Section "location" }}class="active"{{ end }}>Location</a>
       <a href="{{ "restaurant/" | relURL }}" {{ if eq .Section "restaurant" }}class="active"{{ end }}>Restaurant</a>
