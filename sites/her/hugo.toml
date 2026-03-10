@@ -1,6 +1,41 @@
 baseURL = 'https://tarduspura.me/her/'
 languageCode = 'zh-cn'
 title = 'Her'
+theme = 'blowfish'
 
 [params]
-  description = "A special place for her"
+  colorScheme = "cherry"
+  defaultAppearance = "light"
+  autoSwitchAppearance = true
+  
+  [params.homepage]
+    layout = "profile"
+    homepageImage = "images/background.jpg"
+    showRecent = true
+    recentLimit = 5
+  
+  [params.article]
+    showDate = true
+    showDateUpdated = false
+    showAuthor = false
+    showBreadcrumbs = true
+    showTableOfContents = false
+    showPagination = true
+
+[menu]
+  [[menu.main]]
+    name = "Location"
+    pageRef = "location"
+    weight = 10
+  [[menu.main]]
+    name = "Restaurant"
+    pageRef = "restaurant"
+    weight = 20
+  [[menu.main]]
+    name = "Things"
+    pageRef = "things"
+    weight = 30
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
