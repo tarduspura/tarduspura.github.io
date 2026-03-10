@@ -1,0 +1,6 @@
+[submodule "sites/blog/themes/paper"]
+	path = sites/blog/themes/paper
+	url = https://github.com/nanxiaobei/hugo-paper.git
+[submodule "sites/her/themes/blowfish"]
+	path = sites/her/themes/blowfish
+	url = https://github.com/nunocoracao/blowfish.git
