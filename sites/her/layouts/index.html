@@ -20,7 +20,7 @@
       /* 默认渐变背景，如果有背景图会覆盖 */
       background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #e1bee7 100%);
       /* 背景图：放置 sites/her/static/images/background.jpg */
-      background-image: url('/images/background.jpg');
+      background-image: url('{{ "images/background.jpg" | relURL }}');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -100,7 +100,7 @@
       width: 100%;
       height: 100%;
       background: linear-gradient(135deg, #ffb6c1, #dda0dd);
-      background-image: url('/images/avatar.png');
+      background-image: url('{{ "images/avatar.png" | relURL }}');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -337,7 +337,7 @@
       </div>
 
       <!-- Link Cards with SVG icons -->
-      <a href="/location/" class="card card-link location">
+      <a href="{{ "location" | relURL }}" class="card card-link location">
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -348,7 +348,7 @@
         <span class="count">{{ len (where .Site.RegularPages "Section" "location") }}</span>
       </a>
 
-      <a href="/restaurant/" class="card card-link restaurant">
+      <a href="{{ "restaurant" | relURL }}" class="card card-link restaurant">
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.87c1.355 0 2.697.055 4.024.165C17.155 8.51 18 9.473 18 10.608v2.513m-3-4.87v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m18-4.5a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -358,7 +358,7 @@
         <span class="count">{{ len (where .Site.RegularPages "Section" "restaurant") }}</span>
       </a>
 
-      <a href="/things/" class="card card-link things">
+      <a href="{{ "things" | relURL }}" class="card card-link things">
         <div class="icon">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
