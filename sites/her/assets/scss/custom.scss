@@ -1,0 +1,169 @@
+/* Her 站点 - 卡通可爱风格 */
+
+:root {
+  /* 主色调 - 粉色渐变 */
+  --accent-color: #ff6b9d;
+  --accent-color-darker: #e91e63;
+  --body-background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ffecd2 100%);
+  
+  /* 卡片颜色 */
+  --card-background: rgba(255, 255, 255, 0.9);
+  --card-shadow: 0 8px 32px rgba(255, 107, 157, 0.2);
+}
+
+/* 背景渐变动画 */
+body {
+  background: linear-gradient(-45deg, #ffecd2, #fcb69f, #ff9a9e, #fecfef, #ffecd2);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 卡片样式 - 圆润可爱 */
+.article-list article,
+.widget {
+  border-radius: 20px !important;
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #ff9a9e, #fecfef, #a18cd1) border-box;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.article-list article:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 20px 40px rgba(255, 107, 157, 0.3);
+}
+
+/* 标题样式 - 活泼字体 */
+.article-title {
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, #ff6b9d, #c44569);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 网站标题 */
+.site-name {
+  font-size: 1.8rem !important;
+  background: linear-gradient(135deg, #ff6b9d, #ff9a9e, #fecfef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.2);
+}
+
+/* 导航菜单 */
+.menu li {
+  margin: 0.5rem 0;
+}
+
+.menu a {
+  padding: 0.8rem 1.2rem !important;
+  border-radius: 15px !important;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  background: linear-gradient(135deg, #ff9a9e, #fecfef) !important;
+  transform: scale(1.05);
+}
+
+/* 标签云 - 彩色 */
+.tagCloud .tagCloud-tags a {
+  border-radius: 20px !important;
+  padding: 0.4rem 1rem !important;
+  margin: 0.3rem !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.tagCloud .tagCloud-tags a:nth-child(6n+1) { background: #ff9a9e !important; color: white !important; }
+.tagCloud .tagCloud-tags a:nth-child(6n+2) { background: #a18cd1 !important; color: white !important; }
+.tagCloud .tagCloud-tags a:nth-child(6n+3) { background: #fad0c4 !important; color: #c44569 !important; }
+.tagCloud .tagCloud-tags a:nth-child(6n+4) { background: #ffecd2 !important; color: #c44569 !important; }
+.tagCloud .tagCloud-tags a:nth-child(6n+5) { background: #a8edea !important; color: #00695c !important; }
+.tagCloud .tagCloud-tags a:nth-child(6n) { background: #fed6e3 !important; color: #c44569 !important; }
+
+.tagCloud .tagCloud-tags a:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* 搜索框 */
+.search-form input {
+  border-radius: 25px !important;
+  border: 2px solid #fecfef !important;
+  padding: 0.8rem 1.5rem !important;
+}
+
+.search-form input:focus {
+  border-color: #ff6b9d !important;
+  box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+}
+
+/* 分类列表 */
+.categories li a {
+  border-radius: 12px !important;
+  transition: all 0.3s ease;
+}
+
+.categories li a:hover {
+  background: linear-gradient(135deg, #ff9a9e, #fecfef) !important;
+  padding-left: 1.5rem !important;
+}
+
+/* 文章内容页 */
+.article-content {
+  font-size: 1.1rem;
+  line-height: 2;
+}
+
+/* 图片样式 */
+.article-content img {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.article-content img:hover {
+  transform: scale(1.02);
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffecd2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ff6b9d, #ff9a9e);
+}
+
+/* 页脚 */
+.site-footer {
+  background: transparent !important;
+}
+
+/* 爱心装饰动画 */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.sidebar .site-avatar {
+  animation: float 3s ease-in-out infinite;
+}

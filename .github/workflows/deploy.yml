@@ -1,0 +1,99 @@
+name: Deploy Multi-Site
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install MkDocs
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs-minify-plugin
+          pip install jieba
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
+      - name: Build Sites
+        run: |
+          # 清理
+          rm -rf public
+          mkdir -p public
+
+          # 1. Landing Page
+          echo "Building Landing Page..."
+          cp -r sites/landing/* public/
+          rm -f public/assets/README.md 2>/dev/null || true
+
+          # 2. Note (MkDocs)
+          echo "Building Note site..."
+          cd sites/note
+          mkdocs build --site-dir ../../public/note
+          cd ../..
+
+          # 3. Blog (Hugo)
+          echo "Building Blog site..."
+          cd sites/blog
+          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/blog/" -d ../../public/blog
+          cd ../..
+
+          # 4. Her (Hugo)
+          echo "Building Her site..."
+          cd sites/her
+          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/her/" -d ../../public/her
+          cd ../..
+
+          # 5. 共享资源
+          if [ -d "shared/images" ]; then
+            cp -r shared/images public/images 2>/dev/null || true
+          fi
+
+          # 6. CNAME
+          echo "tarduspura.me" > public/CNAME
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,88 @@
+baseURL = "http://localhost:1314/"
+languageCode = "zh-cn"
+title = "💕 Our Story"
+theme = "stack"
+publishDir = "public"
+
+# 分页设置
+[pagination]
+  pagerSize = 10
+
+[params]
+  # 主内容区
+  mainSections = ["location", "restaurant", "things"]
+  rssFullContent = true
+  
+  # 页脚
+  [params.footer]
+    since = 2024
+    customText = "💕 记录我们的故事"
+  
+  # 侧边栏
+  [params.sidebar]
+    compact = false
+    emoji = "💖"
+    subtitle = "记录我们的点点滴滴"
+  
+  # 文章设置
+  [params.article]
+    math = false
+    toc = true
+    readingTime = true
+    
+    [params.article.list]
+      showTags = true
+  
+  # 评论（关闭）
+  [params.comments]
+    enabled = false
+
+  # 小部件
+  [params.widgets]
+    homepage = ["search", "categories", "tag-cloud"]
+    page = ["toc"]
+  
+  # 颜色方案
+  [params.colorScheme]
+    toggle = true
+    default = "light"
+
+# 菜单配置
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "🏠 首页"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    identifier = "location"
+    name = "📍 去过的地方"
+    url = "/location/"
+    weight = 2
+  
+  [[menu.main]]
+    identifier = "restaurant"
+    name = "🍜 吃过的店"
+    url = "/restaurant/"
+    weight = 3
+  
+  [[menu.main]]
+    identifier = "things"
+    name = "🎁 做过的事"
+    url = "/things/"
+    weight = 4
+
+# Markdown 渲染设置
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "dracula"
+    lineNos = false
+
+# 分类设置
+[taxonomies]
+  category = "categories"
+  tag = "tags"

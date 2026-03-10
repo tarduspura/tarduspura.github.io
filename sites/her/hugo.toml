@@ -1,0 +1,6 @@
+baseURL = 'http://localhost:1314/'
+languageCode = 'zh-cn'
+title = 'Her'
+
+[params]
+  description = "A special place for her"

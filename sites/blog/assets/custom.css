@@ -1,0 +1,211 @@
+/* 文章列表卡片样式 - hugo-paper 主题使用 section */
+/* 日间模式 - 深蓝色 */
+main section.relative {
+  background: #c5ddf0;
+  border: 1px solid #9ec5e0;
+  border-radius: 12px;
+  padding: 1.5rem !important;
+  margin-bottom: 1.2rem !important;
+  transition: all 0.3s ease;
+}
+
+main section.relative:hover {
+  background: #b0d0e8;
+  border-color: #7ab5d8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 夜间模式 - 浅灰色 */
+.dark main section.relative {
+  background: #3d3d3d;
+  border: 1px solid #4d4d4d;
+}
+
+.dark main section.relative:hover {
+  background: #454545;
+  border-color: #5a5a5a;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* 文章标题样式 */
+main section.relative h2 {
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* 日期样式 */
+main section.relative time {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* 顶部导航栏样式 - 增加顶部间距 */
+header {
+  padding-top: 4rem !important;
+  padding-bottom: 1.5rem !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  height: auto !important;
+}
+
+.dark header {
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+/* 网站标题 - 花体 Great Vibes */
+header > div:first-child > a {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: 2.5rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 2px !important;
+}
+
+/* 导航菜单 - Playfair Display 衬线体 */
+header nav {
+  margin-left: 2rem !important;
+}
+
+header nav a {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  letter-spacing: 1px !important;
+  margin-left: 1.5rem !important;
+  margin-right: 1.5rem !important;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+/* 导航链接下划线动效 */
+header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateX(-50%);
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+header nav a:hover {
+  opacity: 0.8;
+}
+
+/* 主题切换按钮 - 简约黑白图标 */
+.btn-dark,
+.btn-dark[class*="background"] {
+  background: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  width: 24px !important;
+  height: 24px !important;
+  position: relative !important;
+  opacity: 0.7;
+  transition: opacity 0.3s, transform 0.3s;
+  margin-left: 1rem !important;
+}
+
+.btn-dark:hover {
+  opacity: 1;
+  transform: rotate(15deg);
+}
+
+/* 日间模式显示太阳 - 简约线条 */
+.btn-dark::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-dark::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: 
+    linear-gradient(currentColor, currentColor) center top / 2px 4px no-repeat,
+    linear-gradient(currentColor, currentColor) center bottom / 2px 4px no-repeat,
+    linear-gradient(currentColor, currentColor) left center / 4px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) right center / 4px 2px no-repeat;
+}
+
+/* 夜间模式显示月亮 - 简约线条 */
+.dark .btn-dark::before {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 5px -3px 0 0 currentColor;
+  background: transparent;
+  border: none;
+}
+
+.dark .btn-dark::after {
+  background: none;
+}
+
+/* 首页样式 */
+.home-content {
+  font-size: 1.15rem;
+  line-height: 2.2;
+  text-align: justify;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.home-content h1 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 2rem !important;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.dark .home-content h1 {
+  color: #ecf0f1;
+}
+
+.home-content p {
+  margin-bottom: 1.5rem;
+  color: #34495e;
+}
+
+.dark .home-content p {
+  color: #bdc3c7;
+}
+
+.home-content hr {
+  margin: 2rem auto;
+  width: 60%;
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.dark .home-content hr {
+  border-top-color: rgba(255,255,255,0.1);
+}
+
+.home-content em {
+  font-style: italic;
+  opacity: 0.8;
+  font-size: 0.95rem;
+}

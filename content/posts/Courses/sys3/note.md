@@ -2,6 +2,7 @@
 title: "计算机系统3"
 date: 2026-03-02T10:08:38+08:00
 draft: false
+ShowToc: true
 ---
 
 ### 1.2 Classes of Computers
@@ -109,7 +110,7 @@ CPU的性能取决于：
 1.有多大比例的执行时间可以被优化
 2.优化之后总的执行时间有多大程度的提升
 
-*$Improved Execution Time = \frac{Affected Execution Time}{Amount of Improvement} + Unaffected Execution Time$*
+$$Improved Execution Time = \frac{Affected Execution Time}{Amount of Improvement} + Unaffected Execution Time$$
 
 *Amdahl's Law*描述的是优化计算机的某一部分对于整体优化的影响程度，揭示的核心道理是：即便把计算机的某一个部分优化到极致，如果不解决瓶颈部件，同样无法对整体运行性能带来显著的改善。
 
@@ -125,12 +126,62 @@ $f$ 为可优化部分占比，$S$ 为该部分的加速比，则：
 
 $$T_{new} = T_{old}\left((1-f)+\frac{f}{S}\right)$$
 
-$$\text{Speedup}_{overall} = \frac{T_{old}}{T_{new}} = \frac{1}{(1-f)+\frac{f}{S}}$$
+$$\text{Speedup}_{overall}=\frac{T_{old}}{T_{new}}=\frac{1}{(1-f)+\frac{f}{S}}$$
 
 $$\text{Speedup}_{overall}<\frac{1}{1-f}$$
 
 
 ### 1.5 Great Architecture Ideas
+
+- 8个重要的architecture idea
+
+1.摩尔定律
+- 芯片上的晶体管(transistor)每18-24个月会double
+- 当系统设计完成之后，如何设计架构会成为重要的问题
+
+2.抽象
+- 较低层级的细节在高层被抽象为更简单的模型
+
+3.Make the common case fast
+- 识别并加速常间情况
+
+
+4.并行
+- 指令级并行、进程级并行...
+
+5.流水线
+- break task into stages, and performed simutaneously
+
+
+6.预测
+- 在分支预测中提前**猜**出后续指令，从而加速
+
+7.内存的层级结构
+- 让访问最快、容量最小、每bit价格最贵的内存作为第1层级；让访问最慢、容量最大、每bit价格最低的内存最为最后一个层级
+- 尽可能让内存访问可以命中最快的一级内存，让末级内存包含尽可能多的信息
+
+8.冗余设计(rebundancy)
+- 增加系统的可靠性(dependability)
+- 包括可以探测和可以纠正错误的冗余部件
+- 不同层级都有冗余设计
+
+
+## 2.指令级并行
+
+- Name dependences：在**乱序执行**时，命名的重复可能会对正确性造成影响。所以编译器/程序员可以通过重命名来保障乱序执行
+
+
+
+- Control dependences：一个控制信号依赖另一个信号
+
+
+- Hazards：阻止下一条指令运行的情况
+
+
+1.Data Hazards
+
+(1) RAW
+
 
 
 

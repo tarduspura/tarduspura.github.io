@@ -1,0 +1,60 @@
+baseURL = "http://localhost:1313/"
+languageCode = "zh-cn"
+title = "My Blog"
+theme = "paper"
+publishDir = "public"
+
+# 分页设置
+[pagination]
+  pagerSize = 10
+
+# 启用搜索
+[outputs]
+  home = ["HTML", "RSS"]
+
+[params]
+  # 主题颜色
+  color = "linen"
+  
+  # 显示阅读时间
+  readingTime = true
+  
+  # 显示字数统计
+  wordCount = true
+  
+  # 社交链接
+  email = "tarduspura@163.com"
+  
+  # 首页显示完整内容还是摘要
+  homeFullContent = false
+  
+  # 评论系统（可选）
+  # disqus = ""
+
+# 菜单配置
+[menu]
+  [[menu.main]]
+    identifier = "touch"
+    name = "Touch"
+    url = "/touch/"
+    weight = 1
+  
+  [[menu.main]]
+    identifier = "idea"
+    name = "Idea"
+    url = "/idea/"
+    weight = 2
+
+# Markdown 渲染设置
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+
+# 分类设置
+[taxonomies]
+  category = "categories"
+  tag = "tags"

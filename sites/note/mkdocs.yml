@@ -1,0 +1,105 @@
+site_name: Tardus Pura's Notes
+site_url: https://tarduspura.me/note
+site_description: 技术学习笔记
+
+theme:
+  name: material
+  language: zh
+  font:
+    text: Noto Sans SC
+    code: JetBrains Mono
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - toc.follow
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+repo_url: https://github.com/tarduspura
+repo_name: tarduspura
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      lang: 
+        - zh
+        - en
+
+nav:
+  - 首页: index.md
+  - 计算机科学:
+    - 系统:
+      - CSAPP: cs/system/csapp.md
+    - 安全:
+      - Agent安全: cs/security/agent.md
+    - AI/ML:
+      - GCG对抗攻击: cs/ai/gcg.md
+      - LLM综述: cs/ai/llmreview2402.md
+  - 课程笔记:
+    - 硬核安全: courses/hardcore_sec.md
+    - 隐私计算: courses/privacy_computing.md
+    - 系统三: courses/sys3.md
+  - 杂项:
+    - 学习资源: misc/Learnmore.md
+    - 日常记录: misc/9-30.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tarduspura
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:tardupura@163.com

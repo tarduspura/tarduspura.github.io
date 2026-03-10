@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project on Tardus Pura&#39;s Blog</title>
+    <link>//localhost:1313/project/</link>
+    <description>Recent content in Project on Tardus Pura&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 12 Feb 2026 22:36:52 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Calender</title>
+      <link>//localhost:1313/project/calender/</link>
+      <pubDate>Thu, 12 Feb 2026 22:36:52 +0800</pubDate>
+      <guid>//localhost:1313/project/calender/</guid>
+      <description>&lt;h1 id=&#34;医院排班系统项目综述&#34;&gt;医院排班系统项目综述&lt;/h1&gt;&#xA;&lt;h2 id=&#34;一项目背景与目标&#34;&gt;一、项目背景与目标&lt;/h2&gt;&#xA;&lt;p&gt;本项目是一个面向本地使用场景的医院门诊排班编辑工具，核心目标是：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;快速录入并维护一周（周一到周日）上午/下午排班信息；&lt;/li&gt;&#xA;&lt;li&gt;在单页可视化编辑中完成拖拽调整、修改与删除；&lt;/li&gt;&#xA;&lt;li&gt;一键导出高分辨率排班图片，便于院内发布与传播；&lt;/li&gt;&#xA;&lt;li&gt;提供 Windows 端桌面应用形态，降低非技术用户使用门槛。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;项目在功能上强调“高效编辑 + 高质量导出 + 本地可分发”。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二技术路线与开发环境&#34;&gt;二、技术路线与开发环境&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-技术选型详解&#34;&gt;1. 技术选型详解&lt;/h3&gt;&#xA;&lt;p&gt;本项目采用 &lt;strong&gt;Electron + Vue 3 + TypeScript&lt;/strong&gt; 的现代桌面应用技术栈，每个技术选型都有明确的问题导向：&lt;/p&gt;&#xA;&lt;h4 id=&#34;核心框架层&#34;&gt;核心框架层&lt;/h4&gt;&#xA;&lt;p&gt;&lt;strong&gt;Electron v39.5.2&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：将 Web 技术（HTML/CSS/JS）封装为跨平台桌面应用的运行时框架&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;为什么选它&lt;/strong&gt;：需要本地文件读写能力、系统托盘、窗口管理等桌面特性，同时希望复用前端技术栈快速开发&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;核心价值&lt;/strong&gt;：一套代码可同时打包为 Windows/macOS/Linux 应用，且能调用 Node.js 能力（本项目用于本地数据持久化）&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;替代方案对比&lt;/strong&gt;：Tauri（更轻量但生态较新）、NW.js（配置复杂度高）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Vue 3（Composition API）&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：构建用户界面的渐进式 JavaScript 框架&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;为什么选它&lt;/strong&gt;：响应式数据绑定简化状态-视图同步；Composition API 让逻辑复用更清晰（如本项目的 &lt;code&gt;useWheelZoom&lt;/code&gt; 自定义滚轮缩放逻辑）&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;核心特性应用&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;ref/reactive&lt;/code&gt;：管理缩放级别、拖拽状态、模态框状态&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;computed&lt;/code&gt;：自动计算周日期范围显示文本&lt;/li&gt;&#xA;&lt;li&gt;生命周期钩子：&lt;code&gt;onMounted&lt;/code&gt; 初始化数据、绑定键盘事件&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;替代方案对比&lt;/strong&gt;：React（生态更大但学习曲线陡）、Svelte（编译时框架，Bundle 更小但生态较小）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;TypeScript v5.9.3&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：JavaScript 的超集，提供静态类型检查&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;为什么选它&lt;/strong&gt;：排班数据结构复杂（医生、科室、时段等 8+ 字段），类型约束能在编译期拦截字段拼写错误、类型不匹配等低级 bug&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;实践收益&lt;/strong&gt;：定义 &lt;code&gt;Shift&lt;/code&gt; 接口后，IDE 可自动提示所有可用字段，重构时能准确追踪影响范围&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;学习要点&lt;/strong&gt;：接口定义、泛型使用、类型推导&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;状态与交互层&#34;&gt;状态与交互层&lt;/h4&gt;&#xA;&lt;p&gt;&lt;strong&gt;Pinia v3.0.4&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
