@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>徒步 on My Blog</title>
-    <link>http://localhost:1313/touch/hike/</link>
+    <link>http://localhost:1313/blog/touch/hike/</link>
     <description>Recent content in 徒步 on My Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <atom:link href="http://localhost:1313/touch/hike/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/touch/hike/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

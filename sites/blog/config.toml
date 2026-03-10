@@ -1,4 +1,4 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://tarduspura.me/blog/"
 languageCode = "zh-cn"
 title = "My Blog"
 theme = "paper"

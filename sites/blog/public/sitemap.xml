@@ -2,58 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/blog/idea/</loc>
     <lastmod>2026-01-26T01:09:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/idea/</loc>
+    <loc>http://localhost:1313/blog/idea/create/</loc>
     <lastmod>2026-01-26T01:09:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/idea/create/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2026-01-26T01:09:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/idea/create/essay/empire/</loc>
+    <loc>http://localhost:1313/blog/idea/create/essay/empire/</loc>
     <lastmod>2026-01-26T01:09:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/idea/create/essay/</loc>
+    <loc>http://localhost:1313/blog/idea/create/essay/</loc>
     <lastmod>2026-01-26T01:09:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/idea/art/archi1/</loc>
+    <loc>http://localhost:1313/blog/idea/art/archi1/</loc>
     <lastmod>2025-10-15T01:24:50+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/idea/art/</loc>
+    <loc>http://localhost:1313/blog/idea/art/</loc>
     <lastmod>2025-10-15T01:24:50+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/touch/rock/9-27-dairy/</loc>
+    <loc>http://localhost:1313/blog/touch/rock/9-27-dairy/</loc>
     <lastmod>2025-09-27T15:40:45+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/touch/</loc>
+    <loc>http://localhost:1313/blog/touch/</loc>
     <lastmod>2025-09-27T15:40:45+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/touch/rock/</loc>
+    <loc>http://localhost:1313/blog/touch/rock/</loc>
     <lastmod>2025-09-27T15:40:45+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/idea/learn/sciofjoy/</loc>
+    <loc>http://localhost:1313/blog/idea/learn/sciofjoy/</loc>
     <lastmod>2025-09-25T21:00:40+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/idea/learn/sciofjoy/foreword/</loc>
+    <loc>http://localhost:1313/blog/idea/learn/sciofjoy/foreword/</loc>
     <lastmod>2025-09-25T21:00:40+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/idea/learn/</loc>
+    <loc>http://localhost:1313/blog/idea/learn/</loc>
     <lastmod>2025-09-25T21:00:40+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/idea/art/website/</loc>
+    <loc>http://localhost:1313/blog/idea/art/website/</loc>
     <lastmod>2025-09-24T21:51:59+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/blog/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/blog/tags/</loc>
   </url><url>
-    <loc>http://localhost:1313/idea/create/novel/</loc>
+    <loc>http://localhost:1313/blog/idea/create/novel/</loc>
   </url><url>
-    <loc>http://localhost:1313/touch/hike/</loc>
+    <loc>http://localhost:1313/blog/touch/hike/</loc>
   </url><url>
-    <loc>http://localhost:1313/touch/destination/</loc>
+    <loc>http://localhost:1313/blog/touch/destination/</loc>
   </url><url>
-    <loc>http://localhost:1313/idea/create/poetry/</loc>
+    <loc>http://localhost:1313/blog/idea/create/poetry/</loc>
   </url>
 </urlset>
