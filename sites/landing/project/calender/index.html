@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>医院排班系统 - Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', 'Noto Sans SC', sans-serif;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.8;
+    }
+    .header {
+      background: #0f0f0f;
+      color: #fff;
+      padding: 2rem;
+    }
+    .header .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #fff; }
+    .back-link svg { width: 18px; height: 18px; }
+    .project-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .project-tag {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    .content h1, .content h2, .content h3 {
+      color: #1a1a1a;
+      margin: 2rem 0 1rem;
+    }
+    .content h1 { font-size: 1.8rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+    .content h2 { font-size: 1.4rem; }
+    .content h3 { font-size: 1.2rem; }
+    .content p { margin-bottom: 1rem; color: #555; }
+    .content ul, .content ol { margin: 1rem 0 1rem 1.5rem; color: #555; }
+    .content li { margin-bottom: 0.5rem; }
+    .content code {
+      background: #f0f0f0;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .content pre {
+      background: #1a1a1a;
+      color: #e0e0e0;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+    .content pre code {
+      background: none;
+      padding: 0;
+    }
+    .content img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    .content blockquote {
+      border-left: 3px solid #3b82f6;
+      padding-left: 1rem;
+      margin: 1rem 0;
+      color: #666;
+      font-style: italic;
+    }
+    .content hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 2rem 0;
+    }
+    .content strong { color: #333; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <a href="/project/" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back to Projects
+      </a>
+      <h1 class="project-title">医院排班系统</h1>
+      <div class="project-meta">
+        <span>📅 2026-02-12</span>
+      </div>
+      <div class="project-tags">
+        <span class="project-tag">Electron</span>
+        <span class="project-tag">Vue 3</span>
+        <span class="project-tag">TypeScript</span>
+        <span class="project-tag">Tailwind CSS</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="content">
+    <h1>医院排班系统项目综述</h1>
+    
+    <h2>一、项目背景与目标</h2>
+    <p>本项目是一个面向本地使用场景的医院门诊排班编辑工具，核心目标是：</p>
+    <ul>
+      <li>快速录入并维护一周（周一到周日）上午/下午排班信息</li>
+      <li>在单页可视化编辑中完成拖拽调整、修改与删除</li>
+      <li>一键导出高分辨率排班图片，便于院内发布与传播</li>
+      <li>提供 Windows 端桌面应用形态，降低非技术用户使用门槛</li>
+    </ul>
+    <p>项目在功能上强调"高效编辑 + 高质量导出 + 本地可分发"。</p>
+
+    <hr>
+
+    <h2>二、技术路线与开发环境</h2>
+    <p>本项目采用 <strong>Electron + Vue 3 + TypeScript</strong> 的现代桌面应用技术栈。</p>
+    
+    <h3>核心框架层</h3>
+    <ul>
+      <li><strong>Electron v39.5.2</strong>：将 Web 技术封装为跨平台桌面应用</li>
+      <li><strong>Vue 3（Composition API）</strong>：构建用户界面的渐进式框架</li>
+      <li><strong>TypeScript v5.9.3</strong>：提供静态类型检查</li>
+      <li><strong>Pinia v3.0.4</strong>：Vue 官方推荐的状态管理库</li>
+      <li><strong>vuedraggable v4.1.0</strong>：拖拽排序组件库</li>
+      <li><strong>Tailwind CSS v3.4.17</strong>：原子化 CSS 框架</li>
+      <li><strong>html2canvas v1.4.1</strong>：DOM 转图片导出</li>
+    </ul>
+
+    <hr>
+
+    <h2>三、项目成果</h2>
+    <img src="/images/calender-1.jpg" alt="项目截图">
+    <ul>
+      <li>完成从"数据录入 → 可视化编辑 → 图片导出 → Windows 打包"的闭环</li>
+      <li>建立了可复用的 Electron + Vue 桌面项目模板与实践流程</li>
+      <li>在真实需求的驱动下完成了样式迭代与交互细节打磨</li>
+    </ul>
+
+    <hr>
+
+    <h2>四、价值</h2>
+    <ul>
+      <li><strong>对业务侧</strong>：显著提升排班制作与更新效率</li>
+      <li><strong>对开发侧</strong>：沉淀了跨端桌面化、导出能力、打包分发的完整经验</li>
+      <li><strong>对个人成长</strong>：在工程化、UI 设计表达、问题定位与交付方面形成了系统实践</li>
+    </ul>
+  </div>
+</body>
+</html>
