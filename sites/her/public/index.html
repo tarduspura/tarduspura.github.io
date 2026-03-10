@@ -1,9 +1,334 @@
-<!doctype html><html lang=zh-CN><head><meta name=generator content="Hugo 0.157.0"><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Her</title><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel=stylesheet><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:noto sans sc,sans-serif;min-height:100vh;background:#fff5f8;color:#5a4a5a}.back-home{position:fixed;top:1.5rem;left:1.5rem;display:flex;align-items:center;gap:.5rem;color:#b8a8b8;text-decoration:none;font-size:.9rem;transition:all .3s;z-index:100}.back-home:hover{color:#e8a4b8}.back-home svg{width:18px;height:18px;transition:transform .3s}.back-home:hover svg{transform:translateX(-3px)}header{display:flex;justify-content:space-between;align-items:center;padding:2rem 4rem;max-width:1200px;margin:0 auto}.site-title{font-family:caveat,cursive;font-size:2.8rem;font-weight:600;color:#e8a4b8;text-decoration:none;position:relative;display:flex;align-items:center;gap:.3rem}.heart-btn{font-size:1.5rem;cursor:pointer;user-select:none;transition:transform .1s,color .3s;position:relative}.heart-btn.active{color:#ff6b8a}.heart-btn.shake{animation:shake .3s ease}@keyframes shake{0%,100%{transform:rotate(0)}25%{transform:rotate(-10deg)scale(1.2)}75%{transform:rotate(10deg)scale(1.2)}}.floating-heart{position:absolute;font-size:1rem;color:#ff6b8a;pointer-events:none;animation:float-up 1s ease-out forwards;opacity:0}@keyframes float-up{0%{opacity:1;transform:translate(0,0)scale(.5)}100%{opacity:0;transform:translate(var(--tx),var(--ty))scale(1)}}nav{display:flex;gap:3rem}nav a{font-family:caveat,cursive;font-size:1.4rem;color:#8a7a8a;text-decoration:none;position:relative;padding:.3rem 0;transition:color .3s}nav a:hover{color:#e8a4b8}nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:#e8a4b8;transition:width .3s}nav a:hover::after{width:100%}main{max-width:800px;margin:4rem auto;padding:0 2rem;text-align:center}.quote-box{background:#fff;border-radius:20px;padding:3rem 4rem;box-shadow:0 4px 20px rgba(232,164,184,.15);position:relative;border:2px dashed #f5d5e0}.quote-box::before{content:'❀';position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-size:1.5rem;background:#fff5f8;padding:0 1rem}.quote{font-size:1.1rem;line-height:2;color:#6a5a6a;text-align:justify}.quote::before{content:'"';font-family:caveat,cursive;font-size:3rem;color:#e8a4b8;display:block;margin-bottom:.5rem}.quote::after{content:'"';font-family:caveat,cursive;font-size:3rem;color:#e8a4b8;display:block;margin-top:.5rem}footer{text-align:center;padding:2rem;color:#b8a8b8;font-size:.85rem}.deco-heart{position:fixed;font-size:1rem;color:#f5d5e0;opacity:.5;pointer-events:none}.deco-heart:nth-child(1){top:20%;left:10%}.deco-heart:nth-child(2){top:60%;left:5%}.deco-heart:nth-child(3){top:30%;right:8%}.deco-heart:nth-child(4){top:70%;right:12%}@media(max-width:768px){header{flex-direction:column;gap:1.5rem;padding:1.5rem 2rem}nav{gap:2rem}.quote-box{padding:2rem}.site-title{font-size:2.2rem}.back-home{top:1rem;left:1rem;font-size:.8rem}}</style></head><body><a href=/ class=back-home><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0 7-7m-7 7h18"/></svg>
-<span>Home</span>
-</a><span class=deco-heart>♡</span>
-<span class=deco-heart>♡</span>
-<span class=deco-heart>♡</span>
-<span class=deco-heart>♡</span><header><span class=site-title>Her
-<span class=heart-btn id=heartBtn>♡</span></span><nav><a href=/her/location/>Location</a>
-<a href=/her/restaurant/>Restaurant</a>
-<a href=/her/things/>Things</a></nav></header><main><div class=quote-box><p class=quote>记录我们一起走过的每一个地方，品尝过的每一道美食，分享过的每一份礼物。愿时光温柔，愿我们的故事永远甜蜜。</p></div></main><footer><p>Made with ♡ for her</p></footer><script>const heartBtn=document.getElementById("heartBtn");let isActive=!1;heartBtn.addEventListener("click",function(){isActive=!isActive,this.classList.toggle("active",isActive),this.classList.remove("shake"),void this.offsetWidth,this.classList.add("shake");for(let e=0;e<5;e++)setTimeout(()=>{createFloatingHeart(this)},e*50)});function createFloatingHeart(e){const t=document.createElement("span");t.className="floating-heart",t.textContent="♡";const n=(Math.random()-.5)*80,s=-30-Math.random()*40;t.style.setProperty("--tx",n+"px"),t.style.setProperty("--ty",s+"px"),t.style.fontSize=.6+Math.random()*.6+"rem",e.appendChild(t),setTimeout(()=>t.remove(),1e3)}</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta name="generator" content="Hugo 0.157.0"><script src="/her/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=her/livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Her</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      min-height: 100vh;
+      background: #fff5f8;
+      color: #5a4a5a;
+    }
+
+     
+    .back-home {
+      position: fixed;
+      top: 1.5rem;
+      left: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #b8a8b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      z-index: 100;
+    }
+
+    .back-home:hover {
+      color: #e8a4b8;
+    }
+
+    .back-home svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s;
+    }
+
+    .back-home:hover svg {
+      transform: translateX(-3px);
+    }
+
+     
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+      padding-top: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .site-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: #e8a4b8;
+      text-decoration: none;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .heart-btn {
+      font-size: 1.5rem;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.1s, color 0.3s;
+      position: relative;
+    }
+
+    .heart-btn.active {
+      color: #ff6b8a;
+    }
+
+    .heart-btn.shake {
+      animation: shake 0.3s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-10deg) scale(1.2); }
+      75% { transform: rotate(10deg) scale(1.2); }
+    }
+
+    .floating-heart {
+      position: absolute;
+      font-size: 1rem;
+      color: #ff6b8a;
+      pointer-events: none;
+      animation: float-up 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes float-up {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.5);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(1);
+      }
+    }
+
+    nav {
+      display: flex;
+      gap: 3rem;
+    }
+
+    nav a {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      color: #8a7a8a;
+      text-decoration: none;
+      position: relative;
+      padding: 0.3rem 0;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e8a4b8;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #e8a4b8;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+     
+    main {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .quote-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 3rem 4rem;
+      box-shadow: 0 4px 20px rgba(232, 164, 184, 0.15);
+      position: relative;
+      border: 2px dashed #f5d5e0;
+    }
+
+    .quote-box::before {
+      content: '❀';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      background: #fff5f8;
+      padding: 0 1rem;
+    }
+
+    .quote {
+      font-size: 1.1rem;
+      line-height: 2;
+      color: #6a5a6a;
+      text-align: justify;
+    }
+
+    .quote::before {
+      content: '"';
+      font-family: 'Caveat', cursive;
+      font-size: 3rem;
+      color: #e8a4b8;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote::after {
+      content: '"';
+      font-family: 'Caveat', cursive;
+      font-size: 3rem;
+      color: #e8a4b8;
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+     
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #b8a8b8;
+      font-size: 0.85rem;
+    }
+
+     
+    .deco-heart {
+      position: fixed;
+      font-size: 1rem;
+      color: #f5d5e0;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .deco-heart:nth-child(1) { top: 20%; left: 10%; }
+    .deco-heart:nth-child(2) { top: 60%; left: 5%; }
+    .deco-heart:nth-child(3) { top: 30%; right: 8%; }
+    .deco-heart:nth-child(4) { top: 70%; right: 12%; }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 2rem;
+        padding-top: 4.5rem;
+      }
+      
+      nav {
+        gap: 2rem;
+      }
+
+      .quote-box {
+        padding: 2rem;
+      }
+
+      .site-title {
+        font-size: 2.2rem;
+      }
+
+      .back-home {
+        top: 1rem;
+        left: 1rem;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <a href="/" class="back-home">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+    </svg>
+    <span>Home</span>
+  </a>
+
+  
+  <span class="deco-heart">♡</span>
+  <span class="deco-heart">♡</span>
+  <span class="deco-heart">♡</span>
+  <span class="deco-heart">♡</span>
+
+  <header>
+    <span class="site-title">
+      Her
+      <span class="heart-btn" id="heartBtn">♡</span>
+    </span>
+    <nav>
+      <a href="/her/location/">Location</a>
+      <a href="/her/restaurant/">Restaurant</a>
+      <a href="/her/things/">Things</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="quote-box">
+      <p class="quote">
+        记录我们一起走过的每一个地方，品尝过的每一道美食，分享过的每一份礼物。愿时光温柔，愿我们的故事永远甜蜜。
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Made with ♡ for her</p>
+  </footer>
+
+  <script>
+    const heartBtn = document.getElementById('heartBtn');
+    let isActive = false;
+
+    heartBtn.addEventListener('click', function(e) {
+      
+      isActive = !isActive;
+      this.classList.toggle('active', isActive);
+      
+      
+      this.classList.remove('shake');
+      void this.offsetWidth; 
+      this.classList.add('shake');
+
+      
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          createFloatingHeart(this);
+        }, i * 50);
+      }
+    });
+
+    function createFloatingHeart(parent) {
+      const heart = document.createElement('span');
+      heart.className = 'floating-heart';
+      heart.textContent = '♡';
+      
+      
+      const tx = (Math.random() - 0.5) * 80;
+      const ty = -30 - Math.random() * 40;
+      heart.style.setProperty('--tx', tx + 'px');
+      heart.style.setProperty('--ty', ty + 'px');
+      
+      
+      heart.style.fontSize = (0.6 + Math.random() * 0.6) + 'rem';
+      
+      parent.appendChild(heart);
+      
+      
+      setTimeout(() => heart.remove(), 1000);
+    }
+  </script>
+</body>
+</html>

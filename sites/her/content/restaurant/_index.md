@@ -1,4 +1,4 @@
 ---
-title: "🍜 吃过的店"
+title: "探店ing"
 description: "美食探店记录"
 ---
