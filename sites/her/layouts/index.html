@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Site.Title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      min-height: 100vh;
+      background: #fff5f8;
+      color: #5a4a5a;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .site-title {
+      font-family: 'Caveat', cursive;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: #e8a4b8;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .site-title::after {
+      content: ' ♡';
+      font-size: 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 3rem;
+    }
+
+    nav a {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      color: #8a7a8a;
+      text-decoration: none;
+      position: relative;
+      padding: 0.3rem 0;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e8a4b8;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #e8a4b8;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .quote-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 3rem 4rem;
+      box-shadow: 0 4px 20px rgba(232, 164, 184, 0.15);
+      position: relative;
+      border: 2px dashed #f5d5e0;
+    }
+
+    .quote-box::before {
+      content: '❀';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+      background: #fff5f8;
+      padding: 0 1rem;
+    }
+
+    .quote {
+      font-size: 1.1rem;
+      line-height: 2;
+      color: #6a5a6a;
+      text-align: justify;
+    }
+
+    .quote::before {
+      content: '"';
+      font-family: 'Caveat', cursive;
+      font-size: 3rem;
+      color: #e8a4b8;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote::after {
+      content: '"';
+      font-family: 'Caveat', cursive;
+      font-size: 3rem;
+      color: #e8a4b8;
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #b8a8b8;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: #e8a4b8;
+      text-decoration: none;
+    }
+
+    /* Decorations */
+    .deco-heart {
+      position: fixed;
+      font-size: 1rem;
+      color: #f5d5e0;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .deco-heart:nth-child(1) { top: 20%; left: 10%; }
+    .deco-heart:nth-child(2) { top: 60%; left: 5%; }
+    .deco-heart:nth-child(3) { top: 30%; right: 8%; }
+    .deco-heart:nth-child(4) { top: 70%; right: 12%; }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 2rem;
+      }
+      
+      nav {
+        gap: 2rem;
+      }
+
+      .quote-box {
+        padding: 2rem;
+      }
+
+      .site-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Decorations -->
+  <span class="deco-heart">♡</span>
+  <span class="deco-heart">♡</span>
+  <span class="deco-heart">♡</span>
+  <span class="deco-heart">♡</span>
+
+  <header>
+    <a href="{{ "/" | relURL }}" class="site-title">Her</a>
+    <nav>
+      <a href="{{ "location/" | relURL }}">Location</a>
+      <a href="{{ "restaurant/" | relURL }}">Restaurant</a>
+      <a href="{{ "things/" | relURL }}">Things</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="quote-box">
+      <p class="quote">
+        记录我们一起走过的每一个地方，品尝过的每一道美食，分享过的每一份礼物。愿时光温柔，愿我们的故事永远甜蜜。
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Made with ♡ for her</p>
+  </footer>
+</body>
+</html>
