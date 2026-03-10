@@ -17,6 +17,35 @@
       color: #5a4a5a;
     }
 
+    /* Back to Homepage */
+    .back-home {
+      position: fixed;
+      top: 1.5rem;
+      left: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #b8a8b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      z-index: 100;
+    }
+
+    .back-home:hover {
+      color: #e8a4b8;
+    }
+
+    .back-home svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s;
+    }
+
+    .back-home:hover svg {
+      transform: translateX(-3px);
+    }
+
     /* Header */
     header {
       display: flex;
@@ -34,11 +63,51 @@
       color: #e8a4b8;
       text-decoration: none;
       position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
     }
 
-    .site-title::after {
-      content: ' ♡';
+    .heart-btn {
       font-size: 1.5rem;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.1s, color 0.3s;
+      position: relative;
+    }
+
+    .heart-btn.active {
+      color: #ff6b8a;
+    }
+
+    .heart-btn.shake {
+      animation: shake 0.3s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-10deg) scale(1.2); }
+      75% { transform: rotate(10deg) scale(1.2); }
+    }
+
+    .floating-heart {
+      position: absolute;
+      font-size: 1rem;
+      color: #ff6b8a;
+      pointer-events: none;
+      animation: float-up 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes float-up {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.5);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(1);
+      }
     }
 
     nav {
@@ -136,11 +205,6 @@
       font-size: 0.85rem;
     }
 
-    footer a {
-      color: #e8a4b8;
-      text-decoration: none;
-    }
-
     /* Decorations */
     .deco-heart {
       position: fixed;
@@ -173,10 +237,24 @@
       .site-title {
         font-size: 2.2rem;
       }
+
+      .back-home {
+        top: 1rem;
+        left: 1rem;
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Back to Homepage -->
+  <a href="/" class="back-home">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+    </svg>
+    <span>Home</span>
+  </a>
+
   <!-- Decorations -->
   <span class="deco-heart">♡</span>
   <span class="deco-heart">♡</span>
@@ -184,7 +262,10 @@
   <span class="deco-heart">♡</span>
 
   <header>
-    <a href="{{ "/" | relURL }}" class="site-title">Her</a>
+    <span class="site-title">
+      Her
+      <span class="heart-btn" id="heartBtn">♡</span>
+    </span>
     <nav>
       <a href="{{ "location/" | relURL }}">Location</a>
       <a href="{{ "restaurant/" | relURL }}">Restaurant</a>
@@ -203,5 +284,48 @@
   <footer>
     <p>Made with ♡ for her</p>
   </footer>
+
+  <script>
+    const heartBtn = document.getElementById('heartBtn');
+    let isActive = false;
+
+    heartBtn.addEventListener('click', function(e) {
+      // Toggle active state
+      isActive = !isActive;
+      this.classList.toggle('active', isActive);
+      
+      // Shake animation
+      this.classList.remove('shake');
+      void this.offsetWidth; // Trigger reflow
+      this.classList.add('shake');
+
+      // Create floating hearts
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          createFloatingHeart(this);
+        }, i * 50);
+      }
+    });
+
+    function createFloatingHeart(parent) {
+      const heart = document.createElement('span');
+      heart.className = 'floating-heart';
+      heart.textContent = '♡';
+      
+      // Random direction
+      const tx = (Math.random() - 0.5) * 80;
+      const ty = -30 - Math.random() * 40;
+      heart.style.setProperty('--tx', tx + 'px');
+      heart.style.setProperty('--ty', ty + 'px');
+      
+      // Random size
+      heart.style.fontSize = (0.6 + Math.random() * 0.6) + 'rem';
+      
+      parent.appendChild(heart);
+      
+      // Remove after animation
+      setTimeout(() => heart.remove(), 1000);
+    }
+  </script>
 </body>
 </html>
