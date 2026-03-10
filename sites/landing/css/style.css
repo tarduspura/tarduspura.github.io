@@ -73,14 +73,26 @@ body {
 
 .pura-link {
     color: #9b59b6;
-    text-decoration: none;
+    text-decoration: none !important;
     transition: transform 0.3s ease;
     display: inline-block;
     cursor: pointer;
 }
 
 .pura-link:hover {
+    color: #9b59b6;
+    text-decoration: none !important;
     transform: scale(1.1);
+}
+
+.pura-link:visited {
+    color: #9b59b6;
+    text-decoration: none !important;
+}
+
+.pura-link:active {
+    color: #9b59b6;
+    text-decoration: none !important;
 }
 
 .nav-links {
