@@ -119,7 +119,7 @@
 <body>
   <div class="container">
     <header class="page-header">
-      <a href="/" class="back-link">← 返回首页</a>
+      <a href="{{ "/" | relURL }}" class="back-link">← 返回首页</a>
       <h1>{{ .Title }}</h1>
       <p class="count">共 {{ len .Pages }} 篇记录</p>
     </header>
