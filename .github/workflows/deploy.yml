@@ -74,12 +74,7 @@ jobs:
           hugo --minify --baseURL "https://tarduspura.me/her/" -d ../../public/her
           cd ../..
 
-          # 5. 共享资源
-          if [ -d "shared/images" ]; then
-            cp -r shared/images public/images 2>/dev/null || true
-          fi
-
-          # 6. CNAME
+          # 5. CNAME
           echo "tarduspura.me" > public/CNAME
 
       - name: Upload artifact

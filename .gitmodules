@@ -1,9 +1,0 @@
-[submodule "themes/PaperMod"]
-	path = themes/PaperMod
-	url = https://github.com/adityatelange/hugo-PaperMod.git
-[submodule "sites/blog/themes/paper"]
-	path = sites/blog/themes/paper
-	url = https://github.com/nanxiaobei/hugo-paper
-[submodule "sites/her/themes/blowfish"]
-	path = sites/her/themes/blowfish
-	url = https://github.com/nunocoracao/blowfish.git

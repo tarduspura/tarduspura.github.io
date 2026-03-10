@@ -72,15 +72,15 @@ body {
 }
 
 .pura-link {
-    color: inherit;
+    color: #9b59b6;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
+    display: inline-block;
     cursor: pointer;
 }
 
 .pura-link:hover {
-    font-weight: 500;
-    text-shadow: 0 2px 15px rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
 }
 
 .nav-links {

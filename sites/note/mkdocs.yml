@@ -90,9 +90,9 @@ nav:
       - GCG对抗攻击: cs/ai/gcg.md
       - LLM综述: cs/ai/llmreview2402.md
   - 课程笔记:
-    - 硬核安全: courses/hardcore_sec.md
-    - 隐私计算: courses/privacy_computing.md
-    - 系统三: courses/sys3.md
+    - 硬件安全基础: courses/hardcore_sec.md
+    - 隐私计算与数据合规: courses/privacy_computing.md
+    - 计算系统三: courses/sys3.md
   - 杂项:
     - 学习资源: misc/Learnmore.md
     - 日常记录: misc/9-30.md
