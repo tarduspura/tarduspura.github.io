@@ -1,5 +1,5 @@
 ---
-title: 计算机系统3
+title: Quantative Approach
 date: 2026-03-02
 ---
 
