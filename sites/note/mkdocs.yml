@@ -30,6 +30,8 @@ theme:
     - navigation.top
     - toc.follow
     - content.code.copy
+    - content.action.edit
+    - content.action.view
   icon:
     repo: fontawesome/brands/github
 
@@ -92,7 +94,9 @@ nav:
   - 课程笔记:
     - 硬件安全基础: courses/hardcore_sec.md
     - 隐私计算与数据合规: courses/privacy_computing.md
-    - 计算系统三: courses/sys3.md
+    - 计算机系统三: 
+      - courses/sys3/sys3_lec1.md
+      - courses/sys3/sys3_lec2.md
   - 杂项:
     - 学习资源: misc/Learnmore.md
     - 日常记录: misc/9-30.md
@@ -103,3 +107,15 @@ extra:
       link: https://github.com/tarduspura
     - icon: fontawesome/solid/paper-plane
       link: mailto:tardupura@163.com
+  analytics:
+    feedback:
+      title: 这篇文章有帮助吗？
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: 有帮助
+          data: 1
+          note: 感谢反馈！
+        - icon: material/emoticon-sad-outline
+          name: 需要改进
+          data: 0
+          note: 感谢反馈！
