@@ -92,10 +92,9 @@ date: 2026-02-03
 .s：汇编语言程序（为不同高级语言的不同编译器提供了通用的输出语言）
 .o：relocaatable object program
 
-{{< notice abstract "Link" >}}
-GNU 项目是 1984 年由 Richard Stallman 发起的一个免税的慈善项目。该项目的目标非常宏大，就是开发出一个完整的类 Unix 的系统，其源代码能够不受限制地被修改和传播。GNU 项目已经开发出了一个包含 Unix 操作系统的所有主要部件的环境，但内核除外，内核是由 Linux 项目独立发展而来的。GNU 环境包括 EMACS 编辑器、GCC 编译器、GDB 调试器、汇编器、链接器、处理二进制文件的工具以及其他一些部件。GCC 编译器已经发展到支持许多不同的语言，能够为许多不同的机器生成代码。支持的语言包括 C、C++、Fortran、Java、Pascal、面向对象 C 语言（Objective-C）和 Ada。
-此外，GNU项目还推动了现代开源运动，并因为GNU工具为linux提供了环境而推动了linux的普及。
-{{< /notice >}}
+!!! abstract "Link"
+    GNU 项目是 1984 年由 Richard Stallman 发起的一个免税的慈善项目。该项目的目标非常宏大，就是开发出一个完整的类 Unix 的系统，其源代码能够不受限制地被修改和传播。GNU 项目已经开发出了一个包含 Unix 操作系统的所有主要部件的环境，但内核除外，内核是由 Linux 项目独立发展而来的。GNU 环境包括 EMACS 编辑器、GCC 编译器、GDB 调试器、汇编器、链接器、处理二进制文件的工具以及其他一些部件。GCC 编译器已经发展到支持许多不同的语言，能够为许多不同的机器生成代码。支持的语言包括 C、C++、Fortran、Java、Pascal、面向对象 C 语言（Objective-C）和 Ada。
+    此外，GNU项目还推动了现代开源运动，并因为GNU工具为linux提供了环境而推动了linux的普及。
 
 
 ### 1.3 编译系统
@@ -187,14 +186,14 @@ cache作为暂时的集结区域，存放处理器近期可能会需要的信息
 比较新的、处理能力更强大的系统甚至有三级高速缓存∶L1、L2和L3
 
 
-{{< notice abstract "SRAM" >}}
-L1和L2高速缓存是通过静态随机存取存储器(SRAM,Static Random-Access Memory)实现的。
-- 依靠触发器电路保持数据状态
-- 只要通电，数据就永久保持，无需周期性刷新
-- DRAM 需要定期刷新（动态），SRAM 不需要（静态）
-- 通常由6个晶体管（6T）构成一个存储位
-- 成本较高，速度为纳秒级，非常快
-{{< /notice >}}
+!!! abstract "SRAM"
+    L1和L2高速缓存是通过静态随机存取存储器(SRAM,Static Random-Access Memory)实现的。
+    
+    - 依靠触发器电路保持数据状态
+    - 只要通电，数据就永久保持，无需周期性刷新
+    - DRAM 需要定期刷新（动态），SRAM 不需要（静态）
+    - 通常由6个晶体管（6T）构成一个存储位
+    - 成本较高，速度为纳秒级，非常快
 
 - 程序具有访问局部区域里的数据和代码的趋势。通过让高速缓存里存放可能经常访问的数据，大部分的内存操作都能在快速的高速缓存中完成。
 
@@ -224,10 +223,9 @@ L1和L2高速缓存是通过静态随机存取存储器(SRAM,Static Random-Acces
 - 虚拟内存：主存、I/O设备的抽象表示
 - 进程：处理器、主存和I/O设备的抽象表示
 
-{{< notice abstract "Link" >}}
-- Unix：贝尔实验室的研究人员在六七十年代基于Multics的理念开发的一个简单得多的操作系统
-- Posix标准：IEEE对Unix开发设立的标准。涵盖了C语言接口、shell 程序和工具、线程及网络编程等。与一系列标准化工作一起作用，使Unix版本之间的差异已经基本消失
-{{< /notice >}}
+!!! abstract "Link"
+    - Unix：贝尔实验室的研究人员在六七十年代基于Multics的理念开发的一个简单得多的操作系统
+    - Posix标准：IEEE对Unix开发设立的标准。涵盖了C语言接口、shell 程序和工具、线程及网络编程等。与一系列标准化工作一起作用，使Unix版本之间的差异已经基本消失
 
 
 #### 1.7.1 进程(Process)
@@ -408,12 +406,11 @@ ld -o prog [system object files and args] /tmp/main.o /tmp/sum.o
 - cl和as生成eof和sof
 - linker生成eof
 
-{{< notice abstract "目标文件格式" >}}
-- 从贝尔实验室诞生的第一个Unix系统使用的是a.out格式（直到今天，可执行文件仍然称为a.out文件）。
-- Windows使用可移植可执行（Portable Executable，PE）格式。
-- MacOS-X使用Mach-O格式。
-- 现代x86-64Linux和Unix系统使用可执行可链接格式（Executable and Linkable Format，ELF）
-{{< /notice >}}
+!!! abstract "目标文件格式"
+    - 从贝尔实验室诞生的第一个Unix系统使用的是a.out格式（直到今天，可执行文件仍然称为a.out文件）。
+    - Windows使用可移植可执行（Portable Executable，PE）格式。
+    - MacOS-X使用Mach-O格式。
+    - 现代x86-64Linux和Unix系统使用可执行可链接格式（Executable and Linkable Format，ELF）
 
 
 ### 7.4 可重定位目标文件
@@ -533,12 +530,9 @@ void swap()
 - .symtab中没有什么：定义在函数当中且没有static修饰的变量、局部变量
 
 
-{{< notice abstract "变量类型" >}}
-
-- 全局变量
-（1）
-
-{{< /notice >}}
+!!! abstract "变量类型"
+    - 全局变量
+    （1）
 
 
 

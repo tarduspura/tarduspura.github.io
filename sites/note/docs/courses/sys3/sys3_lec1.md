@@ -3,10 +3,6 @@ title: Quantative Approach
 date: 2026-03-02
 ---
 
-<div class="article-meta">
-<span>约 1500 字</span>
-<span>预计阅读 8 分钟</span>
-</div>
 
 ## 1.2 Classes of Computers
 
