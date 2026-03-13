@@ -103,7 +103,7 @@ nav:
     - 计算机系统三: 
       - courses/sys3/sys3_lec1.md
       - courses/sys3/sys3_lec2.md
-    - 人工智能逻辑：
+    - 人工智能逻辑:
       - courses/ai_logic/ai_logic_lec1.md
       - courses/ai_logic/ai_logic_lec2.md
   - 杂项:
