@@ -16,11 +16,13 @@ date: 2026-03-05
 
     - IP(Initial Permutation)：简单的位置重排（比如第58位换到第1位），只是为了打乱输入模式，不具有加密强度。
     - Split：$L_0$ 为左32位，$R_0$ 为右32位。
-    - 16 Rounds of Feistel：
-    $$
-    L_i = R_{i-1}
-    R_i = L_{i-1} \oplus f(R_{i-1}, K_i)
-    $$
+        - 16 Rounds of Feistel：
+            \[
+            \begin{aligned}
+            L_i &= R_{i-1} \\
+            R_i &= L_{i-1} \oplus f(R_{i-1}, K_i)
+            \end{aligned}
+            \]
         - f(·)
             - 接收：32位R寄存器数据，48位**子密钥 K**
             - 输出：经过四个步骤输出一个32位结果
@@ -52,9 +54,10 @@ Joan Daemen](https://en.wikipedia.org/wiki/Joan_Daemen))
 ![AES_process](../../images/hs.1.2.jpg)
 
 
-| AES |	密钥长度（32位比特字）|	分组长度(32位比特字) | 加密轮数
-AES-128	| 4	| 4 | 10
-AES-192	| 6 | 4	| 12
-AES-256	| 8	| 4 | 14
+| AES | 密钥长度（32位比特字） | 分组长度（32位比特字） | 加密轮数 |
+| --- | --- | --- | --- |
+| AES-128 | 4 | 4 | 10 |
+| AES-192 | 6 | 4 | 12 |
+| AES-256 | 8 | 4 | 14 |
 
 
