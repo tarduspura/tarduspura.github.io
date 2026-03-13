@@ -97,12 +97,15 @@ nav:
       - LLM综述: cs/ai/llmreview2402.md
   - 课程笔记:
     - 硬件安全基础: 
-      - courses/hardcore_sec/hardcore_sec_lec2.md
+      - courses/hardcore_sec/hardcore_sec_lec1.md
     - 隐私计算与数据合规: 
       - courses/privacy_computing/privacy_computing_lec1.md
     - 计算机系统三: 
       - courses/sys3/sys3_lec1.md
       - courses/sys3/sys3_lec2.md
+    - 人工智能逻辑：
+      - courses/ai_logic/ai_logic_lec1.md
+      - courses/ai_logic/ai_logic_lec2.md
   - 杂项:
     - 学习资源: misc/Learnmore.md
     - 日常记录: misc/9-30.md
