@@ -3,7 +3,10 @@ title: 第3课：动态调度
 date: 2026-03-16
 ---
 
-### Dynamic Scheduling
+!!! abstract "Tips"
+    第一个比较有难度的知识点，但实际上理解原理再做一遍例题就能掌握个大概了
+
+### 1.Dynamic Scheduling
 
 - 简单的流水线技术存在的局限
     - 1.指令和执行操作是顺序的
@@ -22,9 +25,10 @@ date: 2026-03-16
     - 可以使用[scoreboard algorithm](https://en.wikipedia.org/wiki/Scoreboarding)和[Tomasulo's algorithm](https://en.wikipedia.org/wiki/Tomasulo%27s_algorithm)两种方法来解决乱序执行的冲突问题
 
 
-### Scoreboard Algorithm
+### 2.Scoreboard Algorithm
 
-- 简单的直觉：在ID阶段检测structural hazards（结构依赖）和data hazards（数据依赖）
+#### 2.1 直觉与概念 
+- 在ID阶段检测structural hazards（结构依赖）和data hazards（数据依赖）
 
 - 于是ID阶段被分成两个部分：
     
@@ -32,10 +36,13 @@ date: 2026-03-16
     - RO(Read Operands)：直到没有数据冲突的时候菜读入操作数
         - 乱序执行从RO开始就是乱序的
 
-- Scoreboarding的基本结构：
+#### 2.2 基本结构：
     - FP Mult：乘法组件有两个是因为，乘法相比于加法所需要的时钟周期较长，相对于除法来说出现的概率又比较高（硬件代价小于整体节省的时间）。
     - SCOREBOARD：记录各个计算单元空闲情况和操作数依赖情况的表格
 ![scoreboarding](../../images/sys3.3.4.jpg)
+
+
+#### 2.3 例子<a id="eg"></a>
 
 - 用下面这六条指令来举个例子：
 ![eg3](../../images/sys3.3.5.jpg)
@@ -91,28 +98,77 @@ date: 2026-03-16
 ![time-space](../../images/sys3.3.16.jpg)
 
 
-### Tomasulo's Approach
+### 3.Tomasulo's Approach
 
-- 解决的问题：
+#### 3.1 作用
+
+- 动态调度存在WAR和WAW两种新的冲突
 
 ![WAR_WAW](../../images/sys3.3.17.jpg)
 
-    - WAR
-        - FADD指令的F0依赖FDIV
-        - FSUB指令要修改F8
-        - 因为FDIV指令比较慢，所以FADD一直卡在IS
-        - 若FSUB率先执行，FADD指令会在读入F8的时候出错、
+- WAR
+    - FADD指令的F0依赖FDIV
+    - FSUB指令要修改F8
+    - 因为FDIV指令比较慢，所以FADD一直卡在IS
+    - 若FSUB率先执行，FADD指令会在读入F8的时候出错、
     
-    - WAW
-        - 若FMUL比FADD先执行完，FADD的旧值会覆盖F6，导致FMUL之后有关F6的指令会出错
+- WAW
+    - 若FMUL比FADD先执行完，FADD的旧值会覆盖F6，导致FMUL之后有关F6的指令会出错
 
 - Scoreboard algorithm在解决上述两个问题的时候不够优雅，依然有较多的时钟浪费。因此，
 [Robert Tomasulo](https://en.wikipedia.org/wiki/Robert_Tomasulo)提出了Tomasulo算法来进一步优化乱序执行的动态调度。
 
-- Two Basic Idea
-    - 1.追踪每条指令的操作数ready的时间来最小化RAW冲突
+
+#### 3.2 基本结构
+
+![Tomasulo](../../images/sys3.3.18.jpg)
+
+- 一些观察
+    - 增加了每种操作的buffer（保留站 Reservation Station）
+    - 运算组件结束后，蓝线（旁路）连到所有的部件，相当于广播某一个操作数的更新
+    - 保留站是实现乱序的主要结构，源操作数先ready的先计算
+    - 检测结构冲突变为**检测对应保留站是否还有空位**
+    - **重命名也在保留站**中完成，只要之前没有真实的数据依赖，那么进入了保留站就相当于重命名
+
+#### 3.3 主要思想
+    - 1.追踪每条指令的操作数可用的时间来最小化RAW冲突
     - 2.引入硬件级的寄存器重命名来最小化WAW和WAR冲突
 
 
-- 基本结构
-![Tomasulo](../../images/sys3.3.18.jpg)
+#### 3.4 过程
+
+一条指令的执行过程变成3步
+
+- Issue（重命名寄存器，消除WAR和WAW的影响）
+    - 从指令队列拿出指令（FIFO）
+    - 如果保留栈有空位，那么将指令放进去
+    - 如果没空位，则结构冲突，等待直到有空位
+    - 如果操作数不在寄存器里，就要追踪那些会产生这些操作数的功能部件
+
+- Execute
+    - 所有操作数都可用了，就进入对应功能部件执行
+    - 注意：load和store需要两个步骤
+        - 1.判断base register是否就绪，并计算地址
+        - 2.把计算后的有效地址放到load/stroe的buffer里
+
+- Write results
+    - 结果计算完成后，通过CDB(Common Data Bus)传输到所有需要这个结果的保留站和寄存器中（包括store buffer）
+    - store指令在store buffer中等待，直到要存储的值和存储地址都可用，等待内存空闲时立刻写入结果
+
+#### 3.5 例子
+
+#### eg1
+
+
+#### eg2
+
+- 依然是上面那[六条指令](#eg)的例子
+- 使用Tomasulo算法可以画出下面这样的时空图
+
+![timespace_T](../../images/sys3.3.19.jpg)
+
+
+
+
+### 4.总结
+
