@@ -12,6 +12,7 @@ date: 2026-03-11
     - WAR
     - WAW
     乱序执行的情况下需要考虑后面两种数据冒险
+![data_hazard](../../images/sys3.2.1.jpg)
 - Control Hazard:和跳转指令有关
 
 ### Dynamic Branch Prediction
