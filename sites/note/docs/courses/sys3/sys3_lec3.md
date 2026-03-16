@@ -6,7 +6,7 @@ date: 2026-03-16
 !!! abstract "Tips"
     第一个比较有难度的知识点，但实际上理解原理再做一遍例题就能掌握个大概了
 
-### 1.Dynamic Scheduling
+## 1.Dynamic Scheduling
 
 - 简单的流水线技术存在的局限
     - 1.指令和执行操作是顺序的
@@ -25,9 +25,9 @@ date: 2026-03-16
     - 可以使用[scoreboard algorithm](https://en.wikipedia.org/wiki/Scoreboarding)和[Tomasulo's algorithm](https://en.wikipedia.org/wiki/Tomasulo%27s_algorithm)两种方法来解决乱序执行的冲突问题
 
 
-### 2.Scoreboard Algorithm
+## 2.Scoreboard Algorithm
 
-#### 2.1 直觉与概念 
+### 2.1 直觉与概念 
 - 在ID阶段检测structural hazards（结构依赖）和data hazards（数据依赖）
 
 - 于是ID阶段被分成两个部分：
@@ -36,13 +36,13 @@ date: 2026-03-16
     - RO(Read Operands)：直到没有数据冲突的时候菜读入操作数
         - 乱序执行从RO开始就是乱序的
 
-#### 2.2 基本结构：
+### 2.2 基本结构：
     - FP Mult：乘法组件有两个是因为，乘法相比于加法所需要的时钟周期较长，相对于除法来说出现的概率又比较高（硬件代价小于整体节省的时间）。
     - SCOREBOARD：记录各个计算单元空闲情况和操作数依赖情况的表格
 ![scoreboarding](../../images/sys3.3.4.jpg)
 
 
-#### 2.3 例子<a id="eg"></a>
+### 2.3 例子<a id="eg"></a>
 
 - 用下面这六条指令来举个例子：
 ![eg3](../../images/sys3.3.5.jpg)
@@ -98,9 +98,9 @@ date: 2026-03-16
 ![time-space](../../images/sys3.3.16.jpg)
 
 
-### 3.Tomasulo's Approach
+## 3.Tomasulo's Approach
 
-#### 3.1 作用
+### 3.1 作用
 
 - 动态调度存在WAR和WAW两种新的冲突
 
@@ -119,7 +119,7 @@ date: 2026-03-16
 [Robert Tomasulo](https://en.wikipedia.org/wiki/Robert_Tomasulo)提出了Tomasulo算法来进一步优化乱序执行的动态调度。
 
 
-#### 3.2 基本结构
+### 3.2 基本结构
 
 ![Tomasulo](../../images/sys3.3.18.jpg)
 
@@ -130,12 +130,12 @@ date: 2026-03-16
     - 检测结构冲突变为**检测对应保留站是否还有空位**
     - **重命名也在保留站**中完成，只要之前没有真实的数据依赖，那么进入了保留站就相当于重命名
 
-#### 3.3 主要思想
+### 3.3 主要思想
     - 1.追踪每条指令的操作数可用的时间来最小化RAW冲突
     - 2.引入硬件级的寄存器重命名来最小化WAW和WAR冲突
 
 
-#### 3.4 过程
+### 3.4 过程
 
 一条指令的执行过程变成3步
 
@@ -155,14 +155,26 @@ date: 2026-03-16
     - 结果计算完成后，通过CDB(Common Data Bus)传输到所有需要这个结果的保留站和寄存器中（包括store buffer）
     - store指令在store buffer中等待，直到要存储的值和存储地址都可用，等待内存空闲时立刻写入结果
 
-#### 3.5 例子
+### 3.5 例子
 
-#### eg1
+#### eg1：两条指令的例子
 
+- step1：
+![eg1.1](../../images/sys3.3.20.jpg)
+    - MUL指令直接从寄存器表中复制F2和F4的值a，b到保留站
+    - 将F0指向MULT1（相当于重命名）
 
-#### eg2
+- step2：
+![eg1.2](../../images/sys3.3.21.jpg)
+    - F2寄存器指向ADD1，但是因为旧值a已经被拷贝到MULT1中，因此消除了WAR冲突
+    - ADD指令在拷贝F0寄存器的值的时候，因为寄存器状态指向MULT1，所以直接拷贝MULT1到保留站
 
-- 依然是上面那[六条指令](#eg)的例子
+- step3：
+![eg1.3](../../images/sys3.3.22.jpg)
+    - MULT协会之后，同时广播到寄存器状态表和ADD保留站，F0寄存器的值同步变成计算结果e
+
+#### eg2：[六条指令](#eg)的例子
+
 - 使用Tomasulo算法可以画出下面这样的时空图
 
 ![timespace_T](../../images/sys3.3.19.jpg)
@@ -170,5 +182,17 @@ date: 2026-03-16
 
 
 
-### 4.总结
+## 4.总结
 
+- Scoreboard Algorithm：使用详细的表格来管理所有的状态
+    - 优点
+        - 硬件逻辑相对精简
+    - 缺点
+        - WAR和WAW冲突会导致算法效率下降
+
+- Tomasulo Algorithm：通过reg renaming和CDB广播进一步加深并行水平
+    - 优点
+        - 通过保留站，把寄存器名重命名为临时标签，在硬件层面解决了WAR和WAW，因为，哪怕后面的指令想要修改之前的
+    - 缺点
+        - 硬件设计比较复杂
+        - CDB总线的复杂度随着计算单元数量增加会指数级上升
