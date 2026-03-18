@@ -16,9 +16,9 @@ date: 2026-03-15
 - Problem: Can large pretrained visionlanguage models be integrated directly into low-level robotic control to boost generalization and enable emergent semantic resoning?
 
 
-### 1.VLA(Vision-Language-Action Models)
+## 1.VLA(Vision-Language-Action Models)
 
-#### 1.1 Pre-Trained Vision-Language Models
+### 1.1 Pre-Trained Vision-Language Models
 
 - input: 一张或多张图象
 - output: 自然语言
@@ -26,8 +26,16 @@ date: 2026-03-15
 - 选择了PaLI-X和PaLM-E两个VLM来改造成VLA
 
 
-#### 1.2 Robot-Action Fine-Tuning
+### 1.2 Robot-Action Fine-Tuning
 
 - 目标：训练VLM使其可以输出动作
 
+- 将机械臂末端的动作分为8个参数
+    - 终止(terminate)
+    - $\delta pos_x$ , $\delta pos_y$ , $\delta pos_z$
+    - $\delta rot_x$ , $\delta rot_x$ , $\delta rot_x$
+    - 夹爪伸展(gripper_extension)
 
+- 将除了终止信号外的7个参数的连续维度**均匀地离散化**为**256个**bins，通过这种方式就可以用8个整数来表示一个完整、精准的机械臂动作
+
+- 
