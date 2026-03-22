@@ -48,8 +48,8 @@ jobs:
 
       - name: Build Sites
         run: |
-          # 更新 Note 站点统计
-          python scripts/update_stats.py
+          # 更新 Note 站点统计（允许失败）
+          python scripts/update_stats.py || echo "Stats update skipped"
           
           # 清理
           rm -rf public

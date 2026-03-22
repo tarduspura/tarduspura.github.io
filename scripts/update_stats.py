@@ -48,16 +48,21 @@ def update_index_stats(index_path, note_count, category_count, total_words):
         content = f.read()
     
     # 计算预计阅读时间（假设每分钟阅读 300 字）
-    reading_time = round(total_words / 300)
+    reading_time = max(1, round(total_words / 300))
     
-    # 更新统计表格
-    stats_pattern = r'(## 站点统计\n\n\| 指标 \| 数值 \|\n\|:-----|:-----\|\n)\| 笔记总数 \| \d+ 篇 \|\n\| 分类数量 \| \d+ 个 \|'
-    stats_replacement = f'\\1| 笔记总数 | {note_count} 篇 |\n| 分类数量 | {category_count} 个 |\n| 总字数 | {total_words:,} 字 |\n| 预计阅读 | {reading_time} 分钟 |'
+    # 更新统计表格 - 使用更宽松的正则
+    stats_pattern = r'(## 站点统计\n\n\| 指标 \| 数值 \|\n\|:-----|:-----\|\n)(\| .+ \| .+ \|\n)+'
+    stats_replacement = f'\\1| 笔记总数 | {note_count} 篇 |\n| 分类数量 | {category_count} 个 |\n| 总字数 | {total_words:,} 字 |\n| 预计阅读 | {reading_time} 分钟 |\n| 建站年份 | 2026 |\n'
     
-    content = re.sub(stats_pattern, stats_replacement, content)
+    new_content = re.sub(stats_pattern, stats_replacement, content)
+    
+    # 如果替换失败，说明格式不匹配，跳过更新
+    if new_content == content:
+        print("⚠ 警告: 未找到匹配的统计表格，跳过更新")
+        return
     
     with open(index_path, 'w', encoding='utf-8') as f:
-        f.write(content)
+        f.write(new_content)
     
     print(f"✓ 统计信息已更新:")
     print(f"  - 笔记总数: {note_count} 篇")
