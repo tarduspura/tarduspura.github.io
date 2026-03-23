@@ -50,7 +50,7 @@ date: 2026-03-23
 ![hierachy](../../images/sys3.5.1.jpg)
 
 
-### 1.5 Cache
+### 1.5 Cache预备
 
 - 定义：a safe place for **hiding** or ** storing** things
 
@@ -104,7 +104,7 @@ date: 2026-03-23
 
 - 结构发展
 
-![architecture](../../images/sys3.5.5.jpg)
+![architecture](../../images/sys3.5.10.jpg)
 
 
 - Memory/Storage
@@ -122,7 +122,60 @@ date: 2026-03-23
 ![typical_arch](../../images/sys3.5.6.jpg)
 
 
+### 2.3 三种计算机对内存结构的不同考虑
 
+- 桌面电脑：单用户、单任务。最关心响应时间
+- 服务器电脑：多用户、多任务。最关心内存带宽
+- 嵌入式电脑：实时任务，用简化的OS运行单个app，主存很小。最关心能源和电池续航
+
+
+### 2.4 Cache
+
+- 在电脑中，什么都可以是cache
+
+![cache](../../images/sys3.5.7.jpg)
+
+
+- 分离缓存和统一缓存
+    - Split cache
+        - I-cache for instruction, D-cache for data
+    
+    ![split_cache](../../images/sys3.5.8.jpg)
+
+    - Unified cache
+        - 更简单的硬件，稍差一些的性能
+
+    ![unified_cache](../../images/sys3.5.9.jpg)
+
+
+### 2.5 cache和memory hierachy设计的4个问题
+
+- Q1：一个数据块应该被放在高层存储器/主存的什么位置？
+    - Direct Mapped（直接映射）：每个块放在固定的一个位置。
+        - 查找快，但是容易产生冲突
+    - Fully Asscoiative（全相联）：可以放在任何空闲的位置
+        - 利用率高，但是查找慢
+    - Set Assocaitive（组相联）：折中。数据块映射到一个特定的组，可以在组中任意选择空闲的位置。现代CPU的常用方案
+
+- Q2：如果一个数据块存在于高层存储器/主存中，如何找到它？
+    - 查index位置是否有item
+    - 检查valid是否为1
+    - 检查tag是否匹配
+
+- Q3：当miss发生，但cache已满，应该剔除哪一个块来存放新的块？
+    - Random
+    - LRU(Least Recently Used)：高效，但硬件记录成本比较高
+    - FIFO：删除最早进来的块
+
+- Q4：CPU执行写操作时，只修改cache，还是连带着内存一起修改？
+    - Write Through：同时更新cache和下层的内存。
+        - 优点：保持内存数据更新
+        - 缺点：速度受限于内存速度，比较慢，通常配合write buffer来缓解等待时间
+
+    - Write Back：只更新cache，并给这个块打上一个dirty bit。只有当这个块离开cache的时候才会更新内存
+        - 优点：速度非常快
+        - 缺点：内存数据无法实时更新，而且逻辑比较复杂
+    
 
 
 
