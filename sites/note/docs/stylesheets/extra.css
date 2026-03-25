@@ -165,3 +165,231 @@ body {
 .md-footer {
   border-top: 1px solid var(--md-default-fg-color--lightest);
 }
+
+
+/* ═══════════════════════════════════════════
+   Phase 2: 自定义主页
+   ═══════════════════════════════════════════ */
+
+/* ─── 主页容器 ─── */
+.tp-home {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* ─── Hero 区域 ─── */
+.tp-hero {
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+
+.tp-hero__wave {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  animation: tp-wave 2.5s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+@keyframes tp-wave {
+  0%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+}
+
+.tp-hero__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--md-default-fg-color);
+  margin: 0.5rem 0 0.8rem;
+}
+
+.tp-hero__subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color--light);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.8rem;
+}
+
+.tp-hero__desc {
+  font-size: 0.9rem;
+  color: var(--md-default-fg-color--lighter);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ─── 卡片区域 ─── */
+.tp-cards {
+  padding: 1rem 0 2rem;
+}
+
+.tp-cards__heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+  margin-bottom: 1.2rem;
+  padding-left: 0.2rem;
+}
+
+.tp-cards__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* ─── 单张卡片 ─── */
+.tp-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 12px;
+  background: var(--md-default-bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  text-decoration: none !important;
+  color: var(--md-default-fg-color) !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+[data-md-color-scheme="slate"] .tp-card {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #161b22;
+}
+
+.tp-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: var(--md-primary-fg-color--light);
+}
+
+[data-md-color-scheme="slate"] .tp-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.tp-card__icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--md-code-bg-color);
+}
+
+.tp-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.tp-card__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem;
+  color: var(--md-default-fg-color);
+}
+
+.tp-card__desc {
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--lighter);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.tp-card__arrow {
+  font-size: 1.1rem;
+  color: var(--md-default-fg-color--lighter);
+  transition: transform 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.tp-card:hover .tp-card__arrow {
+  transform: translateX(4px);
+  color: var(--md-default-fg-color);
+}
+
+/* ─── 统计区域 ─── */
+.tp-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem 0;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-md-color-scheme="slate"] .tp-stats {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tp-stats__item {
+  text-align: center;
+}
+
+.tp-stats__number {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--md-default-fg-color);
+  letter-spacing: -0.02em;
+}
+
+.tp-stats__label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--lighter);
+  margin-top: 0.2rem;
+}
+
+.tp-stats__divider {
+  width: 1px;
+  height: 2.5rem;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+[data-md-color-scheme="slate"] .tp-stats__divider {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── 响应式 ─── */
+@media (max-width: 768px) {
+  .tp-hero {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .tp-hero__title {
+    font-size: 1.8rem;
+  }
+
+  .tp-cards__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tp-stats {
+    gap: 1.5rem;
+  }
+
+  .tp-stats__number {
+    font-size: 1.3rem;
+  }
+}
+
+/* ─── 隐藏主页的默认文章内容区 ─── */
+.tp-home + .md-typeset,
+.tp-home ~ * {
+  display: none;
+}

@@ -4,94 +4,71 @@
 import os
 from pathlib import Path
 import re
-from datetime import datetime
 
 def count_markdown_files(docs_dir):
-    """统计 markdown 文件数量（排除 index.md）"""
     count = 0
     for root, dirs, files in os.walk(docs_dir):
-        for file in files:
-            if file.endswith('.md') and file != 'index.md':
+        # 排除非内容目录
+        dirs[:] = [d for d in dirs if d not in ('stylesheets', 'javascripts', 'images')]
+        for f in files:
+            if f.endswith('.md') and f != 'index.md':
                 count += 1
     return count
 
-def count_categories(docs_dir):
-    """统计分类数量（一级目录）"""
-    categories = set()
-    for item in os.listdir(docs_dir):
-        item_path = os.path.join(docs_dir, item)
-        if os.path.isdir(item_path) and not item.startswith('.'):
-            categories.add(item)
-    return len(categories)
-
 def count_total_words(docs_dir):
-    """统计总字数（中文字符 + 英文单词）"""
-    total_words = 0
+    total = 0
     for root, dirs, files in os.walk(docs_dir):
-        for file in files:
-            if file.endswith('.md') and file != 'index.md':
-                file_path = os.path.join(root, file)
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    content = f.read()
-                    # 移除 front matter
+        dirs[:] = [d for d in dirs if d not in ('stylesheets', 'javascripts', 'images')]
+        for f in files:
+            if f.endswith('.md') and f != 'index.md':
+                path = os.path.join(root, f)
+                with open(path, 'r', encoding='utf-8') as fh:
+                    content = fh.read()
                     content = re.sub(r'^---\n.*?\n---\n', '', content, flags=re.DOTALL)
-                    # 统计中文字符
-                    chinese_chars = len(re.findall(r'[\u4e00-\u9fff]', content))
-                    # 统计英文单词
-                    english_words = len(re.findall(r'\b[a-zA-Z]+\b', content))
-                    total_words += chinese_chars + english_words
-    return total_words
+                    chinese = len(re.findall(r'[\u4e00-\u9fff]', content))
+                    english = len(re.findall(r'\b[a-zA-Z]+\b', content))
+                    total += chinese + english
+    return total
 
-def update_index_stats(index_path, note_count, category_count, total_words):
-    """更新 index.md 中的统计信息"""
-    with open(index_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    
-    # 计算预计阅读时间（假设每分钟阅读 300 字）
-    reading_time = max(1, round(total_words / 300))
-    
-    # 更新统计表格 - 使用更宽松的正则
-    stats_pattern = r'(## 站点统计\n\n\| 指标 \| 数值 \|\n\|:-----|:-----\|\n)(\| .+ \| .+ \|\n)+'
-    stats_replacement = f'\\1| 笔记总数 | {note_count} 篇 |\n| 分类数量 | {category_count} 个 |\n| 总字数 | {total_words:,} 字 |\n| 预计阅读 | {reading_time} 分钟 |\n| 建站年份 | 2026 |\n'
-    
-    new_content = re.sub(stats_pattern, stats_replacement, content)
-    
-    # 如果替换失败，说明格式不匹配，跳过更新
-    if new_content == content:
-        print("⚠ 警告: 未找到匹配的统计表格，跳过更新")
-        return
-    
-    with open(index_path, 'w', encoding='utf-8') as f:
-        f.write(new_content)
-    
-    print(f"✓ 统计信息已更新:")
-    print(f"  - 笔记总数: {note_count} 篇")
-    print(f"  - 分类数量: {category_count} 个")
-    print(f"  - 总字数: {total_words:,} 字")
-    print(f"  - 预计阅读: {reading_time} 分钟")
+def create_stats_override(overrides_dir, note_count, word_count):
+    """创建 overrides/partials/meta.html 注入统计 meta 标签"""
+    partials_dir = os.path.join(overrides_dir, 'partials')
+    os.makedirs(partials_dir, exist_ok=True)
+    # 不覆盖 meta.html，而是创建一个 hooks 可用的文件
+    # 直接更新 home-stats.js 中的数据
+    pass
+
+def update_home_stats_js(docs_dir, note_count, word_count):
+    """更新 home-stats.js 中的 fallback 数据"""
+    js_path = os.path.join(docs_dir, 'javascripts', 'home-stats.js')
+    content = f"""// 主页统计数据（由 update_stats.py 在构建时自动更新）
+document.addEventListener('DOMContentLoaded', function() {{
+  var noteEl = document.getElementById('tp-note-count');
+  var wordEl = document.getElementById('tp-word-count');
+  if (noteEl) noteEl.textContent = '{note_count}';
+  if (wordEl) wordEl.textContent = '{word_count:,}';
+}});
+"""
+    with open(js_path, 'w', encoding='utf-8') as f:
+        f.write(content)
 
 def main():
-    # 获取项目根目录
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
     docs_dir = project_root / 'sites' / 'note' / 'docs'
-    index_path = docs_dir / 'index.md'
-    
+
     if not docs_dir.exists():
         print(f"错误: 找不到目录 {docs_dir}")
         return
-    
-    if not index_path.exists():
-        print(f"错误: 找不到文件 {index_path}")
-        return
-    
-    # 统计信息
+
     note_count = count_markdown_files(docs_dir)
-    category_count = count_categories(docs_dir)
-    total_words = count_total_words(docs_dir)
-    
-    # 更新 index.md
-    update_index_stats(index_path, note_count, category_count, total_words)
+    word_count = count_total_words(docs_dir)
+
+    update_home_stats_js(docs_dir, note_count, word_count)
+
+    print(f"✓ 统计信息已更新:")
+    print(f"  - 笔记总数: {note_count} 篇")
+    print(f"  - 总字数: {word_count:,} 字")
 
 if __name__ == '__main__':
     main()
