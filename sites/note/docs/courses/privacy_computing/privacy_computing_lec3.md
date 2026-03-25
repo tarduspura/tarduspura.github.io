@@ -5,7 +5,7 @@ date: 2026-03-24
 
 ## 1.离散对数问题(Discrete Logarithm Problem)
 
-- 在一个**循环群**中，已知底数和结果，**求指数的计Problem算难度**远远大于已知底数和指数正向计算结果
+- 在一个**循环群**中，已知底数和结果，**求指数的计算难度**远远大于已知底数和指数正向计算结果
 
 $\mathcal{g}$ ：generic（通用的）, polynomial-time的生成一个群的算法
 
@@ -24,9 +24,9 @@ $\mathcal{g}$ ：generic（通用的）, polynomial-time的生成一个群的算
 
 - *G*是一个循环群当且仅当
     - 1.*G*满足群的性质
-    - 2.存在*g* $\in$ *G*，使得群中的**每一个**元素都可以写成*g*若干次作用（乘法、加法...）的结果
+    - 2.存在 *g* $\in$ *G*，使得群中的**每一个**元素都可以写成 *g* 若干次作用（乘法、加法...）的结果
 
-- 其中*g*被称为生成元(generator)
+- 其中*g*被称为生成元 (generator)
 
 - 存在生成元的群称为循环群，循环群**至少**存在一个生成元
 
@@ -35,7 +35,7 @@ $\mathcal{g}$ ：generic（通用的）, polynomial-time的生成一个群的算
 - 群的阶数：等于群中的元素个数
 
 - 元素的阶数
-    - 对于元素a$\in$*G*，假设a与自己作用m次得到e（单位元），把m称为元素a的阶数
+    - 对于元素 a $\in$ *G* ，假设 a 与自己作用 m 次得到 e（单位元），把 m 称为元素 a 的阶数
 
 - 在一个有限群中，任意元素的阶都能整除群的阶
 
@@ -55,7 +55,7 @@ $\mathcal{g}$ ：generic（通用的）, polynomial-time的生成一个群的算
     - 得到一个公开参数 *$g_k$*
 
 - Keygen($g_k$)
-    - 左右两方各自随机选择一个私钥 $\in mathcal{Z}_p$ 
+    - 左右两方各自随机选择一个私钥 $\in \mathcal{Z}_p$ 
     - 各自计算公钥
     - 交换公钥
 
@@ -95,9 +95,9 @@ $\mathcal{g}$ ：generic（通用的）, polynomial-time的生成一个群的算
 ![CDH-sec](../../images/pc_3.2.2.2.jpg)
 
 !!! abstract "Summary"
-离散对数假设(DL)：问题最难，假设最强。攻击者目标：给定 $g^a$，求出a
-CDH假设：难度中等，假设最中等。给定 $g^a$, $g^b$, 求出 $g^(ab)$
-判定DH假设：最容易，假设最弱。给定 $g^a$, $g^b$ 和一个 *Z*，判断Z和 $g^(ab)$ 相等还是一个随机值
+    - 离散对数假设(DL)：问题最难，假设最强。攻击者目标：给定 $g^a$，求出 a。
+    - CDH假设：难度中等，假设强度中等。给定 $g^a$, $g^b$，求出 $g^{ab}$。
+    - 判定DH假设(DDH)：最容易，假设最弱。给定 $g^a$, $g^b$ 和一个 *Z*，判断 Z 与 $g^{ab}$ 是否相等，或仅是随机值。
 
 ### 2.3 CDH和DL之间的关系
 
@@ -155,7 +155,7 @@ CDH假设：难度中等，假设最中等。给定 $g^a$, $g^b$, 求出 $g^(ab)
 
 - 解密流程
     - 恢复共同密钥
-        - $k = (c_1)^s = (g^r)^s = g^(rs)
+        - $k = (c_1)^s = (g^r)^s = g^(rs)$
     - 提取消息
         - m = $c_2$ / k
 
@@ -164,14 +164,14 @@ CDH假设：难度中等，假设最中等。给定 $g^a$, $g^b$, 求出 $g^(ab)
 #### 3.3.1 直觉
 
 - Elgamal = DH + one-time-pad
-- 因为后者具有完美安全，所以Elgamal的安全性和DH的安全性相当
+- 因为后者具有完美安全，所以 Elgamal 的安全性和 DH 的安全性相当
 
 #### 3.3.2 IND-CPA Security
 
 ![indcpa](../../images/pc_3.3.3.2.jpg)
 
 
-- ELgamal是IND-CPA安全的
+- **判断**：ELgamal 是 IND-CPA 安全的
 
 - Theorem：the DDH problem is hard relative to $\mathcal{g}$ is **equivalent** to the Elgamal encryption scheme is IND-CPA secure
 
