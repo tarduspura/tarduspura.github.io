@@ -1,5 +1,5 @@
 ---
-title: Elgamal加密
+title: 第3课：Elgamal加密
 date: 2026-03-24
 ---
 
