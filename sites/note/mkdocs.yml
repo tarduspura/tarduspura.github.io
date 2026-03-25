@@ -4,23 +4,24 @@ site_description: 技术学习笔记
 
 theme:
   name: material
+  custom_dir: overrides
   language: zh
   font:
-    text: Noto Sans SC
+    text: Inter
     code: JetBrains Mono
   palette:
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: 切换到浅色模式
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
         icon: material/brightness-7
         name: 切换到深色模式
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
   features:
     - search.suggest
     - search.highlight
@@ -28,12 +29,14 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
+    - navigation.indexes
+    - navigation.footer
     - toc.follow
     - content.code.copy
-    - content.action.edit
-    - content.action.view
+    - content.code.annotate
   icon:
     repo: fontawesome/brands/github
+    logo: material/notebook-outline
 
 repo_url: https://github.com/tarduspura
 repo_name: tarduspura
@@ -47,7 +50,11 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -67,80 +74,28 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  - javascripts/home-stats.js
 
 extra_css:
   - stylesheets/extra.css
 
 plugins:
   - search:
-      lang: 
+      lang:
         - zh
         - en
   - git-revision-date-localized:
       enable_creation_date: true
-      type: datetime
+      type: timeago
       fallback_to_build_date: true
+      locale: zh
 
-nav:
-  - 首页: index.md
-  - 计算机科学:
-    - 系统:
-      - CSAPP: cs/system/csapp.md
-    - 安全:
-      - Agent安全: cs/security/agent.md
-    - AI/ML:
-      - GCG对抗攻击: cs/ai/gcg.md
-      - LLM综述: cs/ai/llmreview2402.md
-  - 课程笔记:
-    - 硬件安全基础: 
-      - courses/hardcore_sec/hardcore_sec_lec1.md
-    - 隐私计算与数据合规: 
-      - courses/privacy_computing/privacy_computing_lec1.md
-      - courses/privacy_computing/privacy_computing_lec2.md
-      - courses/privacy_computing/privacy_computing_lec3.md
-    - 计算机系统三: 
-      - courses/sys3/sys3_lec1.md
-      - courses/sys3/sys3_lec2.md
-      - courses/sys3/sys3_lec3.md
-      - courses/sys3/sys3_lec4.md
-      - courses/sys3/sys3_lec5.md
-    - 人工智能逻辑:
-      - courses/ai_logic/ai_logic_1.md
-      - courses/ai_logic/ai_logic_2.md
-  - 科研:
-    - 具身智能安全:
-      - 论文阅读:
-        - research/embodied_sec/articles/rt2.md
-
-  - 杂项:
-    - 学习资源: misc/Learnmore.md
-    - 日常记录: misc/9-30.md
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/tarduspura
-    - icon: fontawesome/solid/paper-plane
-      link: mailto:tardupura@163.com
-  analytics:
-    feedback:
-      title: 这篇文章有帮助吗？
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: 有帮助
-          data: 1
-          note: 感谢反馈！
-        - icon: material/emoticon-sad-outline
-          name: 需要改进
-          data: 0
-          note: 感谢反馈！
-
-# ─── Navigation ───
 nav:
   - 首页: index.md
   - 计算机科学:
@@ -176,7 +131,6 @@ nav:
     - 日常记录: misc/9-30.md
   - 更新日志: changelog.md
 
-# ─── Extra ───
 extra:
   social:
     - icon: fontawesome/brands/github
