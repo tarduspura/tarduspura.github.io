@@ -138,3 +138,46 @@ extra:
           name: 需要改进
           data: 0
           note: 感谢反馈！
+
+# ─── Navigation ───
+nav:
+  - 首页: index.md
+  - 计算机科学:
+    - 系统:
+      - CSAPP: cs/system/csapp.md
+    - 安全:
+      - Agent安全: cs/security/agent.md
+    - AI/ML:
+      - GCG对抗攻击: cs/ai/gcg.md
+      - LLM综述: cs/ai/llmreview2402.md
+  - 课程笔记:
+    - 硬件安全基础:
+      - courses/hardcore_sec/hardcore_sec_lec1.md
+    - 隐私计算与数据合规:
+      - courses/privacy_computing/privacy_computing_lec1.md
+      - courses/privacy_computing/privacy_computing_lec2.md
+      - courses/privacy_computing/privacy_computing_lec3.md
+    - 计算机系统三:
+      - courses/sys3/sys3_lec1.md
+      - courses/sys3/sys3_lec2.md
+      - courses/sys3/sys3_lec3.md
+      - courses/sys3/sys3_lec4.md
+      - courses/sys3/sys3_lec5.md
+    - 人工智能逻辑:
+      - courses/ai_logic/ai_logic_1.md
+      - courses/ai_logic/ai_logic_2.md
+  - 科研:
+    - 具身智能安全:
+      - 论文阅读:
+        - research/embodied_sec/articles/rt2.md
+  - 杂项:
+    - 学习资源: misc/Learnmore.md
+    - 日常记录: misc/9-30.md
+
+# ─── Extra ───
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tarduspura
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:tardupura@163.com

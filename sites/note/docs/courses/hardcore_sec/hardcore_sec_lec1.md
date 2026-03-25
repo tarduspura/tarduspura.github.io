@@ -3,6 +3,8 @@ title: DES & AES
 date: 2026-03-05
 ---
 
+以下内容参考了[博客](https://goodapple.top/archives/162)
+
 ## 1.DES
 
 - Data Excryption Standard(美国数据加密标准)

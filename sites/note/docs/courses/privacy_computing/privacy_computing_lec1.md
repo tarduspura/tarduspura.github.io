@@ -1,5 +1,5 @@
 ---
-title: MPC概览
+title: 第1课：MPC概览
 date: 2026-03-05
 ---
 

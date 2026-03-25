@@ -3,6 +3,8 @@ title: 第5课：内存层级结构
 date: 2026-03-23
 ---
 
+[参考](https://note.howjul.com/%E7%B3%BB%E7%BB%9F%E4%B8%89)
+
 ## 1.Introduction
 
 ### 1.1 Memory
