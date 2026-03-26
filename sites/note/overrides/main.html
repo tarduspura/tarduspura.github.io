@@ -7,56 +7,30 @@
 {% block content %}
   {% if page.is_homepage %}
     <div class="tp-home">
-      <!-- Hero Section -->
+      <!-- Hero -->
       <section class="tp-hero">
-        <div class="tp-hero__inner">
-          <div class="tp-hero__greeting">
-            <p class="tp-hero__wave">👋</p>
-            <h1 class="tp-hero__title">Tardus Pura's Notes</h1>
-            <p class="tp-hero__subtitle">
-              计算机系统 · 信息安全 · 人工智能
-            </p>
-            <p class="tp-hero__desc">
-              这里是我的学习笔记本，记录课程笔记、论文阅读和技术探索。
-            </p>
-          </div>
+        <h1 class="tp-hero__title">Tardus Pura's Notes</h1>
+        <p class="tp-hero__subtitle">计算机科学 · 信息安全 · 人工智能</p>
+        <div class="tp-hero__stats">
+          <span class="tp-hero__stat">20 篇笔记</span>
+          <span class="tp-hero__dot">·</span>
+          <span class="tp-hero__stat">2.3w 字</span>
         </div>
       </section>
 
-      <!-- Category Cards -->
+      <!-- Cards -->
       <section class="tp-cards">
-        <h2 class="tp-cards__heading">笔记分类</h2>
         <div class="tp-cards__grid">
 
           <a class="tp-card" href="cs/system/csapp/">
-            <div class="tp-card__icon">🖥️</div>
             <div class="tp-card__body">
-              <h3 class="tp-card__title">计算机系统</h3>
-              <p class="tp-card__desc">CSAPP 读书笔记、体系结构</p>
-            </div>
-            <span class="tp-card__arrow">→</span>
-          </a>
-
-          <a class="tp-card" href="cs/security/agent/">
-            <div class="tp-card__icon">🔐</div>
-            <div class="tp-card__body">
-              <h3 class="tp-card__title">信息安全</h3>
-              <p class="tp-card__desc">Agent 安全、攻防技术</p>
-            </div>
-            <span class="tp-card__arrow">→</span>
-          </a>
-
-          <a class="tp-card" href="cs/ai/gcg/">
-            <div class="tp-card__icon">🤖</div>
-            <div class="tp-card__body">
-              <h3 class="tp-card__title">AI / ML</h3>
-              <p class="tp-card__desc">对抗攻击、LLM 综述</p>
+              <h3 class="tp-card__title">计算机科学</h3>
+              <p class="tp-card__desc">CSAPP 读书笔记</p>
             </div>
             <span class="tp-card__arrow">→</span>
           </a>
 
           <a class="tp-card" href="courses/sys3/sys3_lec1/">
-            <div class="tp-card__icon">📖</div>
             <div class="tp-card__body">
               <h3 class="tp-card__title">课程笔记</h3>
               <p class="tp-card__desc">系统三、隐私计算、硬件安全、AI逻辑</p>
@@ -64,17 +38,31 @@
             <span class="tp-card__arrow">→</span>
           </a>
 
+          <a class="tp-card" href="cs/security/agent/">
+            <div class="tp-card__body">
+              <h3 class="tp-card__title">安全</h3>
+              <p class="tp-card__desc">Agent 安全、攻防技术</p>
+            </div>
+            <span class="tp-card__arrow">→</span>
+          </a>
+
+          <a class="tp-card" href="cs/ai/gcg/">
+            <div class="tp-card__body">
+              <h3 class="tp-card__title">论文阅读</h3>
+              <p class="tp-card__desc">GCG 对抗攻击、LLM 综述</p>
+            </div>
+            <span class="tp-card__arrow">→</span>
+          </a>
+
           <a class="tp-card" href="research/embodied_sec/articles/rt2/">
-            <div class="tp-card__icon">🔬</div>
             <div class="tp-card__body">
               <h3 class="tp-card__title">科研</h3>
-              <p class="tp-card__desc">具身智能安全、论文阅读</p>
+              <p class="tp-card__desc">具身智能安全</p>
             </div>
             <span class="tp-card__arrow">→</span>
           </a>
 
           <a class="tp-card" href="misc/Learnmore/">
-            <div class="tp-card__icon">📌</div>
             <div class="tp-card__body">
               <h3 class="tp-card__title">杂项</h3>
               <p class="tp-card__desc">学习资源、日常记录</p>
@@ -85,27 +73,9 @@
         </div>
       </section>
 
-      <!-- Quick Stats -->
-      <section class="tp-stats">
-        <div class="tp-stats__item">
-          <span class="tp-stats__number">20</span>
-          <span class="tp-stats__label">篇笔记</span>
-        </div>
-        <div class="tp-stats__divider"></div>
-        <div class="tp-stats__item">
-          <span class="tp-stats__number">2.3w</span>
-          <span class="tp-stats__label">总字数</span>
-        </div>
-        <div class="tp-stats__divider"></div>
-        <div class="tp-stats__item">
-          <span class="tp-stats__number">2026</span>
-          <span class="tp-stats__label">建站年份</span>
-        </div>
-      </section>
-
-      <!-- Changelog Link -->
+      <!-- Changelog -->
       <section class="tp-changelog-link">
-        <a href="changelog/">📋 查看更新时间线 →</a>
+        <a href="changelog/">查看更新时间线 →</a>
       </section>
     </div>
   {% else %}

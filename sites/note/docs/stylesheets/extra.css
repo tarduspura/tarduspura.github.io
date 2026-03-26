@@ -315,26 +315,8 @@ mjx-container[jax="CHTML"][display="true"] {
 
 /* Hero */
 .tp-hero {
-  padding: 4rem 0 3rem;
+  padding: 4rem 0 2.5rem;
   text-align: center;
-}
-
-.tp-hero__wave {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  animation: tp-wave 2.5s ease-in-out infinite;
-  display: inline-block;
-  transform-origin: 70% 70%;
-}
-
-@keyframes tp-wave {
-  0%, 100% { transform: rotate(0deg); }
-  10% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  30% { transform: rotate(14deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10deg); }
-  60% { transform: rotate(0deg); }
 }
 
 .tp-hero__title {
@@ -343,15 +325,29 @@ mjx-container[jax="CHTML"][display="true"] {
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--md-default-fg-color);
-  margin: 0.5rem 0 0.8rem;
+  margin: 0 0 0.6rem;
 }
 
 .tp-hero__subtitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--md-default-fg-color--light);
   letter-spacing: 0.15em;
   margin-bottom: 0.8rem;
+}
+
+.tp-hero__stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color--lighter);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.tp-hero__dot {
+  opacity: 0.4;
 }
 
 .tp-hero__desc {
@@ -437,41 +433,6 @@ mjx-container[jax="CHTML"][display="true"] {
 .tp-card:hover .tp-card__arrow {
   transform: translateX(4px);
   color: var(--md-accent-fg-color);
-}
-
-/* Stats */
-.tp-stats {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5rem;
-  padding: 2rem 0;
-  margin-top: 1rem;
-  border-top: 1px solid var(--tp-border);
-}
-
-.tp-stats__item { text-align: center; }
-
-.tp-stats__number {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--md-default-fg-color);
-  letter-spacing: -0.02em;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.tp-stats__label {
-  display: block;
-  font-size: 0.72rem;
-  color: var(--md-default-fg-color--lighter);
-  margin-top: 0.2rem;
-}
-
-.tp-stats__divider {
-  width: 1px;
-  height: 2.5rem;
-  background: var(--tp-border);
 }
 
 /* Changelog link */

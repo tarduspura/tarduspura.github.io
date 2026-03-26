@@ -99,13 +99,7 @@ plugins:
 nav:
   - 首页: index.md
   - 计算机科学:
-    - 系统:
-      - CSAPP: cs/system/csapp.md
-    - 安全:
-      - Agent安全: cs/security/agent.md
-    - AI/ML:
-      - GCG对抗攻击: cs/ai/gcg.md
-      - LLM综述: cs/ai/llmreview2402.md
+    - CSAPP: cs/system/csapp.md
   - 课程笔记:
     - 硬件安全基础:
       - courses/hardcore_sec/hardcore_sec_lec1.md
@@ -122,6 +116,14 @@ nav:
     - 人工智能逻辑:
       - courses/ai_logic/ai_logic_1.md
       - courses/ai_logic/ai_logic_2.md
+  - 安全:
+    - Agent安全: cs/security/agent.md
+  - 论文阅读:
+    - 人工智能:
+      - GCG对抗攻击: cs/ai/gcg.md
+      - LLM综述: cs/ai/llmreview2402.md
+    - 具身智能安全:
+      - research/embodied_sec/articles/rt2.md
   - 科研:
     - 具身智能安全:
       - 论文阅读:
