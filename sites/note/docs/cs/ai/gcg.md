@@ -5,10 +5,6 @@ date: 2026-02-26
 
 # GCG 对抗攻击
 
-<div class="article-meta">
-<span>📝 约 2500 字</span>
-<span>⏱️ 预计阅读 13 分钟</span>
-</div>
 
 !!! abstract "关键词"
     jailbroken · adversarial suffix · affirmative prefix · GCG · Universal and Transferable
