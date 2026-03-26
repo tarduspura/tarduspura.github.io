@@ -268,6 +268,25 @@ mjx-container[jax="CHTML"][display="true"] {
   opacity: 0.7;
 }
 
+/* ═══════ Article Meta ═══════ */
+
+.tp-article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--lighter);
+  margin: 0.5rem 0 1.5rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--tp-border);
+}
+
+.tp-article-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
 /* ═══════ Task lists ═══════ */
 
 .md-typeset .task-list-indicator::before {
@@ -341,10 +360,10 @@ mjx-container[jax="CHTML"][display="true"] {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--md-default-fg-color--lighter);
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
+  font-family: 'Ma Shan Zheng', cursive;
+  font-weight: 400;
 }
 
 .tp-hero__dot {

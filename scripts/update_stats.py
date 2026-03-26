@@ -5,7 +5,6 @@ import os
 from pathlib import Path
 import re
 import subprocess
-from datetime import datetime
 
 def count_markdown_files(docs_dir):
     count = 0
@@ -57,76 +56,55 @@ def update_main_html(overrides_dir, note_count, word_count_str):
     with open(main_html, 'w', encoding='utf-8') as f:
         f.write(content)
 
-def get_git_file_changes(project_root):
-    """从 git log 获取最近的文件变更"""
+def generate_changelog(docs_dir, project_root):
+    """从 git log 自动生成时间线"""
     try:
         result = subprocess.run(
-            ['git', 'log', '--diff-filter=AM', '--name-only',
-             '--pretty=format:%H|%ai|%s', '-30', '--', 'sites/note/docs/'],
-            capture_output=True, text=True, cwd=project_root, encoding='utf-8', errors='replace'
+            ['git', 'log', '--pretty=format:%ai|%s', '-50'],
+            capture_output=True, text=True, cwd=project_root,
+            encoding='utf-8', errors='replace'
         )
         if result.returncode != 0:
-            return []
-        entries = []
-        current_commit = None
-        for line in result.stdout.strip().split('\n'):
-            if '|' in line and not line.startswith('sites/'):
-                parts = line.split('|', 2)
-                if len(parts) == 3:
-                    current_commit = {
-                        'date': parts[1].strip()[:10],
-                        'msg': parts[2].strip(),
-                        'files': []
-                    }
-            elif line.startswith('sites/note/docs/') and line.endswith('.md'):
-                if current_commit and line not in ('sites/note/docs/index.md', 'sites/note/docs/changelog.md'):
-                    current_commit['files'].append(line)
-                    if current_commit not in entries:
-                        entries.append(current_commit)
-        return entries
-    except Exception:
-        return []
-
-def generate_changelog(docs_dir, project_root):
-    """自动生成时间线"""
-    entries = get_git_file_changes(project_root)
-    if not entries:
+            print("⚠ git log 失败，跳过时间线生成")
+            return
+    except Exception as e:
+        print(f"⚠ git 命令异常: {e}")
         return
 
     lines = [
-        '---',
-        'title: 更新时间线',
-        'hide:',
-        '  - navigation',
-        '  - toc',
-        '---',
-        '',
-        '# 更新时间线',
-        '',
-        '<div class="tp-timeline">',
-        ''
+        '---', 'title: 更新时间线', 'hide:', '  - navigation', '  - toc',
+        '---', '', '# 更新时间线', '', '<div class="tp-timeline">', ''
     ]
 
-    seen_dates = set()
-    for entry in entries:
-        date = entry['date']
-        msg = entry['msg']
-        if date in seen_dates:
+    seen = set()
+    for raw_line in result.stdout.strip().split('\n'):
+        if '|' not in raw_line:
             continue
-        seen_dates.add(date)
+        parts = raw_line.split('|', 1)
+        if len(parts) != 2:
+            continue
+        date = parts[0].strip()[:10]
+        msg = parts[1].strip()
 
-        file_names = [os.path.basename(f).replace('.md', '') for f in entry['files'][:3]]
-        desc = ', '.join(file_names) if file_names else ''
+        # 跳过无意义的 commit
+        if not msg or msg.startswith('Merge') or msg.startswith('Initial'):
+            continue
 
-        lines.append(f'<div class="tp-timeline__item">')
+        key = f"{date}:{msg}"
+        if key in seen:
+            continue
+        seen.add(key)
+
+        lines.append('<div class="tp-timeline__item">')
         lines.append(f'<div class="tp-timeline__date">{date}</div>')
         lines.append(f'<div class="tp-timeline__content">')
         lines.append(f'<h3>{msg}</h3>')
-        if desc:
-            lines.append(f'<p>{desc}</p>')
-        lines.append(f'</div>')
-        lines.append(f'</div>')
+        lines.append('</div>')
+        lines.append('</div>')
         lines.append('')
+
+        if len(seen) >= 20:
+            break
 
     lines.append('</div>')
 
