@@ -83,6 +83,7 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 extra_css:
+  - https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap
   - stylesheets/extra.css
 
 plugins:

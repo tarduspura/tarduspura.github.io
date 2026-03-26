@@ -340,10 +340,11 @@ mjx-container[jax="CHTML"][display="true"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 0.8rem;
+  gap: 1.5rem;
+  font-size: 0.9rem;
   color: var(--md-default-fg-color--lighter);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
 }
 
 .tp-hero__dot {
