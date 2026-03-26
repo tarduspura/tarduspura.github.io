@@ -440,8 +440,7 @@ mjx-container[jax="CHTML"][display="true"] {
 .tp-stats-panel__value {
   color: var(--md-default-fg-color);
   font-weight: 600;
-  font-family: 'Ma Shan Zheng', cursive;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 .tp-hero__subtitle {
