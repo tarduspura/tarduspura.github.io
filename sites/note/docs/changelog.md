@@ -12,6 +12,13 @@ hide:
 <div class="tp-timeline__item">
 <div class="tp-timeline__date">2026-03-26</div>
 <div class="tp-timeline__content">
+<h3>Homepage: typing effect, stats toggle panel, auto-update changelog</h3>
+</div>
+</div>
+
+<div class="tp-timeline__item">
+<div class="tp-timeline__date">2026-03-26</div>
+<div class="tp-timeline__content">
 <h3>Polish article meta: smaller italic font, gray box, more spacing</h3>
 </div>
 </div>
@@ -137,13 +144,6 @@ hide:
 
 <div class="tp-timeline__item">
 <div class="tp-timeline__date">2026-03-17</div>
-<div class="tp-timeline__content">
-<h3>add article</h3>
-</div>
-</div>
-
-<div class="tp-timeline__item">
-<div class="tp-timeline__date">2026-03-16</div>
 <div class="tp-timeline__content">
 <h3>add article</h3>
 </div>

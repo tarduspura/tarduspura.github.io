@@ -7,18 +7,17 @@
 {% block content %}
   {% if page.is_homepage %}
     <div class="tp-home">
-      <!-- Hero with typing effect -->
+      <!-- Hero with typing effect on title -->
       <section class="tp-hero">
-        <h1 class="tp-hero__title">Tardus Pura's Notes</h1>
-        <p class="tp-hero__typing">
+        <h1 class="tp-hero__title">
           <span id="tp-typed"></span><span class="tp-cursor">|</span>
-        </p>
+        </h1>
 
         <!-- Quick links -->
         <div class="tp-hero__links">
-          <a href="changelog/" class="tp-hero__link">⏱ 最近更新</a>
+          <a href="changelog/" class="tp-hero__link">最近更新</a>
           <span class="tp-hero__sep">/</span>
-          <a href="javascript:void(0)" class="tp-hero__link" id="tp-stats-toggle">📊 站点统计</a>
+          <a href="javascript:void(0)" class="tp-hero__link" id="tp-stats-toggle">站点统计</a>
         </div>
 
         <!-- Stats panel (hidden by default) -->
@@ -32,8 +31,8 @@
             <span class="tp-stats-panel__value">3.5w 字</span>
           </div>
           <div class="tp-stats-panel__row">
-            <span class="tp-stats-panel__label">建站时间</span>
-            <span class="tp-stats-panel__value">2026 年 2 月</span>
+            <span class="tp-stats-panel__label">已运行</span>
+            <span class="tp-stats-panel__value" id="tp-uptime"></span>
           </div>
         </div>
       </section>
@@ -88,26 +87,41 @@
     </div>
 
     <script>
-    // Typing effect
+    // Typing effect on title (slower speed)
     (function() {
-      var text = "这里是我的学习笔记本，记录课程笔记、论文阅读和技术探索。";
+      var text = "Tardus Pura's Notes";
       var el = document.getElementById('tp-typed');
       var i = 0;
       function type() {
         if (i < text.length) {
           el.textContent += text.charAt(i);
           i++;
-          setTimeout(type, 60);
+          setTimeout(type, 100);
         }
       }
-      setTimeout(type, 500);
+      setTimeout(type, 400);
     })();
 
     // Stats toggle
     document.getElementById('tp-stats-toggle').addEventListener('click', function() {
-      var panel = document.getElementById('tp-stats-panel');
-      panel.classList.toggle('tp-stats-panel--open');
+      document.getElementById('tp-stats-panel').classList.toggle('tp-stats-panel--open');
     });
+
+    // Uptime counter (site created: 2026-02-01)
+    (function() {
+      var created = new Date(2026, 1, 1);
+      function update() {
+        var now = new Date();
+        var diff = now - created;
+        var days = Math.floor(diff / 86400000);
+        var hours = Math.floor((diff % 86400000) / 3600000);
+        var mins = Math.floor((diff % 3600000) / 60000);
+        var el = document.getElementById('tp-uptime');
+        if (el) el.textContent = days + ' 天 ' + hours + ' 小时 ' + mins + ' 分钟';
+      }
+      update();
+      setInterval(update, 60000);
+    })();
     </script>
   {% else %}
     {{ super() }}
