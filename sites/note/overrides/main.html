@@ -7,19 +7,40 @@
 {% block content %}
   {% if page.is_homepage %}
     <div class="tp-home">
-      <!-- Hero -->
+      <!-- Hero with typing effect -->
       <section class="tp-hero">
         <h1 class="tp-hero__title">Tardus Pura's Notes</h1>
-        <div class="tp-hero__stats">
-          <span class="tp-hero__stat">20 篇笔记</span>
-          <span class="tp-hero__stat">2.3w 字</span>
+        <p class="tp-hero__typing">
+          <span id="tp-typed"></span><span class="tp-cursor">|</span>
+        </p>
+
+        <!-- Quick links -->
+        <div class="tp-hero__links">
+          <a href="changelog/" class="tp-hero__link">⏱ 最近更新</a>
+          <span class="tp-hero__sep">/</span>
+          <a href="javascript:void(0)" class="tp-hero__link" id="tp-stats-toggle">📊 站点统计</a>
+        </div>
+
+        <!-- Stats panel (hidden by default) -->
+        <div class="tp-stats-panel" id="tp-stats-panel">
+          <div class="tp-stats-panel__row">
+            <span class="tp-stats-panel__label">文章总数</span>
+            <span class="tp-stats-panel__value">22 篇</span>
+          </div>
+          <div class="tp-stats-panel__row">
+            <span class="tp-stats-panel__label">总字数</span>
+            <span class="tp-stats-panel__value">3.5w 字</span>
+          </div>
+          <div class="tp-stats-panel__row">
+            <span class="tp-stats-panel__label">建站时间</span>
+            <span class="tp-stats-panel__value">2026 年 2 月</span>
+          </div>
         </div>
       </section>
 
       <!-- Cards -->
       <section class="tp-cards">
         <div class="tp-cards__grid">
-
           <a class="tp-card" href="cs/system/csapp/">
             <div class="tp-card__body">
               <h3 class="tp-card__title">计算机科学</h3>
@@ -27,7 +48,6 @@
             </div>
             <span class="tp-card__arrow">→</span>
           </a>
-
           <a class="tp-card" href="courses/sys3/sys3_lec1/">
             <div class="tp-card__body">
               <h3 class="tp-card__title">课程笔记</h3>
@@ -35,7 +55,6 @@
             </div>
             <span class="tp-card__arrow">→</span>
           </a>
-
           <a class="tp-card" href="cs/security/agent/">
             <div class="tp-card__body">
               <h3 class="tp-card__title">安全</h3>
@@ -43,7 +62,6 @@
             </div>
             <span class="tp-card__arrow">→</span>
           </a>
-
           <a class="tp-card" href="cs/ai/gcg/">
             <div class="tp-card__body">
               <h3 class="tp-card__title">论文阅读</h3>
@@ -51,7 +69,6 @@
             </div>
             <span class="tp-card__arrow">→</span>
           </a>
-
           <a class="tp-card" href="research/embodied_sec/articles/rt2/">
             <div class="tp-card__body">
               <h3 class="tp-card__title">科研</h3>
@@ -59,7 +76,6 @@
             </div>
             <span class="tp-card__arrow">→</span>
           </a>
-
           <a class="tp-card" href="misc/Learnmore/">
             <div class="tp-card__body">
               <h3 class="tp-card__title">杂项</h3>
@@ -67,15 +83,32 @@
             </div>
             <span class="tp-card__arrow">→</span>
           </a>
-
         </div>
       </section>
-
-      <!-- Changelog -->
-      <section class="tp-changelog-link">
-        <a href="changelog/">查看更新时间线 →</a>
-      </section>
     </div>
+
+    <script>
+    // Typing effect
+    (function() {
+      var text = "这里是我的学习笔记本，记录课程笔记、论文阅读和技术探索。";
+      var el = document.getElementById('tp-typed');
+      var i = 0;
+      function type() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, 60);
+        }
+      }
+      setTimeout(type, 500);
+    })();
+
+    // Stats toggle
+    document.getElementById('tp-stats-toggle').addEventListener('click', function() {
+      var panel = document.getElementById('tp-stats-panel');
+      panel.classList.toggle('tp-stats-panel--open');
+    });
+    </script>
   {% else %}
     {{ super() }}
   {% endif %}

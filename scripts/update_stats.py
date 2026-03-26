@@ -43,14 +43,15 @@ def update_main_html(overrides_dir, note_count, word_count_str):
         return
     with open(main_html, 'r', encoding='utf-8') as f:
         content = f.read()
+    # Update stats panel values
     content = re.sub(
-        r'<span class="tp-hero__stat">\d+\S* 篇笔记</span>',
-        f'<span class="tp-hero__stat">{note_count} 篇笔记</span>',
+        r'(<span class="tp-stats-panel__value">)\d+\S* 篇(</span>)',
+        rf'\g<1>{note_count} 篇\2',
         content
     )
     content = re.sub(
-        r'<span class="tp-hero__stat">[\d.]+\S* 字</span>',
-        f'<span class="tp-hero__stat">{word_count_str} 字</span>',
+        r'(<span class="tp-stats-panel__value">)[\d.]+\S* 字(</span>)',
+        rf'\g<1>{word_count_str} 字\2',
         content
     )
     with open(main_html, 'w', encoding='utf-8') as f:

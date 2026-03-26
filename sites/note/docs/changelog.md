@@ -12,6 +12,27 @@ hide:
 <div class="tp-timeline__item">
 <div class="tp-timeline__date">2026-03-26</div>
 <div class="tp-timeline__content">
+<h3>Polish article meta: smaller italic font, gray box, more spacing</h3>
+</div>
+</div>
+
+<div class="tp-timeline__item">
+<div class="tp-timeline__date">2026-03-26</div>
+<div class="tp-timeline__content">
+<h3>Add article meta, auto changelog, brush font</h3>
+</div>
+</div>
+
+<div class="tp-timeline__item">
+<div class="tp-timeline__date">2026-03-26</div>
+<div class="tp-timeline__content">
+<h3>optimization</h3>
+</div>
+</div>
+
+<div class="tp-timeline__item">
+<div class="tp-timeline__date">2026-03-26</div>
+<div class="tp-timeline__content">
 <h3>Simplify hero: remove subtitle and dot, use Quicksand font for stats</h3>
 </div>
 </div>
@@ -125,27 +146,6 @@ hide:
 <div class="tp-timeline__date">2026-03-16</div>
 <div class="tp-timeline__content">
 <h3>add article</h3>
-</div>
-</div>
-
-<div class="tp-timeline__item">
-<div class="tp-timeline__date">2026-03-13</div>
-<div class="tp-timeline__content">
-<h3>add article</h3>
-</div>
-</div>
-
-<div class="tp-timeline__item">
-<div class="tp-timeline__date">2026-03-12</div>
-<div class="tp-timeline__content">
-<h3>add article</h3>
-</div>
-</div>
-
-<div class="tp-timeline__item">
-<div class="tp-timeline__date">2026-03-11</div>
-<div class="tp-timeline__content">
-<h3>Fix notice blocks, remove duplicate stats, disable reading time display</h3>
 </div>
 </div>
 

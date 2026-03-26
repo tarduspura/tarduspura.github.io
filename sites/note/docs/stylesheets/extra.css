@@ -337,7 +337,7 @@ mjx-container[jax="CHTML"][display="true"] {
 
 /* Hero */
 .tp-hero {
-  padding: 4rem 0 2.5rem;
+  padding: 4rem 0 2rem;
   text-align: center;
 }
 
@@ -347,7 +347,94 @@ mjx-container[jax="CHTML"][display="true"] {
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--md-default-fg-color);
-  margin: 0 0 0.6rem;
+  margin: 0 0 1rem;
+}
+
+/* Typing effect */
+.tp-hero__typing {
+  font-size: 0.9rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0 0 1.5rem;
+  min-height: 1.5em;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.tp-cursor {
+  font-weight: 300;
+  color: var(--md-accent-fg-color);
+  animation: tp-blink 1s step-end infinite;
+}
+
+@keyframes tp-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Quick links */
+.tp-hero__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.tp-hero__link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--md-accent-fg-color) !important;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.tp-hero__link:hover {
+  opacity: 0.7;
+}
+
+.tp-hero__sep {
+  color: var(--md-default-fg-color--lighter);
+  font-size: 0.85rem;
+}
+
+/* Stats panel */
+.tp-stats-panel {
+  max-width: 360px;
+  margin: 0 auto;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+}
+
+.tp-stats-panel--open {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tp-stats-panel__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--tp-border);
+}
+
+.tp-stats-panel__row:last-child {
+  border-bottom: none;
+}
+
+.tp-stats-panel__label {
+  color: var(--md-default-fg-color--lighter);
+}
+
+.tp-stats-panel__value {
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+  font-family: 'Ma Shan Zheng', cursive;
+  font-size: 0.95rem;
 }
 
 .tp-hero__subtitle {
