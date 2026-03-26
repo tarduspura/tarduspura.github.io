@@ -273,18 +273,21 @@ mjx-container[jax="CHTML"][display="true"] {
 .tp-article-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.2rem;
-  font-size: 0.78rem;
+  gap: 1.8rem;
+  font-size: 0.7rem;
+  font-style: italic;
   color: var(--md-default-fg-color--lighter);
-  margin: 0.5rem 0 1.5rem;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid var(--tp-border);
+  margin: 1rem 0 1.8rem;
+  padding: 0.6rem 1rem;
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  border: 1px solid var(--tp-border);
 }
 
 .tp-article-meta span {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.4rem;
 }
 
 /* ═══════ Task lists ═══════ */
