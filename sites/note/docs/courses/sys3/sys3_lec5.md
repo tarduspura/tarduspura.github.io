@@ -150,7 +150,7 @@ date: 2026-03-23
     ![unified_cache](../../images/sys3.5.9.jpg)
 
 
-### 2.5 cache和memory hierachy设计的4个问题
+## 3 cache和memory hierachy设计的4个问题
 
 - Q1：一个数据块应该被放在高层存储器/主存的什么位置？
     - Direct Mapped（直接映射）：每个块放在固定的一个位置。
@@ -177,7 +177,90 @@ date: 2026-03-23
     - Write Back：只更新cache，并给这个块打上一个dirty bit。只有当这个块离开cache的时候才会更新内存
         - 优点：速度非常快
         - 缺点：内存数据无法实时更新，而且逻辑比较复杂
-    
+
+
+### 3.1 Block Placement
+
+- 怎么找到对应块的位置
+
+- Direct mapped：内存上的一个位置只会映射到cache上的一个特定位置
+    - 一般直接取模当作索引
+
+    ![dm1](../../images/sys3.5.11.jpg)
+
+    - 地址低位的 m bit 是 index 用来确定内存该位置应该映射到 cache 的哪个位置，从中可以看出 cache 有 $2^m$ 个位置
+
+    ![dm2](../../images/sys3.5.12.jpg)
+
+    - 好处是寻找速度很快
+    - 缺点在于当映射冲突出现的时候，cache的空间利用率可能不够高
+
+
+- Fully-associative（全相连）
+    - 主存当中的任何一个块都可以放到 cache 的任何一个位置
+    ![fa](../../images/sys3.5.13.jpg)
+
+    - 好处是空间利用率很高
+    - 缺点在于寻找的开销很大，并且实现的算法比较复杂
+
+
+- Set-associative（组相连）
+
+    - n-way set associative（n路组相连）：每 n 个 clock 为一组，主存中的每个位置映射到一个具体的组中，但是在组中可以放置在任意一个位置
+
+    - ![sa](../../images/sys3.5.14.jpg)
+
+!!! abstract "Tips"
+    - 为什么不使用 high-order bits 作为 index？
+    - some contiguous memory blocks will map to the same cache set.
+
+
+- 直接映射可以看作是 1-way set association；全相连可以看作是 cache 的所有位置共同组成一个组
+
+- 一个 set 内的 block 越多，cache 的空间利用率越高，块冲突和 cahce miss 的概率就越低。但相应的，在 cache 中寻找所花费的时间也越多。
+
+- 现代大部分的cache都使用组相连，每组的元素数量 n 一般不大于4。
+
+
+### 3.2 Block Identification
+
+- 如何定位一个block
+
+![bi](../../images/sys3.5.15.jpg)
+
+- Index
+    - 在**组相联**中用来选择**组**
+    - 在**直接映射中**中用来选择**块**
+    - 数量是组/块的数量对 2 取对数
+
+- Byte Offset
+    - 用来在定位到的数据块中精准定位你想要的字节
+    - 位数取决于 Block Size
+
+- Tag
+    - 在 index 找到对应 cache 中的行或者组之后具体比对 tag 部分的地址 
+
+- Valid Bit
+    - 有时候会有，用来指示 cache block 里的数据是不是有效的
+
+
+- 一个直接映射的例子
+![eg1](../../images/sys3.5.16.jpg)
+
+- 一个二路组相连的例子
+![eg2](../../images/sys3.5.17.jpg)
+
+- 一个全相连的例子（1-word Block）
+![eg3](../../images/sys3.5.18.jpg)
+
+
+
+
+
+
+
+
+
 
 
 
