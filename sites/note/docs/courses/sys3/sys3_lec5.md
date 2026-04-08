@@ -254,8 +254,159 @@ date: 2026-03-23
 ![eg3](../../images/sys3.5.18.jpg)
 
 
+!!! abstract "定量计算"
+    - ![caluculate](../../images/sys3.5.19.jpg)
+
+    - cache 实际上的物理开销比宣称的“存储容量”要更高
 
 
+- Quiz1：
+![quiz1](../../images/sys3.5.20.jpg)
+
+- Quiz2：
+![quiz2](../../images/sys3.5.21.jpg)
+
+
+### 3.3 Block Replacement
+
+- dierect-mapped cache
+
+    - cache hit：继续使用，无事发生
+    - cache miss：
+        - 1.向内存发送初始的 PC
+        - 2.等待内存读取该地址中的数据
+        - 3.将内存取到的地址加入 cache，填好tag、valid bit
+        - 4.重新从 cache 中取出正确的指令
+
+- fully/set-asscociative cache
+
+    - Random replacement：随机选取一个 block 替换掉
+        - 只需一个随机数生成器，在硬件上很好实现
+        - 将替换均匀地传播到整个 cache
+        - 有可能将还需要访问的 block 给移除了
+
+    - LRU(Least-Recently Used)：选择最少访问的一个 block
+        - 假设**更少访问的 block 倾向于之后也不会访问**
+        - 需要额外的硬件开销
+
+    - FIFO：先进入 cache 的先被移除
+
+    - 使用同样的一个访问序列来举例：
+
+    ![eg1](../../images/sys3.5.22.jpg)
+
+    ![eg2](../../images/sys3.5.23.jpg)
+
+    ![eg3](../../images/sys3.5.24.jpg)
+
+
+    - 结论：
+    1.hit rate 和选用的替换算法有关
+    ![eg](../../images/sys3.5.25.jpg)
+
+    2.hit rate 和 cache block size 有关
+    ![eg](../../images/sys3.5.26.jpg)
+        - 并不是 cache 容量越大，hit rate 就越高
+        ![exception](../../images/sys3.5.28.jpg) 
+
+    3.
+    ![conclusion](../../images/sys3.5.27.jpg)
+
+    - 如果使用的是 LRU，那么随着 cache 中 block size 的增加，不但存放的内存块存在包含关系，甚至在 cache 中的顺序都是一致的
+
+
+- LRU 如何具体实现：
+
+    - 1.两两之间存在一个 Flip-Flop 寄存器，记录两者之间谁是最近被访问的那个
+    - 2.接下来就可以使用门电路来判断出最不经常被访问的哪一个
+
+    - 举个例子：如果 C 是最长时间没有被访问的那个
+    ![eg](../../images/sys3.5.29.jpg)
+    ![eg](../../images/sys3.5.30.jpg)
+
+
+- 上述 LRU 实现的硬件分析
+    - **假设 cache 有 p 个 blocks** 
+    - 共有 p 个与门。因为每个块都有可能需要被替换，为了帮助每个 block 产生替换信号，我们需要** p 个与门**
+    - 每个与门有 p-1 个输入。分别输入当前这个块与其他 p-1 个块之间的比较结果。
+    - 有 p(p-1)/2 个 flip-flop 寄存器
+
+
+### 3.4 Write Strategy
+
+- Write Hit
+    - Write Through
+        - 当write hit 的时候，cache 和 memory 中同时更新
+        - 数据一致性很好，memory中总有最新的数据
+        - cache control bit 只是一个 valid bit
+        - 典型的使用场景：Real-time systems
+
+    - Write Back
+        - data **只被写入 cache**
+        - memory 只在**包含 dirty bit 的 block 从 cache 中被 evicted 的时候**更新
+        - 使用 dirty bit 来追踪 modifications
+        - 会减少内存带宽的使用
+        - cache control bits : both valid and dirty bits
+        - 典型的使用场景：通用处理器（性能表现优先）
+
+    - Dirty Bit
+        - 标识 cache 中的 block 是不是被修改了但是还没有被写入 memory
+        - 是 Write-Back 策略的核心
+
+
+- Write Miss
+
+    - write allocate
+        - 系统将 missed block 从主存加载到 cache 当中，然后**再进行 write**
+        - 利用空间和时间局部性来优化未来的访问
+        - 通常在 L2/L3 caches 中和 Write-Back 搭配使用来优化重复的写操作
+
+    - no write allocate(Write around)
+        - write miss 之后**直接将数据写入主存中对应的块**而不将这个块加载进 cache
+        - 在**单次访问**或**少量访问**情况下防止 cache 被加载进来的 block 污染
+
+        - 日志系统或流数据这种数据一般不会连续写入的场景
+
+    
+- 搭配
+    - write-back + write-allocate
+    - write-through + no write-allocate
+
+    ![pairs](../../images/sys3.5.32.jpg)
+
+
+- Write stall & Write buffer
+
+    - Write stall：**Write through** 的情况下，CPU 必须等待向内存中的写操作完成
+
+    - Write buffer：优化 Write-Through Optimization
+        - 一个**临时存放 write through 数据**的小 buffer
+        - 避免 wrtie through 过程中的停顿，缓和该策略的 performance penalty
+        - write buffer 在写操作密集的时候非常有帮助
+        - 并不能完全避免 stall。因为 buffer 可能会满
+
+    ![wb](../../images/sys3.5.31.jpg)
+
+
+## 4 虚拟内存
+
+### 4.1 虚拟内存概览
+
+![virtual-memory](../../images/sys3.5.33.jpg)
+
+- 在虚拟内存中**连续**的数据，映射到真实的内存上，既有可能在内存当中，也有可能数据仍然在磁盘（二级存储）当中
+
+- 如果程序现在想要访问 D，会触发一个**“缺页异常”**。操作系统会把磁盘里的 D 搬到主存里某个空闲的地方
+
+- 页表（页面对照表）：用来记录虚拟内存和真实物理内存之间的对照关系
+
+### 4.2 虚拟内存的作用
+
+- 因为不需要的数据可以放在磁盘当中，只有必要的数据才会加载进内存，所以可以**用较小的内存来运行较大的程序**
+
+
+
+    
 
 
 
