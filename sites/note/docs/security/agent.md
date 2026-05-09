@@ -13,7 +13,6 @@ date: 2026-02-12T16:56:10+08:00
 
 ### Format
 
-!(format)[/images/skill-1.jpg]
 
 - SKILL.md为第一指引（有时候还会有一些子技能）
 - 结合任务情况，判断何时需要调用代码脚本（scripts）、翻阅参考文档（ref.）、使用素材资源（assets）

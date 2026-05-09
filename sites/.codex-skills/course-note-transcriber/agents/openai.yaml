@@ -1,0 +1,4 @@
+interface:
+  display_name: "Course Note Transcriber"
+  short_description: "Turn lecture PDFs into Mayazar-style notes"
+  default_prompt: "Use $course-note-transcriber to turn this lecture PDF into a structured note in my course-note style."
