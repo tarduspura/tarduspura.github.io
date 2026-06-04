@@ -13,3 +13,7 @@ date: 2026-04-07
 - 由 Ben-Or，Goldwasser，Wigderson 提出的著名 BGW 协议的**半诚实安全版本**
 
 ![BGW](../../images/pc.7.1.jpg)
+
+
+### 1.2 安全性证明
+- 给出在 UC 框架下的
