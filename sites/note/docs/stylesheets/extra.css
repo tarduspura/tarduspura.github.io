@@ -165,8 +165,8 @@ body {
   align-items: center;
   min-height: 2.35rem;
   margin: 0;
-  padding: 0.58rem 1rem;
-  background: var(--tp-abstract-title-bg);
+  padding: 0.82rem 1rem 0.35rem;
+  background: transparent;
   color: var(--md-default-fg-color);
   font-size: 0.9rem;
   font-weight: 700;
@@ -190,6 +190,12 @@ body {
 .md-typeset .admonition.tldr > :not(.admonition-title) {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.md-typeset .admonition.abstract > .admonition-title + *,
+.md-typeset .admonition.summary > .admonition-title + *,
+.md-typeset .admonition.tldr > .admonition-title + * {
+  margin-top: 0.45rem;
 }
 
 .md-typeset .admonition.abstract > p,
