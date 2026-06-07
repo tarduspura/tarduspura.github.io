@@ -7,7 +7,7 @@ date: 2026-03-24
 
 - 在一个**循环群**中，已知底数和结果，**求指数的计算难度**远远大于已知底数和指数正向计算结果
 
-$\mathcal{g}$ ：generic（通用的）, polynomial-time的生成一个群的算法
+- $\mathcal{g}$ ：generic（通用的）, polynomial-time的生成一个群的算法
 
 ### 1.1 群(Group)
 
@@ -94,10 +94,10 @@ $\mathcal{g}$ ：generic（通用的）, polynomial-time的生成一个群的算
 
 ![CDH-sec](../../images/pc_3.2.2.2.jpg)
 
-!!! abstract "Summary"
+!!! abstract Summary
     - 离散对数假设(DL)：问题最难，假设最强。攻击者目标：给定 $g^a$，求出 a。
-    - CDH假设：难度中等，假设强度中等。给定 $g^a$, $g^b$，求出 $g^{ab}^$。
-    - 判定DH假设(DDH)：最容易，假设最弱。给定 $g^a$, $g^b$ 和一个 *Z*，判断 Z 与 $g^{ab}$ 是否相等，或仅是随机值。
+    - CDH假设：难度中等，假设强度中等。给定 $g^a$, $g^b$，求出 $g^{ab}$。
+    - 判定DH假设(DDH)：最容易，假设最弱。给定 $g^a$, $g^b$ 和一个 Z，判断 Z 与 $g^{ab}$ 是否相等，或仅是随机值。
 
 ### 2.3 CDH和DL之间的关系
 
@@ -149,15 +149,15 @@ $\mathcal{g}$ ：generic（通用的）, polynomial-time的生成一个群的算
     - 发送者**随机选择**一个临时私钥r
     - 计算临时公钥 $c_1 = g^r$
     - 发送者通过临时公钥和接受者的长期公钥生成共享密钥
-        - $k = h^r = (g^s)^r = g^(sr)^$
+        - $k = h^r = (g^s)^r = g^{sr}$
     - $c_2 = m·k$
     - 发送密文对 $(c_1,c_2)$
 
 - 解密流程
     - 恢复共同密钥
-        - $k = (c_1)^s = (g^r)^s = g^(rs)^$
+        - $k = (c_1)^s = (g^r)^s = g^{rs}$
     - 提取消息
-        - m = $c_2$ / k
+        - m = $\frac{c_2}{k}$
 
 ### 3.3 Elgamal的安全性
 
