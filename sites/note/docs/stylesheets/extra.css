@@ -159,26 +159,29 @@ body {
 .md-typeset .admonition.abstract > .admonition-title,
 .md-typeset .admonition.summary > .admonition-title,
 .md-typeset .admonition.tldr > .admonition-title {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.05rem minmax(0, 1fr);
+  column-gap: 0.72rem;
   align-items: center;
-  min-height: 2.4rem;
+  min-height: 2.35rem;
   margin: 0;
-  padding: 0.58rem 1rem 0.58rem 2.6rem;
+  padding: 0.58rem 1rem;
   background: var(--tp-abstract-title-bg);
   color: var(--md-default-fg-color);
   font-size: 0.9rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1;
 }
 
 .md-typeset .admonition.abstract > .admonition-title::before,
 .md-typeset .admonition.summary > .admonition-title::before,
 .md-typeset .admonition.tldr > .admonition-title::before {
-  top: 50%;
-  left: 1rem;
-  width: 1rem;
-  height: 1rem;
-  transform: translateY(-50%);
+  position: static;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin: 0;
+  transform: none;
+  align-self: center;
   background-color: var(--tp-abstract-accent);
 }
 
