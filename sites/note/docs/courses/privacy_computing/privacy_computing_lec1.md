@@ -19,6 +19,9 @@ date: 2026-03-05
     - Correctness：输出的y正确
     - Privacy：除了y，不泄露任何 $x_i$ 信息
 
+- 例子：第一价格密封拍卖
+    - 最高者用最高价得
+
 
 ## 2 核心工具：秘密分享(Secret Sharing)
 
@@ -33,6 +36,9 @@ date: 2026-03-05
 ### 3.1 Secure Addition
 
 ![secadd](../../images/pc_1.3.1.1.jpg)
+
+!!! abstract 思考
+  - 为什么 p 一定要是一个素数？不是素数可以吗
 
 
 ### 3.2 Secure Multiplication
@@ -52,14 +58,14 @@ date: 2026-03-05
 
 - Input Substitution
 - 行为：比如上面的例子中Alice总是输入 a=1 来试探Bob
-- **无法通过协议防止**，只能通过博弈论或外部机制解决
+- **无法通过协议阻止**，只能通过博弈论或外部机制解决
 
 ### 4.2 违背协议
 
 - Protocol Deviation
 - 行为：比如在安全加法协议中，发送错误的份额，或则和计算错误的结果
 - 解决方法：一致性检查(Consistency Check)
-    - P2和P3可以互相验证来自P1的数据是否一致
+    - 比如再安全加法协议当中，P2 和 P3 可以互相验证来自 P1 的数据是否一致
 - 这种增强后的模型为**恶意安全**(Malicious Security)
 
 ## 5 通用解决方案
